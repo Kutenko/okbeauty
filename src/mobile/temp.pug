@@ -1,0 +1,164 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+        link(rel="stylesheet", href="css/main.css")
+        script(src="http://ctr-localhost.ru/vlad/jq.js")
+
+        include translate/ru
+    body
+        .header
+            .first_line
+                .container
+                    .table
+                        .logo.table-cell.middle
+                        .nav.table-cell.middle.text-align-right
+                            ul
+                                li INÍCIO
+                                li DIETAS E NUTRIÇÃO
+                                li TREINAMENTO
+                                li MOTIVAÇÃO
+                                li SOBRE MIM
+                                li CONTATOS
+                        //end nav
+                //end container
+            //end first line
+            .last_line
+                .container
+                    .table.text-align-center
+                        .logo_2.table-cell.middle
+                        .text_block.table-cell.bottom
+                            p!= last_line_text
+                //end container
+            //end last line
+        .container
+            .main
+                .content
+                    .post-info.table  
+                        .autor.table-cell.middle  
+                                span= postInfoAutor
+                        .comments.table-cell.middle
+                                span= postInfoComments
+                        .visitors.table-cell.middle
+                                span= postInfoVisitors
+                        .date.table-cell.middle
+                            span <script>dtime_nums(-1, true)</script>
+                    //end post info
+                    .content-title
+                        h1= contentTitle
+                        h2= contentSubTitle
+                    //end content title
+                    //main content
+                    img(src="http://dadbab.info/content/U9wj1XuDclDjLmF/img/ph1.jpg", alt="", srcset="http://dadbab.info/content/U9wj1XuDclDjLmF/img/ph1.jpg")
+                    p!= p1
+                    h2= h2_1
+                    p!= p2
+                    img(src=img_2, alt="", srcset="")
+                    p!= p3
+                    p!= p4
+                    p!= p5
+                    img(src=img_3, alt="", srcset="")
+                    p!= p6
+                    P!= p7
+                    P!= p8
+                    img(class="img-center" src=pack, alt="", srcset="" )
+                    p!= p9
+                    h2= h2_2
+                    p!= p10
+                    img(src=img_5, alt="", srcset="")
+                    p!= p11
+                    ol
+                        each list in [list_01,list_02,list_03,list_04]
+                            li!= list
+                    p!= p13
+                    img(src=img_6, alt="", srcset="")
+                    p!= p14
+                    p!= p15
+                    p!= p16
+                    p!= p17
+                    a.button
+                        span!= button_text
+                    img(src=ph_extra1, alt="", srcset="")
+                    p!= p18
+                    p(style="text-align:right")!= p19
+                    //end main content
+                    .social_links.table.middle
+                        .facebook.table-cell.middle
+                            .quant
+                                span  58,8 Kg
+                        .google-plus.table-cell.middle
+                            .quant 1.2k
+                        .add.table-cell.middle
+                            .quant 9
+                        //comments
+                    .comment-title
+                        h2= commentTitle
+
+                    //- each data in datas
+                    mixin comment( ava, name, day, time, comment, c_img)
+                        div.comment-item
+                            .data
+                                .data-info.table
+                                    .avatar.table-cell
+                                        img(src=ava)
+                                    .table-cell                                          
+                                        .name!= name  
+                                        .day!= day + '&nbsp;' + time                        
+                            .text
+                                p!= comment
+                                img(src=c_img)
+                                if block
+                                    block
+                                else
+                                    
+                            div
+                                .button-reply!= comment_button
+
+                    +comment ( ava_01, name_01, day_01, '11:13', comment_01, c_img_01) 
+                        img
+                    +comment ( ava_02, name_02, day_01, '15:55', comment_01, c_img_02)
+                        img
+                    +comment ( ava_03, name_03, day_02, '11:23', comment_01)
+                    +comment ( ava_04, name_04, day_02, '12:13', comment_01)
+                    +comment ( ava_noname, name_05, day_03, '09:48', comment_01)
+                    +comment ( ava_06, name_06, day_03, '10:26', comment_01)
+                    +comment ( ava_noname, name_07, day_05, '11:43', comment_01)
+                    +comment ( ava_08, name_08, day_05, '06:13', comment_01)
+
+
+
+                //end content
+                .sidebar
+                    .sidebar-title
+                        h2= sidebarTitle
+                    mixin news(img, news)
+                        .item
+                            img(src=img)
+                            p!= news
+                    +news ( teaser_01, news_01)
+                    +news ( teaser_02, news_02)
+                    +news ( teaser_03, news_03)
+                    +news ( teaser_04, news_04)
+
+                
+
+                //end sidebar        
+            //end main
+        //end container
+        
+-ava_03 = 'images/ava3.jpg'
+-ava_04 = 'images/ava4.jpg'
+-ava_noname = 'images/ava5.jpg'
+-ava_06 = 'images/ava6.jpg'
+-ava_07 = 'images/ava7.jpg'
+-ava_08 = 'images/ava8.jpg'
+-c_img_01 = 'images/ava8.jpg'
+-c_img_02 = 'images/ava7.jpg'
+-name_03 = ' Santiago7 '
+-name_04 = ' Sergio '
+-name_05 = ' Alberto '
+-name_06 = ' Luis '
+-name_07 = ' Carlos '
+-name_08 = ' Meu nome e Natan '
