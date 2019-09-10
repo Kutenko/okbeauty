@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+    body
+        .hero__slider
+            mixin hero_slider_item(img, hero_text1,hero_text2,hero_text3)
+                .item(class!=attributes.class)
+                    .hero__slider_image
+                        img(src=img, alt="", srcset="")
+                    .container
+                        .text    
+                            .__1!= hero_text1
+                            .__2!= hero_text2
+                            .__3!= hero_text3 
+                        .button
+                            span перейти к покупкам
+                    //end container
+                //end item
+
+            -hero_1_img = 'images/slide1.jpg'
+            -hero_1_text1 = 'бесплатная доставка'
+            -hero_1_text2 = 'при заказе от'
+            -hero_1_text3 = '3500' 
+            
+            +hero_slider_item(hero_1_img, hero_1_text1,hero_1_text2,hero_1_text3)(class="__1")
+            
+        //end hero slider               
+        .product__wrapper
+            .container
+                .title
+                    h2 Каталог продукции
+                .product__nav
+                    ul
+                        mixin product_nav(link, link_name)
+                            li(class!=attributes.class)  
+                                a(href=link)!= link_name
+
+                        -link_name_1 = 'хит продаж'
+                        -link_name_2 = 'для волос'
+                        -link_name_3 = 'для лица'
+                        -link_name_4 = 'для тела'
+                        -link_name_5 = 'наборы'
+                        -link_name_6 = 'тинты'
+
+
+                        -link_1 = '/hit.html'
+
+                        +product_nav(link_1, link_name_1 )(class="active")
+                        +product_nav(link_1, link_name_2 )
+                        +product_nav(link_1, link_name_3 )
+                        +product_nav(link_1, link_name_4 )
+                        +product_nav(link_1, link_name_5 )
+                        +product_nav(link_1, link_name_6 )
+                //end product nav
+                mixin product_item( prod_img, prod_name, prod_price )
+                    .product__item
+                        div
+                            .product__image
+                                img(src=prod_img, alt="", srcset="")
+                            .product__name  
+                                p!= prod_name
+                            .product__price
+                                p!= prod_price 
+                                    span &nbsp;р
+                            .one-clk__order
+                                a(href="")!= prod_order
+                
+                -prod_order = "купить в 1 клик"
+                
+                -prod_img_1 = 'images/pr1.jpg'
+                -prod_name_1 = 'Интенсивная маска для питания и восстановления'
+                -prod_price_1 = '1600'
+
+                -prod_img_2 = 'images/pr2.jpg'
+                -prod_name_2 = 'Интенсивная маска для питания и чего то еще'
+                -prod_price_2 = '1600'                
+
+                -prod_img_3 = 'images/pr3.jpg'
+                -prod_name_3 = 'Интенсивная маска для питания и чего то еще'
+                -prod_price_3 = '1600'       
+
+                -prod_img_4 = 'images/pr4.jpg'
+                -prod_name_4 = 'Интенсивная маска для питания и чего то еще'
+                -prod_price_4 = '1600'       
+
+                -prod_img_5 = 'images/pr1.jpg'
+                -prod_name_5 = 'Интенсивная маска для питания и чего то еще'
+                -prod_price_5 = '1600' 
+
+                -prod_img_6 = 'images/pr2.jpg'
+                -prod_name_6 = 'Интенсивная маска для питания и чего то еще'
+                -prod_price_6 = '1600' 
+
+                +product_item(prod_img_1, prod_name_1, prod_price_1 )
+                +product_item(prod_img_2, prod_name_2, prod_price_2 ) 
+                +product_item(prod_img_3, prod_name_3, prod_price_3 )
+                +product_item(prod_img_4, prod_name_4, prod_price_4 )     
+                +product_item(prod_img_5, prod_name_5, prod_price_5 )
+                +product_item(prod_img_6, prod_name_6, prod_price_6 )                
+        //end product wrapper
+        .press
+            .container
+                .title
+                    h2 пресса о нас
+                .press_slider
+                    mixin press_slider (img)
+                        .item
+                            img(src=img, alt="")
+                    -img_1 = 'images/press_logo_1.png'
+                    -img_2 = 'images/press_logo_2.png'
+                    -img_3 = 'images/press_logo_3.png'
+
+                    +press_slider(img_1)
+                    +press_slider(img_2)
+                    +press_slider(img_3)
+                //end press slider
+            //end container
+        // end press        

@@ -4,67 +4,13 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="css/main.css")
         title Document
     body
-        header
-            .top_panel
-                .logo__left
-                    a#home(href="/")
-                        img(src="images/logo.png", alt="")
-                .cart__right
-                    a#cart(href="")
-                        .cart__icon
-                        .cart__info
-        .hero__slider
-            .item__1
-                img(src="iages/slide.jpg", alt="", srcset="")
-                .text
-                    p 
-                        span.__1 бесплатная доставка
-                        span.__2 при заказе от
-                        span.__3 3500 р. 
-                .button         
-            .item__2
-        .product__wrapper
-            .title
-                h2 Каталог продукции
-            .product__nav
-                    ul
-                        mixin product_nav(link, link_name)
-                            li  
-                                a(href=link)!= link_name
-
-                        -link_name_1 = 'хит продаж'
-                        -link_1 = '/hit.html'
-                        +product_nav(link_1, link_name_1 )
-                        +product_nav(link_1, link_name_1 )
-
-            mixin product_item( prod_img, prod_name, prod_price )
-                .product__item
-                    .product__image
-                        img(src=prod_img, alt="", srcset="")
-                        .product__name  
-                            p!= prod_name
-                        .product__price
-                            p 1600 р.
-                        .one-clk__order
-                            a(href="")!= prod_order
-            
-            -prod_order = "купить в один клик"
-            
-            -prod_img_1 = 'images/pr1.jpg'
-            -prod_name_1 = 'Интенсивная маска для питания и восстановления'
-            -prod_price_1 = '1600'
-
-            -prod_img_2 = 'images/pr2.jpg'
-            -prod_name_2 = 'Интенсивная маска для питания и чего то еще'
-            -prod_price_2 = '1600'                
-
-            +product_item(prod_img_1, prod_name_1, prod_price_1 )
-            +product_item(prod_img_2, prod_name_2, prod_price_2 )
-            
-            +product_item(prod_img_1, prod_name_1, prod_price_1 )
-            +product_item(prod_img_2, prod_name_2, prod_price_2 )     
-            
-            +product_item(prod_img_1, prod_name_1, prod_price_1 )
-            +product_item(prod_img_2, prod_name_2, prod_price_2 )                
+        include views/header.pug
+        main
+            include views/product-list.pug
+            //end product-list
+            include views/product-page.pug
+        //end main
+        include views/footer.pug
