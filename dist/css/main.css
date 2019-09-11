@@ -459,3 +459,14 @@ footer {
         right: -10px;
         background: #cc5f8d;
         color: #ffffff; }
+
+.show-cart li {
+  display: flex; }
+
+.card {
+  margin-bottom: 20px; }
+
+.card-img-top {
+  width: 200px;
+  height: 200px;
+  align-self: center; }

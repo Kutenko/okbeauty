@@ -66,33 +66,33 @@ html(lang="en")
                             .product__item__price
                                 p!= prod_price 
                                     span &nbsp;р
-                            .one-clk__order
-                                a(href="")!= prod_order
+                            a.one-clk__order.add-to-cart(href="" data-name=prod_name data-price=prod_price)
+                               span!= prod_order
                 
                 -prod_order = "купить в 1 клик"
                 
                 -prod_img_1 = 'images/pr1.jpg'
-                -prod_name_1 = 'Интенсивная маска для питания и восстановления'
+                -prod_name_1 = '1Интенсивная маска для питания и восстановления'
                 -prod_price_1 = '1600'
 
                 -prod_img_2 = 'images/pr2.jpg'
-                -prod_name_2 = 'Интенсивная маска для питания и чего то еще'
+                -prod_name_2 = '2Интенсивная маска для питания и чего то еще'
                 -prod_price_2 = '1600'                
 
                 -prod_img_3 = 'images/pr3.jpg'
-                -prod_name_3 = 'Интенсивная маска для питания и чего то еще'
+                -prod_name_3 = '3Интенсивная маска для питания и чего то еще'
                 -prod_price_3 = '1600'       
 
                 -prod_img_4 = 'images/pr4.jpg'
-                -prod_name_4 = 'Интенсивная маска для питания и чего то еще'
+                -prod_name_4 = '4Интенсивная маска для питания и чего то еще'
                 -prod_price_4 = '1600'       
 
                 -prod_img_5 = 'images/pr1.jpg'
-                -prod_name_5 = 'Интенсивная маска для питания и чего то еще'
+                -prod_name_5 = '5Интенсивная маска для питания и чего то еще'
                 -prod_price_5 = '1600' 
 
                 -prod_img_6 = 'images/pr2.jpg'
-                -prod_name_6 = 'Интенсивная маска для питания и чего то еще'
+                -prod_name_6 = '6Интенсивная маска для питания и чего то еще'
                 -prod_price_6 = '1600' 
 
                 +product_item(prod_img_1, prod_name_1, prod_price_1 )

@@ -579,3 +579,16 @@ footer{
     }//cart right    
 
 }// end footer
+//cart css
+
+  .show-cart li {
+    display: flex;
+  }
+  .card {
+    margin-bottom: 20px;
+  }
+  .card-img-top {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+  }
