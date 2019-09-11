@@ -5,81 +5,257 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 		<link rel="stylesheet" href="css/main.css"/>
+		<script src="js/app.min.js"></script>
 		<title>Document</title>
 	</head>
-	<body><!DOCTYPE html>
-		<html lang="en">
-			<head>
-				<meta charset="UTF-8"/>
-				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-				<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-				<title>Document</title>
-			</head>
-			<body>
-				<header>
-					<div class="container">
-						<div class="top__panel">
-							<div class="logo__left"><a id="home" href="/"><img src="images/logo.png" alt=""/></a></div>
-							<div class="cart__right">
-								<div class="cart__icon">
-									<div class="cart__info"><span>3</span></div>
+	<body>
+		<!--start header-->
+		<header>
+			<div class="container">
+				<div class="top__panel">
+					<div class="logo__left"><a id="home" href="/"><img src="images/logo.png" alt=""/></a></div>
+					<div class="cart__right">
+						<div class="cart__icon">
+							<div class="cart__info"><span>2</span></div>
+						</div>
+					</div>
+				</div>
+				<!--end container-->
+			</div>
+		</header>
+		<!--end header-->
+		<main><p>URL: http://test.com/?<span id="params"></span></p>
+<p><input placeholder="Enter URL params" /></p>
+<pre id="results">{}</pre>
+			<div class="product__list hidden"><!DOCTYPE html>
+				<html lang="en">
+					<head>
+						<meta charset="UTF-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+						<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+						<title>Document</title>
+					</head>
+					<body>
+						<div class="hero__slider">
+														<div class="item __1">
+															<div class="hero__slider_image"><img src="images/slide1.jpg" alt="" srcset=""/></div>
+															<div class="container">
+																<div class="text">   
+																	<div class="__1">бесплатная доставка</div>
+																	<div class="__2">при заказе от</div>
+																	<div class="__3">3500</div>
+																</div>
+																<div class="button"><span>перейти к покупкам</span></div>
+															</div>
+															<!--end container-->
+														</div>
+														<!--end item-->
+						</div>
+						<!--end hero slider               -->
+						<div class="product__wrapper">
+							<div class="container">
+								<div class="title">
+									<h2>Каталог продукции</h2>
 								</div>
+								<div class="product__nav">
+									<ul>
+																				<li class="active"> <a href="/hit.html">хит продаж</a></li>
+																				<li> <a href="/hit.html">для волос</a></li>
+																				<li> <a href="/hit.html">для лица</a></li>
+																				<li> <a href="/hit.html">для тела</a></li>
+																				<li> <a href="/hit.html">наборы</a></li>
+																				<li> <a href="/hit.html">тинты</a></li>
+									</ul>
+								</div>
+								<!--end product nav-->
+																<div class="product__item">
+																	<div>
+																		<div class="product__image"><img src="images/pr1.jpg" alt="" srcset=""/></div>
+																		<div class="product__name"> 
+																			<p>Интенсивная маска для питания и восстановления</p>
+																		</div>
+																		<div class="product__item__price">
+																			<p>1600<span>&nbsp;р</span></p>
+																		</div>
+																		<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
+																	</div>
+																</div>
+																<div class="product__item">
+																	<div>
+																		<div class="product__image"><img src="images/pr2.jpg" alt="" srcset=""/></div>
+																		<div class="product__name"> 
+																			<p>Интенсивная маска для питания и чего то еще</p>
+																		</div>
+																		<div class="product__item__price">
+																			<p>1600<span>&nbsp;р</span></p>
+																		</div>
+																		<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
+																	</div>
+																</div>
+																<div class="product__item">
+																	<div>
+																		<div class="product__image"><img src="images/pr3.jpg" alt="" srcset=""/></div>
+																		<div class="product__name"> 
+																			<p>Интенсивная маска для питания и чего то еще</p>
+																		</div>
+																		<div class="product__item__price">
+																			<p>1600<span>&nbsp;р</span></p>
+																		</div>
+																		<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
+																	</div>
+																</div>
+																<div class="product__item">
+																	<div>
+																		<div class="product__image"><img src="images/pr4.jpg" alt="" srcset=""/></div>
+																		<div class="product__name"> 
+																			<p>Интенсивная маска для питания и чего то еще</p>
+																		</div>
+																		<div class="product__item__price">
+																			<p>1600<span>&nbsp;р</span></p>
+																		</div>
+																		<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
+																	</div>
+																</div>
+																<div class="product__item">
+																	<div>
+																		<div class="product__image"><img src="images/pr1.jpg" alt="" srcset=""/></div>
+																		<div class="product__name"> 
+																			<p>Интенсивная маска для питания и чего то еще</p>
+																		</div>
+																		<div class="product__item__price">
+																			<p>1600<span>&nbsp;р</span></p>
+																		</div>
+																		<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
+																	</div>
+																</div>
+																<div class="product__item">
+																	<div>
+																		<div class="product__image"><img src="images/pr2.jpg" alt="" srcset=""/></div>
+																		<div class="product__name"> 
+																			<p>Интенсивная маска для питания и чего то еще</p>
+																		</div>
+																		<div class="product__item__price">
+																			<p>1600<span>&nbsp;р</span></p>
+																		</div>
+																		<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
+																	</div>
+																</div>
 							</div>
 						</div>
-						<!--end container-->
+						<!--end product wrapper-->
+						<div class="press">
+							<div class="container">
+								<div class="title">
+									<h2>пресса о нас</h2>
+								</div>
+								<div class="press_slider">
+																		<div class="item"><img src="images/press_logo_1.png" alt=""/></div>
+																		<div class="item"><img src="images/press_logo_2.png" alt=""/></div>
+																		<div class="item"><img src="images/press_logo_3.png" alt=""/></div>
+								</div>
+								<!--end press slider-->
+							</div>
+							<!--end container-->
+						</div>
+						<!-- end press        -->
+					</body>
+				</html>
+				<!--end product-list-->
+			</div>
+			<div class="product__page hidden">
+				<!-- Product page-->
+				<div class="product__image">
+					<div class="container"><img src="./images/tint_for_lips.jpg" alt=""/></div>
+				</div>
+				<div class="product__title">
+					<div class="container"><span>хит продаж</span>
+						<h2>ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY СOLOR SALUTE LIP & CHEEK TINT ТОН MARRAKECH</h2>
 					</div>
-				</header>
-				<!--end header-->
-			</body>
-		</html>
-		<main><!DOCTYPE html>
-			<html lang="en">
-				<head>
-					<meta charset="UTF-8"/>
-					<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-					<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-					<title>Document</title>
-				</head>
-				<body>
-					<div class="hero__slider">
-												<div class="item __1">
-													<div class="hero__slider_image"><img src="images/slide1.jpg" alt="" srcset=""/></div>
-													<div class="container">
-														<div class="text">   
-															<div class="__1">бесплатная доставка</div>
-															<div class="__2">при заказе от</div>
-															<div class="__3">3500</div>
-														</div>
-														<div class="button"><span>перейти к покупкам</span></div>
-													</div>
-													<!--end container-->
-												</div>
-												<!--end item-->
+				</div>
+				<div class="product__price">
+					<div class="container">
+						<p><span>1770</span>р</p>
+						<div class="add_cart_button"><span>в корзину</span></div>
+						<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
 					</div>
-					<!--end hero slider               -->
+				</div>
+								<div class="product__feature">
+									<div class="container">
+										<div class="short">
+											<div><span>Тип кожи :&nbsp;</span>для всех типов.
+											</div>
+											<div><span>Эффект: &nbsp;</span>стойкий пигмент для лица.
+											</div>
+											<div><span>Объем:&nbsp;</span>7 мл.
+											</div>
+										</div>
+										<div class="product__desc box">
+											<div class="title"> 
+												<h2>Описание</h2>
+											</div>
+											<div class="wrapper">
+												<p>
+													OK BEAUTY СOLOR SALUTE — уникальный продукт, подчеркивающий вашу естественную красоту. Универсальный оттенок 
+													MARRAKECH - это загадочный глиняно- бордовый цвет древней столицы Марокко. Подойдет на каждый день и для любого случая: 
+													в офис, на свидание, на вечеринку 
+													или прогулку
+												</p>
+												<h3>Эффект</h3>
+												<ul>
+													<li>
+														Многофункциональное средство: может заменить румяна, помаду 
+														и даже тени;
+													</li>
+													<li>
+														Прост в нанесении — вы сможете освежить свой образ даже 
+														без зеркала и без помощи кистей;
+													</li>
+													<li>
+														Естественный румянец 
+														и подчеркнутые губы без эффекта «маски».
+													</li>
+												</ul>
+												<h3>Кому подойдет</h3>
+												<p>
+													Идеально подходит для создания естественного образа без эффекта макияжа с 
+													натуральным финишем.
+												</p>
+											</div>
+										</div>
+										<!--end product description-->
+										<div class="ingredient box">
+											<div class="title"> 
+												<h2>активные ингридиенты и состав</h2>
+											</div>
+										</div>
+										<!--end product ingredient-->
+										<div class="how__use box">
+											<div class="title"> 
+												<h2>способ применения</h2>
+											</div>
+										</div>
+										<!--end product how__use-->
+										<div class="review box">
+											<div class="title"> 
+												<h2>отзывы</h2>
+											</div>
+										</div>
+										<!--end product review-->
+									</div>
+								</div>
+				<div class="recomend">
 					<div class="product__wrapper">
 						<div class="container">
 							<div class="title">
-								<h2>Каталог продукции</h2>
+								<h2>с этим товаром покупают</h2>
 							</div>
-							<div class="product__nav">
-								<ul>
-																		<li class="active"> <a href="/hit.html">хит продаж</a></li>
-																		<li> <a href="/hit.html">для волос</a></li>
-																		<li> <a href="/hit.html">для лица</a></li>
-																		<li> <a href="/hit.html">для тела</a></li>
-																		<li> <a href="/hit.html">наборы</a></li>
-																		<li> <a href="/hit.html">тинты</a></li>
-								</ul>
-							</div>
-							<!--end product nav-->
 														<div class="product__item">
 															<div>
 																<div class="product__image"><img src="images/pr1.jpg" alt="" srcset=""/></div>
 																<div class="product__name"> 
 																	<p>Интенсивная маска для питания и восстановления</p>
 																</div>
-																<div class="product__price">
+																<div class="product__item__price">
 																	<p>1600<span>&nbsp;р</span></p>
 																</div>
 																<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
@@ -91,55 +267,7 @@
 																<div class="product__name"> 
 																	<p>Интенсивная маска для питания и чего то еще</p>
 																</div>
-																<div class="product__price">
-																	<p>1600<span>&nbsp;р</span></p>
-																</div>
-																<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
-															</div>
-														</div>
-														<div class="product__item">
-															<div>
-																<div class="product__image"><img src="images/pr3.jpg" alt="" srcset=""/></div>
-																<div class="product__name"> 
-																	<p>Интенсивная маска для питания и чего то еще</p>
-																</div>
-																<div class="product__price">
-																	<p>1600<span>&nbsp;р</span></p>
-																</div>
-																<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
-															</div>
-														</div>
-														<div class="product__item">
-															<div>
-																<div class="product__image"><img src="images/pr4.jpg" alt="" srcset=""/></div>
-																<div class="product__name"> 
-																	<p>Интенсивная маска для питания и чего то еще</p>
-																</div>
-																<div class="product__price">
-																	<p>1600<span>&nbsp;р</span></p>
-																</div>
-																<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
-															</div>
-														</div>
-														<div class="product__item">
-															<div>
-																<div class="product__image"><img src="images/pr1.jpg" alt="" srcset=""/></div>
-																<div class="product__name"> 
-																	<p>Интенсивная маска для питания и чего то еще</p>
-																</div>
-																<div class="product__price">
-																	<p>1600<span>&nbsp;р</span></p>
-																</div>
-																<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
-															</div>
-														</div>
-														<div class="product__item">
-															<div>
-																<div class="product__image"><img src="images/pr2.jpg" alt="" srcset=""/></div>
-																<div class="product__name"> 
-																	<p>Интенсивная маска для питания и чего то еще</p>
-																</div>
-																<div class="product__price">
+																<div class="product__item__price">
 																	<p>1600<span>&nbsp;р</span></p>
 																</div>
 																<div class="one-clk__order"><a href="">купить в 1 клик</a></div>
@@ -147,62 +275,57 @@
 														</div>
 						</div>
 					</div>
-					<!--end product wrapper-->
-					<div class="press">
-						<div class="container">
-							<div class="title">
-								<h2>пресса о нас</h2>
-							</div>
-							<div class="press_slider">
-																<div class="item"><img src="images/press_logo_1.png" alt=""/></div>
-																<div class="item"><img src="images/press_logo_2.png" alt=""/></div>
-																<div class="item"><img src="images/press_logo_3.png" alt=""/></div>
-							</div>
-							<!--end press slider-->
-						</div>
-						<!--end container-->
-					</div>
-					<!-- end press        -->
-				</body>
-			</html>
-			<!--end product-list--><!DOCTYPE html>
-			<html lang="en">
-				<head>
-					<meta charset="UTF-8"/>
-					<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-					<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-					<title>Document</title>
-				</head>
-				<body>
-					<div class="product__image">
-						<div class="container">     </div>
-					</div>
-				</body>
-			</html>
-		</main>
-		<!--end main--><!DOCTYPE html>
-		<html lang="en">
-			<head>
-				<meta charset="UTF-8"/>
-				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-				<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-				<title>Document</title>
-			</head>
-			<body>
-				<footer>
+					<!--end product wrapper    -->
+				</div>
+				<!--end-product-page-->
+			</div>
+			<div class="cart__page hidden">
+				<div class="title">
 					<div class="container">
-						<div class="copyright__left">
-							<p>&copy; ok beauty</p>
-						</div>
-						<div class="cart__right">
-							<div class="cart__icon">
-								<div class="cart__info"><span>3</span></div>
-							</div>
-						</div>
+						<h2>оформление заказа</h2>
 					</div>
-				</footer>
-				<!--end footer  -->
-			</body>
-		</html>
+				</div>
+				<div class="cart__info">
+					<div class="container">
+						<div class="title"><span>Ваш заказ</span></div>
+						<div class="total__price"><span>1890</span>р.</div>
+					</div>
+					<!--end container-->
+				</div>
+				<!--end cart__info    -->
+				<div class="container">
+					<div class="cart__form"> 
+						<form action="">
+							<label for="name">Ваше имя</label>
+							<input id="name" type="text"/>
+							<label for="phone">Телефон</label>
+							<input id="phone" type="text"/>
+							<label for="country">Страна</label>
+							<select id="country" name="country">
+								<option value="ОАЭ">ОАЭ</option>
+								<option value="Россия" selected="selected">Россия</option>
+							</select>
+							<button class="submit">подтвердить заказ</button>
+						</form>
+					</div>
+					<!--end cart__form-->
+				</div>
+			</div>
+		</main>
+		<!--end main-->
+		<!-- start footer-->
+		<footer>
+			<div class="container">
+				<div class="copyright__left">
+					<p>&copy; ok beauty</p>
+				</div>
+				<div class="cart__right">
+					<div class="cart__icon">
+						<div class="cart__info"><span>3</span></div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--end footer  -->
 	</body>
 </html>

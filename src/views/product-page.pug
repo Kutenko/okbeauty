@@ -1,10 +1,127 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Document
-    body
-        .product__image
-            .container      
+// Product page
+-product_title = 'ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY СOLOR SALUTE LIP & CHEEK TINT ТОН MARRAKECH'
+-product_price = '1770'
+-tipe_1 = 'для всех типов.'
+-effect_1 = 'стойкий пигмент для лица.'
+-volume_1 = '7 мл.'
+
+.product__image
+    .container
+        img(src="./images/tint_for_lips.jpg", alt="")
+.product__title
+    .container
+        span хит продаж
+        h2!= product_title
+.product__price
+    .container
+        p
+            span!= product_price
+            |р
+        .add_cart_button
+            span в корзину
+        .one-clk__order
+            a(href="")!= prod_order
+mixin product_item( tipe, effect, volume )
+    .product__feature
+        .container
+            .short
+                div
+                    span Тип кожи :&nbsp;
+                    != tipe
+                div
+                    span Эффект: &nbsp;
+                    != effect
+                div
+                    span Объем:&nbsp;
+                    != volume                 
+
+            .product__desc.box
+                .title 
+                    h2 Описание
+                .wrapper
+                    p. 
+                        OK BEAUTY СOLOR SALUTE — уникальный продукт, подчеркивающий вашу естественную красоту. Универсальный оттенок 
+                        MARRAKECH - это загадочный глиняно- бордовый цвет древней столицы Марокко. Подойдет на каждый день и для любого случая: 
+                        в офис, на свидание, на вечеринку 
+                        или прогулку
+                    h3 Эффект
+                    ul
+                        li. 
+                            Многофункциональное средство: может заменить румяна, помаду 
+                            и даже тени;
+                        li. 
+                            Прост в нанесении — вы сможете освежить свой образ даже 
+                            без зеркала и без помощи кистей;
+                        li. 
+                            Естественный румянец 
+                            и подчеркнутые губы без эффекта «маски».
+                    h3 Кому подойдет
+                    p. 
+                        Идеально подходит для создания естественного образа без эффекта макияжа с 
+                        натуральным финишем.
+            //end product description
+            .ingredient.box
+                .title 
+                    h2 активные ингридиенты и состав
+            //end product ingredient
+
+            .how__use.box
+                .title 
+                    h2 способ применения
+            //end product how__use
+            
+            .review.box
+                .title 
+                    h2 отзывы
+            //end product review
++product_item(tipe_1, effect_1, volume_1 )
+
+    
+.recomend
+    .product__wrapper
+        .container
+            .title
+                h2 с этим товаром покупают
+            mixin product_item( prod_img, prod_name, prod_price )
+                .product__item
+                    div
+                        .product__image
+                            img(src=prod_img, alt="", srcset="")
+                        .product__name  
+                            p!= prod_name
+                        .product__item__price
+                            p!= prod_price 
+                                span &nbsp;р
+                        .one-clk__order
+                            a(href="")!= prod_order
+            
+            -prod_order = "купить в 1 клик"
+            
+            -prod_img_1 = 'images/pr1.jpg'
+            -prod_name_1 = 'Интенсивная маска для питания и восстановления'
+            -prod_price_1 = '1600'
+
+            -prod_img_2 = 'images/pr2.jpg'
+            -prod_name_2 = 'Интенсивная маска для питания и чего то еще'
+            -prod_price_2 = '1600'                
+
+            -prod_img_3 = 'images/pr3.jpg'
+            -prod_name_3 = 'Интенсивная маска для питания и чего то еще'
+            -prod_price_3 = '1600'       
+
+            -prod_img_4 = 'images/pr4.jpg'
+            -prod_name_4 = 'Интенсивная маска для питания и чего то еще'
+            -prod_price_4 = '1600'       
+
+            -prod_img_5 = 'images/pr1.jpg'
+            -prod_name_5 = 'Интенсивная маска для питания и чего то еще'
+            -prod_price_5 = '1600' 
+
+            -prod_img_6 = 'images/pr2.jpg'
+            -prod_name_6 = 'Интенсивная маска для питания и чего то еще'
+            -prod_price_6 = '1600' 
+
+            +product_item(prod_img_1, prod_name_1, prod_price_1 )
+            +product_item(prod_img_2, prod_name_2, prod_price_2 ) 
+            
+    //end product wrapper    
