@@ -6,7 +6,7 @@
 .product__title
     .container
         span!= annotation
-        h2!= product_title
+        h2!= pid_1_prod_name 
 .product__price
     .container
         p
@@ -26,7 +26,7 @@ mixin product_item( tipe, effect, volume )
                     != tipe
                 div
                     span!= effect_title 
-                    |: &nbsp;
+                    |:&nbsp;
                     != effect
                 div
                     span!= volume_title 
@@ -89,11 +89,12 @@ mixin product_item( tipe, effect, volume )
                             p!= prod_name
                         .product__item__price
                             p!= prod_price 
-                                span &nbsp;р
+                                span &nbsp;
+                                span!= currency
                         a.one-clk__order.add-to-cart(href="" data-name=prod_name data-price=prod_price)
                             span!= prod_order
             
-            +product_item(prod_img_1, prod_name_1, prod_price_1 )
-            +product_item(prod_img_2, prod_name_2, prod_price_2 ) 
+            +product_item(pid_1_prod_img, pid_1_prod_name, pid_1_prod_price )
+            +product_item(pid_2_prod_img, pid_2_prod_name, pid_2_prod_price )
             
     //end product wrapper    

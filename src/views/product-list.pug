@@ -33,7 +33,7 @@
                 +product_nav(link_1, link_name_5 )
                 +product_nav(link_1, link_name_6 )
         //end product nav
-        mixin product_item( prod_img, prod_name, prod_price )
+        mixin product_item( prod_id, prod_img, prod_name, prod_price )
             .product__item
                 div
                     .product__image
@@ -43,14 +43,16 @@
                     .product__item__price
                         p!= prod_price 
                             span!=currency
-                    a.one-clk__order.add-to-cart(href="" data-name=prod_name data-price=prod_price)
+                    a.one-clk__order.add-to-cart(href="" data-pid=prod_id data-name=prod_name data-price=prod_price)
                         span!= prod_order
         
 
 
-        +product_item(prod_img_1, prod_name_1, prod_price_1 )
-        +product_item(prod_img_2, prod_name_2, prod_price_2 ) 
-        +product_item(prod_img_3, prod_name_3, prod_price_3 )
+        +product_item(pid_1_prod_id, pid_1_prod_img, pid_1_prod_name, pid_1_prod_price )
+        +product_item(pid_2_prod_id, pid_2_prod_img, pid_2_prod_name, pid_2_prod_price )
+        +product_item(pid_3_prod_id, pid_3_prod_img, pid_3_prod_name, pid_3_prod_price )
+
+
     
 //end product wrapper
 .press
