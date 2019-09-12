@@ -13,13 +13,13 @@ html(lang="en")
         include content/content.pug
         include views/header.pug
         main
-            .product__list
+            .product__list.hidden(name="home")
                 include views/product-list.pug
                 //end product-list
-            .product__page
+            .product__page.hidden(name="prod-1")
                 include views/product-page.pug
                 //end-product-page
-            .cart__page#cart
+            .cart__page.hidden#cart
                 include views/cart.pug
                 //end-cart-page
         //end main

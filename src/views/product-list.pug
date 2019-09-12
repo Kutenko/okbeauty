@@ -36,7 +36,7 @@
         mixin product_item( prod_id, prod_img, prod_name, prod_price )
             .product__item
                 div
-                    .product__image
+                    .product__image.select_prod(data-pid=prod_id)
                         img(src=prod_img, alt="", srcset="")
                     .product__name  
                         p!= prod_name

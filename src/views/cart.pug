@@ -1,21 +1,21 @@
 .title
     .container
         h2!= cart_title
-.cart__info
+form(action="")
+    .cart__info
+        .container
+            .title
+                span!= your_order
+            .total__price
+                span.total-cart
+                !=currency
+            .show-cart
+            .clear-cart
+                span!= remove_all
+        //end container
+    //end cart__info    
     .container
-        .title
-            span!= your_order
-        .total__price
-            span.total-cart
-            !=currency
-        .show-cart
-        .clear-cart
-            span!= remove_all
-    //end container
-//end cart__info    
-.container
-    .cart__form 
-        form(action="")
+        .cart__form 
             label(for="name")!= user_name
             input#name(type="text")
 
@@ -28,4 +28,4 @@
                 option(value="Россия" selected) Россия
             button.submit
                 != submit_title
-    //end cart__form
+        //end cart__form

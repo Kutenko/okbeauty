@@ -42,7 +42,7 @@
 		</header>
 		<!--end header-->
 		<main>
-			<div class="product__list">
+			<div class="product__list hidden" name="home">
 				<div class="hero__slider">
 										<div class="item __1">
 											<div class="hero__slider_image"><img src="images/slide1.jpg" alt="" srcset=""/></div>
@@ -77,7 +77,7 @@
 						<!--end product nav-->
 												<div class="product__item">
 													<div>
-														<div class="product__image"><img src="images/pr1.jpg" alt="" srcset=""/></div>
+														<div class="product__image select_prod" data-pid="1"><img src="images/pr1.jpg" alt="" srcset=""/></div>
 														<div class="product__name"> 
 															<p>Банка</p>
 														</div>
@@ -88,7 +88,7 @@
 												</div>
 												<div class="product__item">
 													<div>
-														<div class="product__image"><img src="images/pr2.jpg" alt="" srcset=""/></div>
+														<div class="product__image select_prod" data-pid="2"><img src="images/pr2.jpg" alt="" srcset=""/></div>
 														<div class="product__name"> 
 															<p>Пузырь</p>
 														</div>
@@ -99,7 +99,7 @@
 												</div>
 												<div class="product__item">
 													<div>
-														<div class="product__image"><img src="images/pr3.jpg" alt="" srcset=""/></div>
+														<div class="product__image select_prod" data-pid="3"><img src="images/pr3.jpg" alt="" srcset=""/></div>
 														<div class="product__name"> 
 															<p>Крем</p>
 														</div>
@@ -128,10 +128,10 @@
 				<!-- end press        -->
 				<!--end product-list-->
 			</div>
-			<div class="product__page">
+			<div class="product__page hidden" name="prod-1">
 				<!-- Product page-->
 								<div class="product__image">
-									<div class="container"><img src="./images/tint_for_lips.jpg" alt=""/></div>
+									<div class="container"><img src="images/pr1.jpg" alt=""/></div>
 								</div>
 								<div class="product__title">
 									<div class="container"><span>хит продаж</span>
@@ -244,26 +244,26 @@
 				</div>
 				<!--end-product-page-->
 			</div>
-			<div class="cart__page" id="cart">
+			<div class="cart__page hidden" id="cart">
 				<div class="title">
 					<div class="container">
 						<h2>оформление заказа</h2>
 					</div>
 				</div>
-				<div class="cart__info">
-					<div class="container">
-						<div class="title"><span>Ваш заказ</span></div>
-						<div class="total__price"><span class="total-cart"></span> р.
+				<form action="">
+					<div class="cart__info">
+						<div class="container">
+							<div class="title"><span>Ваш заказ</span></div>
+							<div class="total__price"><span class="total-cart"></span> р.
+							</div>
+							<div class="show-cart"></div>
+							<div class="clear-cart"><span>очистить</span></div>
 						</div>
-						<div class="show-cart"></div>
-						<div class="clear-cart"><span>очистить</span></div>
+						<!--end container-->
 					</div>
-					<!--end container-->
-				</div>
-				<!--end cart__info    -->
-				<div class="container">
-					<div class="cart__form"> 
-						<form action="">
+					<!--end cart__info    -->
+					<div class="container">
+						<div class="cart__form"> 
 							<label for="name">Ваше имя</label>
 							<input id="name" type="text"/>
 							<label for="phone">Телефон</label>
@@ -275,10 +275,10 @@
 							</select>
 							<button class="submit">подтвердить заказ
 							</button>
-						</form>
+						</div>
+						<!--end cart__form-->
 					</div>
-					<!--end cart__form-->
-				</div>
+				</form>
 				<!--end-cart-page-->
 			</div>
 		</main>
