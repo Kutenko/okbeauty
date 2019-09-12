@@ -240,15 +240,13 @@ main{
             }//end product price
             .one-clk__order{
                 margin-top: 24px;
-                a{
-                    font-size: 12px;
-                    font-weight: 700;
-                    color: #cc5f8d;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    padding-bottom: 0px;
-                    border-bottom: 1px solid;
-                }
+                font-size: 12px;
+                font-weight: 700;
+                color: #cc5f8d;
+                text-decoration: none;
+                text-transform: uppercase;                  
+                padding-bottom: 0px;
+                border-bottom: 1px solid;
             }
 
         } // end product item
@@ -318,16 +316,16 @@ main{
                 }
             }
             .one-clk__order{
+                display: inline-block;
                 margin-top: 24px;
-                a{
-                    font-size: 12px;
-                    font-weight: 700;
-                    color: #cc5f8d;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    padding-bottom: 0px;
-                    border-bottom: 1px solid;
-                }
+                font-size: 12px;
+                font-weight: 700;
+                color: #cc5f8d;
+                text-decoration: none;
+                text-transform: uppercase;
+                padding-bottom: 0px;
+                border-bottom: 1px solid;
+                cursor: pointer;
             }            
         }//end product price
         .product__feature{

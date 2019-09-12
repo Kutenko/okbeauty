@@ -1,31 +1,31 @@
 .title
     .container
-        h2 оформление заказа
+        h2!= cart_title
 .cart__info
     .container
         .title
-            span Ваш заказ
+            span!= your_order
         .total__price
             span.total-cart
-            | р.
+            !=currency
         .show-cart
         .clear-cart
-            span очистить
+            span!= remove_all
     //end container
 //end cart__info    
 .container
     .cart__form 
         form(action="")
-            label(for="name") Ваше имя
+            label(for="name")!= user_name
             input#name(type="text")
 
-            label(for="phone") Телефон
+            label(for="phone")!= user_phone
             input#phone(type="text")
 
-            label(for="country") Страна
+            label(for="country")!= user_country
             select#country(name="country")
                 option(value="ОАЭ") ОАЭ
                 option(value="Россия" selected) Россия
             button.submit
-                |подтвердить заказ
+                != submit_title
     //end cart__form

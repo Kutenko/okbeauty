@@ -2,10 +2,12 @@
 footer
     .container
         .copyright__left
-            p &copy; ok beauty
+            p 
+            span &copy; 
+            span!= site_name
         .cart__right
-                //- a#cart(href="")
                 .cart__icon
-                    .cart__info
-                        span 3
+                    .cart__info(data-target="#cart")
+                        span.total-count
+                .clear-cart.btn.btn-danger!= remove_all
 //end footer  

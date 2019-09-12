@@ -196,15 +196,14 @@ main {
           background-size: contain;
           background-repeat: no-repeat; }
       main .product__wrapper .product__item .one-clk__order {
-        margin-top: 24px; }
-        main .product__wrapper .product__item .one-clk__order a {
-          font-size: 12px;
-          font-weight: 700;
-          color: #cc5f8d;
-          text-decoration: none;
-          text-transform: uppercase;
-          padding-bottom: 0px;
-          border-bottom: 1px solid; }
+        margin-top: 24px;
+        font-size: 12px;
+        font-weight: 700;
+        color: #cc5f8d;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding-bottom: 0px;
+        border-bottom: 1px solid; }
   main .product__page .product__image {
     width: 100%;
     max-width: 268px;
@@ -258,15 +257,16 @@ main {
         background-size: contain;
         background-repeat: no-repeat; }
     main .product__page .product__price .one-clk__order {
-      margin-top: 24px; }
-      main .product__page .product__price .one-clk__order a {
-        font-size: 12px;
-        font-weight: 700;
-        color: #cc5f8d;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding-bottom: 0px;
-        border-bottom: 1px solid; }
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #cc5f8d;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding-bottom: 0px;
+      border-bottom: 1px solid;
+      cursor: pointer; }
   main .product__page .product__feature {
     max-width: 620px;
     margin: 0 auto;

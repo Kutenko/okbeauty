@@ -1,43 +1,41 @@
 // Product page
--product_title = 'ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY СOLOR SALUTE LIP & CHEEK TINT ТОН MARRAKECH'
--product_price = '1770'
--tipe_1 = 'для всех типов.'
--effect_1 = 'стойкий пигмент для лица.'
--volume_1 = '7 мл.'
 
 .product__image
     .container
-        img(src="./images/tint_for_lips.jpg", alt="")
+        img(src=prod_img_1_big , alt="")
 .product__title
     .container
-        span хит продаж
+        span!= annotation
         h2!= product_title
 .product__price
     .container
         p
             span!= product_price
-            |р
-        .add_cart_button
-            span в корзину
-        .one-clk__order
-            a(href="")!= prod_order
+            != currency
+        .add_cart_button.add-to-cart(data-name=prod_name data-price=prod_price)
+            span!= add_cart
+        .one-clk__order.add-to-cart(data-name=prod_name data-price=prod_price)
+            span(href="")!= prod_order
 mixin product_item( tipe, effect, volume )
     .product__feature
         .container
             .short
                 div
-                    span Тип кожи :&nbsp;
+                    span!= tipe_title 
+                    |:&nbsp;
                     != tipe
                 div
-                    span Эффект: &nbsp;
+                    span!= effect_title 
+                    |: &nbsp;
                     != effect
                 div
-                    span Объем:&nbsp;
+                    span!= volume_title 
+                    |:&nbsp;
                     != volume                 
 
             .product__desc.box
                 .title 
-                    h2 Описание
+                    h2!= product__desc_title
                 .wrapper
                     p. 
                         OK BEAUTY СOLOR SALUTE — уникальный продукт, подчеркивающий вашу естественную красоту. Универсальный оттенок 
@@ -62,17 +60,17 @@ mixin product_item( tipe, effect, volume )
             //end product description
             .ingredient.box
                 .title 
-                    h2 активные ингридиенты и состав
+                    h2!= ingredient_title
             //end product ingredient
 
             .how__use.box
                 .title 
-                    h2 способ применения
+                    h2!= how__use_title
             //end product how__use
             
             .review.box
                 .title 
-                    h2 отзывы
+                    h2!= review_title
             //end product review
 +product_item(tipe_1, effect_1, volume_1 )
 
@@ -81,7 +79,7 @@ mixin product_item( tipe, effect, volume )
     .product__wrapper
         .container
             .title
-                h2 с этим товаром покупают
+                h2!= recomend_title
             mixin product_item( prod_img, prod_name, prod_price )
                 .product__item
                     div
@@ -92,35 +90,9 @@ mixin product_item( tipe, effect, volume )
                         .product__item__price
                             p!= prod_price 
                                 span &nbsp;р
-                        .one-clk__order
-                            a(href="")!= prod_order
+                        a.one-clk__order.add-to-cart(href="" data-name=prod_name data-price=prod_price)
+                            span!= prod_order
             
-            -prod_order = "купить в 1 клик"
-            
-            -prod_img_1 = 'images/pr1.jpg'
-            -prod_name_1 = 'Интенсивная маска для питания и восстановления'
-            -prod_price_1 = '1600'
-
-            -prod_img_2 = 'images/pr2.jpg'
-            -prod_name_2 = 'Интенсивная маска для питания и чего то еще'
-            -prod_price_2 = '1600'                
-
-            -prod_img_3 = 'images/pr3.jpg'
-            -prod_name_3 = 'Интенсивная маска для питания и чего то еще'
-            -prod_price_3 = '1600'       
-
-            -prod_img_4 = 'images/pr4.jpg'
-            -prod_name_4 = 'Интенсивная маска для питания и чего то еще'
-            -prod_price_4 = '1600'       
-
-            -prod_img_5 = 'images/pr1.jpg'
-            -prod_name_5 = 'Интенсивная маска для питания и чего то еще'
-            -prod_price_5 = '1600' 
-
-            -prod_img_6 = 'images/pr2.jpg'
-            -prod_name_6 = 'Интенсивная маска для питания и чего то еще'
-            -prod_price_6 = '1600' 
-
             +product_item(prod_img_1, prod_name_1, prod_price_1 )
             +product_item(prod_img_2, prod_name_2, prod_price_2 ) 
             
