@@ -308,11 +308,14 @@ if (!param.cart && !param.prod) {
 
 $('.select_prod').click(function(event) {
   var pid = Number($(this).data('pid'));
-  $(location).attr('href',location.origin + location.pathname + '?prod=' + pid);
+  $(location).attr('href', location.search + '&prod=' + pid);
+
 })
 
 $('.cart__icon').click(function(event) {
-  $(location).attr('href',location.origin + location.pathname + '?cart=1');
+  window.location.href = window.location.href.split("prod=")[0], 
+  $(location).attr('href', location.href + '&cart=1');
 })
 
 }
+
