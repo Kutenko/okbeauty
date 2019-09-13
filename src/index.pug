@@ -13,15 +13,14 @@ html(lang="en")
         script(src="js/app.min.js")
         title O.K. BEAUTY Store
     body
-        include content/content.pug
+        include content/content.en.pug
         include views/header.pug
         main
             .product__list.hidden(name="home")
                 include views/product-list.pug
                 //end product-list
-            .product__page.hidden(name="prod-1")
-                include views/product-page.pug
-                //end-product-page
+            include views/product-page.pug
+            //end-product-page
             .cart__page.hidden#cart
                 include views/cart.pug
                 //end-cart-page

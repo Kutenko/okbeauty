@@ -1,100 +1,103 @@
 // Product page
 
 mixin product_item( prod_id, prod_img_big, prod_name, prod_price, tipe, effect, volume )
-    .product__image
-        .container
-            img(src=prod_img_big , alt="")
-    .product__title
-        .container
-            span!= annotation
-            h2!= prod_name 
-    .product__price
-        .container
-            p
-                span!= prod_price
-                != currency
-            .add_cart_button.add-to-cart(data-name=prod_name data-price=prod_price)
-                span!= add_cart
-            .one-clk__order.add-to-cart(data-name=prod_name data-price=prod_price)
-                span(href="")!= prod_order
-        .product__feature
+
+    .product__page.hidden(name='prod-' + prod_id)
+        .product__image
             .container
-                .short
-                    div
-                        span!= tipe_title 
-                        |:&nbsp;
-                        != tipe
-                    div
-                        span!= effect_title 
-                        |:&nbsp;
-                        != effect
-                    div
-                        span!= volume_title 
-                        |:&nbsp;
-                        != volume                 
+                img(src=prod_img_big , alt="")
+        .product__title
+            .container
+                span!= annotation
+                h2!= prod_name 
+        .product__price
+            .container
+                p
+                    span!= prod_price
+                    != currency
+                .add_cart_button.add-to-cart(data-name=prod_name data-price=prod_price)
+                    span!= add_cart
+                .one-clk__order.add-to-cart(data-name=prod_name data-price=prod_price)
+                    span(href="")!= prod_order
+            .product__feature
+                .container
+                    .short
+                        div
+                            span!= tipe_title 
+                            |:&nbsp;
+                            != tipe
+                        div
+                            span!= effect_title 
+                            |:&nbsp;
+                            != effect
+                        div
+                            span!= volume_title 
+                            |:&nbsp;
+                            != volume                 
 
-                .product__desc.box
-                    .title 
-                        h2!= product__desc_title
-                    .wrapper
-                        p. 
-                            OK BEAUTY СOLOR SALUTE — уникальный продукт, подчеркивающий вашу естественную красоту. Универсальный оттенок 
-                            MARRAKECH - это загадочный глиняно- бордовый цвет древней столицы Марокко. Подойдет на каждый день и для любого случая: 
-                            в офис, на свидание, на вечеринку 
-                            или прогулку
-                        h3 Эффект
-                        ul
-                            li. 
-                                Многофункциональное средство: может заменить румяна, помаду 
-                                и даже тени;
-                            li. 
-                                Прост в нанесении — вы сможете освежить свой образ даже 
-                                без зеркала и без помощи кистей;
-                            li. 
-                                Естественный румянец 
-                                и подчеркнутые губы без эффекта «маски».
-                        h3 Кому подойдет
-                        p. 
-                            Идеально подходит для создания естественного образа без эффекта макияжа с 
-                            натуральным финишем.
-                //end product description
-                .ingredient.box
-                    .title 
-                        h2!= ingredient_title
-                //end product ingredient
+                    .product__desc.box
+                        .title 
+                            h2!= product__desc_title
+                        .wrapper
+                            p. 
+                                OK BEAUTY СOLOR SALUTE — уникальный продукт, подчеркивающий вашу естественную красоту. Универсальный оттенок 
+                                MARRAKECH - это загадочный глиняно- бордовый цвет древней столицы Марокко. Подойдет на каждый день и для любого случая: 
+                                в офис, на свидание, на вечеринку 
+                                или прогулку
+                            h3 Эффект
+                            ul
+                                li. 
+                                    Многофункциональное средство: может заменить румяна, помаду 
+                                    и даже тени;
+                                li. 
+                                    Прост в нанесении — вы сможете освежить свой образ даже 
+                                    без зеркала и без помощи кистей;
+                                li. 
+                                    Естественный румянец 
+                                    и подчеркнутые губы без эффекта «маски».
+                            h3 Кому подойдет
+                            p. 
+                                Идеально подходит для создания естественного образа без эффекта макияжа с 
+                                натуральным финишем.
+                    //end product description
+                    .ingredient.box
+                        .title 
+                            h2!= ingredient_title
+                    //end product ingredient
 
-                .how__use.box
-                    .title 
-                        h2!= how__use_title
-                //end product how__use
-                
-                .review.box
-                    .title 
-                        h2!= review_title
-                //end product review
-+product_item(pid_1_prod_id, pid_1_prod_img, pid_1_prod_name, pid_1_prod_price, pid_1_tipe, pid_1_effect, pid_1_volume )
-
+                    .how__use.box
+                        .title 
+                            h2!= how__use_title
+                    //end product how__use
+                    
+                    .review.box
+                        .title 
+                            h2!= review_title
+                    //end product review
     
-.recomend
-    .product__wrapper
-        .container
-            .title
-                h2!= recomend_title
-            mixin product_item( prod_img, prod_name, prod_price )
-                .product__item
-                    div
-                        .product__image
-                            img(src=prod_img, alt="", srcset="")
-                        .product__name  
-                            p!= prod_name
-                        .product__item__price
-                            p!= prod_price 
-                                span &nbsp;
-                                span!= currency
-                        a.one-clk__order.add-to-cart(href="" data-name=prod_name data-price=prod_price)
-                            span!= prod_order
-            
-            +product_item(pid_1_prod_img, pid_1_prod_name, pid_1_prod_price )
-            +product_item(pid_2_prod_img, pid_2_prod_name, pid_2_prod_price )
-            
+    .recomend
+        .product__wrapper
+            .container
+                .title
+                    h2!= recomend_title
+                mixin product_item( prod_img, prod_name, prod_price )
+                    .product__item
+                        div
+                            .product__image
+                                img(src=prod_img, alt="", srcset="")
+                            .product__name  
+                                p!= prod_name
+                            .product__item__price
+                                p!= prod_price 
+                                    span &nbsp;
+                                    span!= currency
+                            a.one-clk__order.add-to-cart(href="" data-name=prod_name data-price=prod_price)
+                                span!= prod_order
+                
+                +product_item(pid_1_prod_img, pid_1_prod_name, pid_1_prod_price )
+                +product_item(pid_2_prod_img, pid_2_prod_name, pid_2_prod_price )
+                
++product_item(pid_1_prod_id, pid_1_prod_img, pid_1_prod_name, pid_1_prod_price, pid_1_tipe, pid_1_effect, pid_1_volume )
++product_item(pid_2_prod_id, pid_2_prod_img, pid_2_prod_name, pid_2_prod_price, pid_2_tipe, pid_2_effect, pid_2_volume )
+                
     //end product wrapper    
