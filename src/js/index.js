@@ -313,8 +313,8 @@ $('.select_prod').click(function(event) {
 })
 
 $('.cart__icon').click(function(event) {
-  window.location.href = window.location.href.split("prod=")[0], 
-  $(location).attr('href', location.href + '&cart=1');
+  window.location.href = window.location.href.split("prod=")['cart'];
+  var cart = $(location).attr('href', location.href + '&cart=1');
 })
 
 }
