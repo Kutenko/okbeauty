@@ -49,6 +49,10 @@ header{
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: 21px 25px;
+                cursor: pointer;
+                &:hover{
+                    background-color: #ce925b;
+                }                
                 .cart__info{
                     width: 30px;
                     height: 30px;
@@ -188,6 +192,7 @@ main{
                 padding: 10px 10px 27px;
                 overflow: hidden;
                 text-align: center;
+                cursor: pointer;
             }
             // &:nth-child(2n){
             //     margin-right: 0;
@@ -213,6 +218,8 @@ main{
                 }
             }// end product name
             .product__item__price{
+                position: absolute;
+                bottom:0 ;
                 width: 100%;
                 padding: 15px 21px 15px 43px;
                 background: #cc5f8d;
@@ -221,7 +228,10 @@ main{
                 font-size: 14px;
                 line-height: 14px;
                 font-weight: 700;
-                // margin-top: 28px;
+                transition: 0.3s;
+                &:hover{
+                    background: #d03978;
+                }
                 span{
                     font-weight: 500;
                 }
@@ -247,6 +257,9 @@ main{
                 text-transform: uppercase;                  
                 padding-bottom: 0px;
                 border-bottom: 1px solid;
+                &:hover{
+                    color: #d03978;
+                }
             }
 
         } // end product item
@@ -259,6 +272,7 @@ main{
             max-width:268px;
             max-height: auto;
             margin: 30px auto;
+            text-align: center;
         }//end product image
         .product__title{
             max-width: 360px;
@@ -299,6 +313,10 @@ main{
                 font-weight: 700;
                 margin-top: 28px;
                 cursor: pointer;
+                transition: .5s;
+                &:hover{
+                    background-color: #d03978;
+                }
                 span{
                     font-weight: 500;
                 }
@@ -326,6 +344,10 @@ main{
                 padding-bottom: 0px;
                 border-bottom: 1px solid;
                 cursor: pointer;
+                transition: .5s;
+                :hover {
+                    color: #d03978;
+                }
             }            
         }//end product price
         .product__feature{
@@ -559,6 +581,11 @@ footer{
             background-position: center;
             background-repeat: no-repeat;
             background-size: 21px 25px;
+            cursor: pointer;
+            transition: 0.5s;
+            &:hover{
+                background-color: #ce925b;
+            }
             .cart__info{
                 width: 30px;
                 height: 30px;
@@ -581,6 +608,11 @@ footer{
 
   .show-cart li {
     display: flex;
+  }
+  .add-to-cart{
+      cursor: pointer;
+      position: relative;
+      z-index: 9;
   }
   .card {
     margin-bottom: 20px;

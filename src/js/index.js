@@ -308,14 +308,17 @@ if (!param.cart && !param.prod) {
 
 $('.select_prod').click(function(event) {
   var pid = Number($(this).data('pid'));
-  $(location).attr('href', location.search + '&prod=' + pid);
+  $(location).attr('href', location.origin + location.pathname + '?&prod=' + pid);
 
 })
 
-$('.cart__icon').click(function(event) {
-  window.location.href = window.location.href.split("prod=")['cart'];
-  var cart = $(location).attr('href', location.href + '&cart=1');
+$('.home').click(function(event) {
+  $(location).attr('href', location.origin + location.pathname);
+
+})
+
+$('.cart__icon').click(function (event) {
+  $(location).attr('href', location.origin + location.pathname + '?&cart=1');
 })
 
 }
-

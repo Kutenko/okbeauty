@@ -31,12 +31,11 @@
 		<header>
 			<div class="container">
 				<div class="top__panel">
-					<div class="logo__left"><a id="home" href="#"><img src="images/logo.png" alt=""/></a></div>
+					<div class="logo__left"><a class="home" id="home" href="#"><img src="images/logo.png" alt=""/></a></div>
 					<div class="cart__right">
 						<div class="cart__icon">
 							<div class="cart__info" data-target="#cart"><span class="total-count"></span></div>
 						</div>
-						<div class="clear-cart btn btn-danger">очистить</div>
 					</div>
 				</div>
 				<!--end container-->
@@ -80,10 +79,10 @@
 												<div class="product__item">
 													<div>
 														<div class="product__image select_prod" data-pid="1"><img src="images/pr1.jpg" alt="" srcset=""/></div>
-														<div class="product__name"> 
+														<div class="product__name select_prod" data-pid="1">
 															<p>Банка</p>
 														</div>
-														<div class="product__item__price">
+														<div class="product__item__price add-to-cart" data-pid="1" data-name="Банка" data-price="1200">
 															<p>1200<span> р.</span></p>
 														</div><a class="one-clk__order add-to-cart" data-pid="1" data-name="Банка" data-price="1200"><span>купить в 1 клик</span></a>
 													</div>
@@ -91,10 +90,10 @@
 												<div class="product__item">
 													<div>
 														<div class="product__image select_prod" data-pid="2"><img src="images/pr2.jpg" alt="" srcset=""/></div>
-														<div class="product__name"> 
+														<div class="product__name select_prod" data-pid="2">
 															<p>Пузырь</p>
 														</div>
-														<div class="product__item__price">
+														<div class="product__item__price add-to-cart" data-pid="2" data-name="Пузырь" data-price="1100">
 															<p>1100<span> р.</span></p>
 														</div><a class="one-clk__order add-to-cart" data-pid="2" data-name="Пузырь" data-price="1100"><span>купить в 1 клик</span></a>
 													</div>
@@ -102,10 +101,10 @@
 												<div class="product__item">
 													<div>
 														<div class="product__image select_prod" data-pid="3"><img src="images/pr3.jpg" alt="" srcset=""/></div>
-														<div class="product__name"> 
+														<div class="product__name select_prod" data-pid="3">
 															<p>Крем</p>
 														</div>
-														<div class="product__item__price">
+														<div class="product__item__price add-to-cart" data-pid="3" data-name="Крем" data-price="1400">
 															<p>1400<span> р.</span></p>
 														</div><a class="one-clk__order add-to-cart" data-pid="3" data-name="Крем" data-price="1400"><span>купить в 1 клик</span></a>
 													</div>
@@ -275,7 +274,7 @@
 								<option value="ОАЭ">ОАЭ</option>
 								<option value="Россия" selected="selected">Россия</option>
 							</select>
-							<button class="submit">подтвердить заказ
+							<button class="submit js_submit">подтвердить заказ
 							</button>
 						</div>
 						<!--end cart__form-->
@@ -295,7 +294,6 @@
 					<div class="cart__icon">
 						<div class="cart__info" data-target="#cart"><span class="total-count"></span></div>
 					</div>
-					<div class="clear-cart btn btn-danger">очистить</div>
 				</div>
 			</div>
 		</footer>

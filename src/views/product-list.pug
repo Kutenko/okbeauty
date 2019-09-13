@@ -38,9 +38,9 @@
                 div
                     .product__image.select_prod(data-pid=prod_id)
                         img(src=prod_img, alt="", srcset="")
-                    .product__name  
+                    .product__name.select_prod(data-pid=prod_id)
                         p!= prod_name
-                    .product__item__price
+                    .product__item__price.add-to-cart(data-pid=prod_id data-name=prod_name data-price=prod_price)
                         p!= prod_price 
                             span!=currency
                     a.one-clk__order.add-to-cart(data-pid=prod_id data-name=prod_name data-price=prod_price)

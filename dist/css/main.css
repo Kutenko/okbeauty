@@ -46,7 +46,10 @@ header {
         background-image: url(../images/icons/cart.png);
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 21px 25px; }
+        background-size: 21px 25px;
+        cursor: pointer; }
+        header .top__panel .cart__right .cart__icon:hover {
+          background-color: #ce925b; }
         header .top__panel .cart__right .cart__icon .cart__info {
           width: 30px;
           height: 30px;
@@ -156,7 +159,8 @@ main {
         border: 1px solid #c1c1c160;
         padding: 10px 10px 27px;
         overflow: hidden;
-        text-align: center; }
+        text-align: center;
+        cursor: pointer; }
       main .product__wrapper .product__item .product__image {
         width: 100%;
         height: 185px;
@@ -174,6 +178,8 @@ main {
           font-weight: 500;
           color: #000000; }
       main .product__wrapper .product__item .product__item__price {
+        position: absolute;
+        bottom: 0;
         width: 100%;
         padding: 15px 21px 15px 43px;
         background: #cc5f8d;
@@ -181,7 +187,10 @@ main {
         color: #ffffff;
         font-size: 14px;
         line-height: 14px;
-        font-weight: 700; }
+        font-weight: 700;
+        transition: 0.3s; }
+        main .product__wrapper .product__item .product__item__price:hover {
+          background: #d03978; }
         main .product__wrapper .product__item .product__item__price span {
           font-weight: 500; }
         main .product__wrapper .product__item .product__item__price::before {
@@ -204,11 +213,14 @@ main {
         text-transform: uppercase;
         padding-bottom: 0px;
         border-bottom: 1px solid; }
+        main .product__wrapper .product__item .one-clk__order:hover {
+          color: #d03978; }
   main .product__page .product__image {
     width: 100%;
     max-width: 268px;
     max-height: auto;
-    margin: 30px auto; }
+    margin: 30px auto;
+    text-align: center; }
   main .product__page .product__title {
     max-width: 360px;
     margin: 0 auto;
@@ -242,7 +254,10 @@ main {
       line-height: 14px;
       font-weight: 700;
       margin-top: 28px;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: .5s; }
+      main .product__page .product__price .add_cart_button:hover {
+        background-color: #d03978; }
       main .product__page .product__price .add_cart_button span {
         font-weight: 500; }
       main .product__page .product__price .add_cart_button::before {
@@ -266,7 +281,10 @@ main {
       text-transform: uppercase;
       padding-bottom: 0px;
       border-bottom: 1px solid;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: .5s; }
+      main .product__page .product__price .one-clk__order :hover {
+        color: #d03978; }
   main .product__page .product__feature {
     max-width: 620px;
     margin: 0 auto;
@@ -445,7 +463,11 @@ footer {
       background-image: url(../images/icons/cart.png);
       background-position: center;
       background-repeat: no-repeat;
-      background-size: 21px 25px; }
+      background-size: 21px 25px;
+      cursor: pointer;
+      transition: 0.5s; }
+      footer .cart__right .cart__icon:hover {
+        background-color: #ce925b; }
       footer .cart__right .cart__icon .cart__info {
         width: 30px;
         height: 30px;
@@ -462,6 +484,11 @@ footer {
 
 .show-cart li {
   display: flex; }
+
+.add-to-cart {
+  cursor: pointer;
+  position: relative;
+  z-index: 9; }
 
 .card {
   margin-bottom: 20px; }
