@@ -68,55 +68,103 @@ main {
   width: 100%;
   margin: 0 auto;
   overflow: hidden; }
-  main .hero__slider .item {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 512px;
-    text-align: center; }
-    main .hero__slider .item.__1 {
-      color: #ffffff;
-      background-color: #eca3b6; }
-      main .hero__slider .item.__1 .hero__slider_image img {
-        bottom: -10px; }
-      main .hero__slider .item.__1 .text {
+  main .hero__slider {
+    max-height: 560px !important;
+    min-height: 560px !important;
+    overflow: hidden; }
+    main .hero__slider .item {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 560px;
+      text-align: center; }
+      main .hero__slider .item .text {
         margin-top: 51px;
-        line-height: 36px; }
-        main .hero__slider .item.__1 .text .__1 {
+        line-height: 28px; }
+        main .hero__slider .item .text .__1 {
           text-transform: uppercase;
           font-weight: 700;
           font-size: 20px; }
-        main .hero__slider .item.__1 .text .__2 {
+        main .hero__slider .item .text .__2 {
           font-weight: 500;
           font-size: 18px; }
-        main .hero__slider .item.__1 .text .__3 {
+        main .hero__slider .item .text .__3 {
           text-transform: uppercase;
           font-weight: 700;
           font-size: 24px; }
-    main .hero__slider .item .hero__slider_image {
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      text-align: center; }
-      main .hero__slider .item .hero__slider_image img {
+      main .hero__slider .item.__1, main .hero__slider .item.__2, main .hero__slider .item.__5 {
+        color: #ffffff; }
+        main .hero__slider .item.__1 .hero__slider_image img, main .hero__slider .item.__2 .hero__slider_image img, main .hero__slider .item.__5 .hero__slider_image img {
+          bottom: -10px; }
+      main .hero__slider .item.__1 {
+        background-color: #eca3b6; }
+      main .hero__slider .item.__2 {
+        background-color: #f6b1c3; }
+      main .hero__slider .item.__3 {
+        background-color: #ffffff; }
+        main .hero__slider .item.__3 .button {
+          display: none; }
+      main .hero__slider .item.__4 {
+        background-color: #ffffff;
+        color: #000000; }
+        main .hero__slider .item.__4 .button {
+          border: none;
+          background: #d03978;
+          color: #ffffff;
+          margin-top: 10px; }
+        main .hero__slider .item.__4 .text {
+          margin-top: 140px;
+          padding: 0 50px; }
+      main .hero__slider .item.__5 .button {
+        border: none;
+        background: #d03978;
+        color: #ffffff;
+        margin-top: 10px; }
+      main .hero__slider .item.__5 .text {
+        margin-top: 25px; }
+        main .hero__slider .item.__5 .text .__1 {
+          font-size: 24px;
+          padding: 0 50px;
+          margin-bottom: 20px; }
+        main .hero__slider .item.__5 .text .__2 {
+          text-transform: uppercase;
+          font-weight: 500;
+          font-size: 18px; }
+      main .hero__slider .item.__6 .button {
+        border: none;
+        background: #d03978;
+        color: #ffffff;
+        margin-top: 10px; }
+      main .hero__slider .item.__6 .text {
+        margin-top: 95px; }
+        main .hero__slider .item.__6 .text .__1 {
+          font-size: 24px;
+          margin-bottom: 20px; }
+      main .hero__slider .item .hero__slider_image {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center; }
+        main .hero__slider .item .hero__slider_image img {
+          position: relative;
+          width: 100%;
+          max-width: 360px;
+          height: auto; }
+      main .hero__slider .item .text {
         position: relative;
-        width: auto;
-        height: auto; }
-    main .hero__slider .item .text {
-      position: relative;
-      text-align: center;
-      z-index: 9; }
-    main .hero__slider .item .button {
-      display: inline-block;
-      font-size: 16px;
-      position: relative;
-      padding: 10px 19px;
-      text-transform: uppercase;
-      text-align: center;
-      border: 2px solid;
-      margin: 23px auto 0;
-      z-index: 9; }
+        text-align: center;
+        z-index: 9; }
+      main .hero__slider .item .button {
+        display: inline-block;
+        font-size: 16px;
+        position: relative;
+        padding: 10px 19px;
+        text-transform: uppercase;
+        text-align: center;
+        border: 2px solid;
+        margin: 23px auto 0;
+        z-index: 9; }
   main .product__wrapper {
     margin-bottom: 41px; }
     main .product__wrapper .title {
@@ -171,7 +219,7 @@ main {
           width: auto;
           height: 100%; }
       main .product__wrapper .product__item .product__name {
-        min-height: 50px;
+        min-height: 80px;
         text-align: center; }
         main .product__wrapper .product__item .product__name p {
           font-size: 12px;
@@ -221,6 +269,8 @@ main {
     max-height: auto;
     margin: 30px auto;
     text-align: center; }
+    main .product__page .product__image img {
+      width: 100%; }
   main .product__page .product__title {
     max-width: 360px;
     margin: 0 auto;
@@ -244,7 +294,7 @@ main {
         text-transform: uppercase; }
     main .product__page .product__price .add_cart_button {
       width: 100%;
-      max-width: 136px;
+      max-width: 160px;
       margin: 0 auto 15px;
       padding: 15px 21px 15px 40px;
       background: #cc5f8d;
@@ -497,3 +547,69 @@ footer {
   width: 200px;
   height: 200px;
   align-self: center; }
+
+/* ========================================================================
+   Component: Slideshow
+ ========================================================================== */
+/*
+ * 1. Prevent tab highlighting on iOS.
+ */
+.uk-slideshow {
+  /* 1 */
+  -webkit-tap-highlight-color: transparent; }
+
+/* Items
+ ========================================================================== */
+/*
+ * 1. Create position and stacking context
+ * 2. Reset list
+ * 3. Clip child elements
+ * 4. Prevent displaying the callout information on iOS.
+ */
+.uk-slideshow-items {
+  /* 1 */
+  position: relative;
+  z-index: 0;
+  /* 2 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* 3 */
+  overflow: hidden;
+  /* 4 */
+  -webkit-touch-callout: none; }
+
+/* Item
+ ========================================================================== */
+/*
+ * 1. Position items above each other
+ * 2. Take the full width
+ * 3. Clip child elements, e.g. for `uk-cover`
+ * 4. Optimize animation
+ * 5. Disable horizontal panning gestures in IE11 and Edge
+ * 6. Suppress outline on focus
+ */
+.uk-slideshow-items > * {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 2 */
+  right: 0;
+  bottom: 0;
+  /* 3 */
+  overflow: hidden;
+  /* 4 */
+  will-change: transform, opacity;
+  /* 5 */
+  touch-action: pan-y; }
+
+/* 6 */
+.uk-slideshow-items > :focus {
+  outline: none; }
+
+/*
+ * Hide not active items
+ */
+.uk-slideshow-items > :not(.uk-active) {
+  display: none; }

@@ -208,7 +208,7 @@ window.onload = function() {
           + "<td>" + cartArray[i].name + "</td>" 
           + "<td>(" + cartArray[i].price + ")</td>"
           + "<td><div class='input-group'><button class='minus-item' data-name=" + cartArray[i].name + ">-</button>"
-          + "<input name='cc_product' type='number' class='item-count' data-pid='" + cartArray[i].pid + "' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
+          + "<input name='cc_product_"+ cartArray[i].pid +"' type='number' class='item-count' data-pid='" + cartArray[i].pid + "' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
           + "<button class='plus-item ' data-name=" + cartArray[i].name + ">+</button></div></td>"
           + "<td><button class='delete-item' data-name=" + cartArray[i].name + ">X</button></td>"
           + " = " 
