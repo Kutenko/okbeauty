@@ -17,13 +17,13 @@ form(action="")
     .container
         .cart__form 
             label(for="name")!= user_name
-            input#name(type="text")
+            input#name(type="text" name="name")
 
             label(for="phone")!= user_phone
-            input#phone(type="text")
+            input#phone.only_number(type="text" name="phone")
 
             label(for="country")!= user_country
-            select#country(name="country")
+            select#country_code_selector(name="country_code")
                 option(value="ОАЭ") ОАЭ
                 option(value="Россия" selected) Россия
             button.submit.js_submit

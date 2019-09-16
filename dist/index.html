@@ -7,8 +7,8 @@
 		<script src="https://dadbab.info/content/shared/js/jquery-1.12.4.min.js"></script>
 		<script src="https://dadbab.info/content/shared/js/order_me.min.js"></script>
 		<script src="https://dadbab.info/content/shared/js/validation.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-core.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/components/slideshow.min.js"></script>
+		<script src="js/uikit-core.min.js"></script>
+		<script src="js/slideshow.min.js"></script>
 		<script src="js/app.min.js"></script>
 		<link rel="stylesheet" href="css/main.css"/>
 		<title>O.K. BEAUTY Store</title>
@@ -2064,11 +2064,11 @@
 					<div class="container">
 						<div class="cart__form"> 
 							<label for="name">Your name</label>
-							<input id="name" type="text"/>
+							<input id="name" type="text" name="name"/>
 							<label for="phone">Your phone</label>
-							<input id="phone" type="text"/>
+							<input class="only_number" id="phone" type="text" name="phone"/>
 							<label for="country">Сhoose сountry</label>
-							<select id="country" name="country">
+							<select id="country_code_selector" name="country_code">
 								<option value="ОАЭ">ОАЭ</option>
 								<option value="Россия" selected="selected">Россия</option>
 							</select>
