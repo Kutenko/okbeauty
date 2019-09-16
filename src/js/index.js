@@ -12,8 +12,7 @@ window.onload = function() {
       var paramName = a[0];
       var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
 
-      paramName = paramName.toLowerCase();
-      if (typeof paramValue === 'string') paramValue = paramValue.toLowerCase();
+      if (typeof paramValue === 'string') ;
 
       if (paramName.match(/\[(\d+)?\]$/)) {
           var key = paramName.replace(/\[(\d+)?\]/, '');
@@ -266,8 +265,7 @@ if (queryString) {
     var paramName = a[0];
     var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
 
-    paramName = paramName.toLowerCase();
-    if (typeof paramValue === 'string') paramValue = paramValue.toLowerCase();
+    if (typeof paramValue === 'string') ;
 
     if (paramName.match(/\[(\d+)?\]$/)) {
       var key = paramName.replace(/\[(\d+)?\]/, '');
@@ -315,12 +313,12 @@ $(document.getElementsByName('home')).show();
 $(document.getElementsByName('prod-' + param.prod)).show();
 } else if (param.cart) {
 $(document.getElementById('cart')).show();
+
 }
 
 $('.select_prod').click(function(event) {
 var pid = Number($(this).data('pid'));
 $(location).attr('href', location.origin + location.pathname + setParam() + '&prod=' + pid);
-
 })
 
 $('.home').click(function(event) {
@@ -329,7 +327,7 @@ $(location).attr('href', location.origin + location.pathname + setParam());
 })
 
 $('.cart__icon').click(function (event) {
-$(location).attr('href', location.origin + location.pathname + setParam () + '&cart=1');
+$(location).attr('href', location.origin + location.pathname + setParam () + '&cart=0');
 })
 
 }
