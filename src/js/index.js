@@ -297,28 +297,39 @@ return obj;
 
 var param = getAllUrlParams(window.url)
 
+setParam = function() {
+  var str = '?';
+  Object.keys(param).forEach((elem) => {
+      if (elem !== 'prod' && elem !== 'cart') {
+          str !== '?' && (str += '&')
+          str += elem + '=' + param[elem];
+      }
+  })
+  return str;
+}
+
 
 if (!param.cart && !param.prod) {
-  $(document.getElementsByName('home')).show();
+$(document.getElementsByName('home')).show();
 } else if (param.prod) {
-  $(document.getElementsByName('prod-' + param.prod)).show();
+$(document.getElementsByName('prod-' + param.prod)).show();
 } else if (param.cart) {
-  $(document.getElementById('cart')).show();
+$(document.getElementById('cart')).show();
 }
 
 $('.select_prod').click(function(event) {
-  var pid = Number($(this).data('pid'));
-  $(location).attr('href', location.origin + location.pathname + '?&prod=' + pid);
+var pid = Number($(this).data('pid'));
+$(location).attr('href', location.origin + location.pathname + setParam() + '&prod=' + pid);
 
 })
 
 $('.home').click(function(event) {
-  $(location).attr('href', location.origin + location.pathname);
+$(location).attr('href', location.origin + location.pathname + setParam());
 
 })
 
 $('.cart__icon').click(function (event) {
-  $(location).attr('href', location.origin + location.pathname + '?&cart=1');
+$(location).attr('href', location.origin + location.pathname + setParam () + '&cart=1');
 })
 
 }
