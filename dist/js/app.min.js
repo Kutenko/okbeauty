@@ -50,9 +50,10 @@ window.onload = function() {
       cart = [];
       
       // Constructor
-      function Item(name, price, count, pid) {
+      function Item(name, price, currency, count, pid) {
         this.name = name;
         this.price = price;
+        this.currency =currency;
         this.count = count;
         this.pid = pid;
       }
@@ -77,7 +78,7 @@ window.onload = function() {
       var obj = {};
       
       // Add to cart
-      obj.addItemToCart = function(name, price, count, pid) {
+      obj.addItemToCart = function(name, price, currency, count, pid) {
         for(var item in cart) {
           if(cart[item].name === name) {
             cart[item].count ++;
@@ -85,7 +86,7 @@ window.onload = function() {
             return;
           }
         }
-        var item = new Item(name, price, count, pid);
+        var item = new Item(name, price, currency, count, pid);
         cart.push(item);
         saveCart();
       }
@@ -186,9 +187,9 @@ window.onload = function() {
       event.preventDefault();
       var name = $(this).data('name');
       var pid = Number($(this).data('pid'));
+      var currency = $(this).data('currency');
       var price = Number($(this).data('price'));
-      var pid = Number($(this).data('pid'));
-      shoppingCart.addItemToCart(name, price, 1, pid);
+      shoppingCart.addItemToCart(name, price, currency, 1, pid);
       displayCart();
     });
     
@@ -203,16 +204,16 @@ window.onload = function() {
       var cartArray = shoppingCart.listCart();
       var output = "";
       for(var i in cartArray) {
-        output += "<tr>"
-          + "<td>" + cartArray[i].name + "</td>" 
-          + "<td>(" + cartArray[i].price + ")</td>"
-          + "<td><div class='input-group'><button class='minus-item' data-name=" + cartArray[i].name + ">-</button>"
-          + "<input name='cc_product_"+ cartArray[i].pid +"' type='number' class='item-count' data-pid='" + cartArray[i].pid + "' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
-          + "<button class='plus-item ' data-name=" + cartArray[i].name + ">+</button></div></td>"
-          + "<td><button class='delete-item' data-name=" + cartArray[i].name + ">X</button></td>"
+        output += "<div>"
+          + "<div>" + cartArray[i].name + "</div>" 
+          + "<div>('" + cartArray[i].price + "''"+ cartArray[i].currency + "')</div>"
+          + "<td><div class='input__group'><button class='minus-item' name='cc_product_"+ cartArray[i].pid +"' data-pid="+ cartArray[i].pid +" data-name='" + cartArray[i].name + "'>-</button>"
+          + "<input name='cc_product_"+ cartArray[i].pid +"' type='number' class='item__count' data-pid='" + cartArray[i].pid + "' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
+          + "<button class='plus-item' name='cc_product_"+ cartArray[i].pid +"' data-pid="+ cartArray[i].pid +" data-name='" + cartArray[i].name + "'>+</button></div></td>"
+          + "<td><button class='delete-item' name='cc_product_"+ cartArray[i].pid +"' data-pid="+ cartArray[i].pid +" data-name='" + cartArray[i].name + "'>X</button></td>"
           + " = " 
-          + "<td>" + cartArray[i].total + "</td>" 
-          +  "</tr>";
+          + "<td>" + cartArray[i].total + " "+ cartArray[i].currency + "</td>" 
+          +  "</div>";
       }
       $('.show-cart').html(output);
       $('.total-cart').html(shoppingCart.totalCart());
@@ -253,45 +254,45 @@ window.onload = function() {
     
     // param URL
     function getAllUrlParams(url) {
-var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
-var obj = {};
+    var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+    var obj = {};
 
-if (queryString) {
-  queryString = queryString.split('#')[0];
-  var arr = queryString.split('&');
+      if (queryString) {
+        queryString = queryString.split('#')[0];
+        var arr = queryString.split('&');
 
-  for (var i = 0; i < arr.length; i++) {
-    var a = arr[i].split('=');
-    var paramName = a[0];
-    var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
+        for (var i = 0; i < arr.length; i++) {
+          var a = arr[i].split('=');
+          var paramName = a[0];
+          var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];
 
-    if (typeof paramValue === 'string') ;
+          if (typeof paramValue === 'string') ;
 
-    if (paramName.match(/\[(\d+)?\]$/)) {
-      var key = paramName.replace(/\[(\d+)?\]/, '');
-      if (!obj[key]) obj[key] = [];
+          if (paramName.match(/\[(\d+)?\]$/)) {
+            var key = paramName.replace(/\[(\d+)?\]/, '');
+            if (!obj[key]) obj[key] = [];
 
-      if (paramName.match(/\[\d+\]$/)) {
-        var index = /\[(\d+)\]/.exec(paramName)[1];
-        obj[key][index] = paramValue;
-      } else {
-        obj[key].push(paramValue);
-      }
-    } else {
-      if (!obj[paramName]) {
-        obj[paramName] = paramValue;
-      } else if (obj[paramName] && typeof obj[paramName] === 'string'){
-        obj[paramName] = [obj[paramName]];
-        obj[paramName].push(paramValue);
-      } else {
-        obj[paramName].push(paramValue);
+            if (paramName.match(/\[\d+\]$/)) {
+              var index = /\[(\d+)\]/.exec(paramName)[1];
+              obj[key][index] = paramValue;
+            } else {
+              obj[key].push(paramValue);
+            }
+          } else {
+            if (!obj[paramName]) {
+              obj[paramName] = paramValue;
+            } else if (obj[paramName] && typeof obj[paramName] === 'string'){
+              obj[paramName] = [obj[paramName]];
+              obj[paramName].push(paramValue);
+            } else {
+              obj[paramName].push(paramValue);
+            }
+          }
       }
     }
-  }
-}
 
-return obj;
-}
+    return obj;
+    }
 
 var param = getAllUrlParams(window.url)
 

@@ -4,11 +4,12 @@
 form(action="")
     .cart__info
         .container
-            .title
-                span!= your_order
-            .total__price
-                span.total-cart
-                !=currency
+            .cart__head
+                .title
+                    span!= your_order
+                .total__price
+                    span.total-cart
+                    !=currency
             .show-cart
             .clear-cart
                 span!= remove_all
