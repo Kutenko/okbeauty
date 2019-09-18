@@ -17,7 +17,10 @@ body {
   display: none; }
 
 header {
-  border-bottom: 1px solid #C2A284; }
+  border-bottom: 1px solid #C2A284;
+  padding: 10px 0;
+  z-index: 9999;
+  background: #fff; }
   header .top__panel {
     width: 100%;
     height: 76px;
@@ -69,17 +72,23 @@ main {
   margin: 0 auto;
   overflow: hidden; }
   main .hero__slider {
-    max-height: 560px !important;
-    min-height: 560px !important;
-    overflow: hidden; }
+    max-height: 545px !important;
+    min-height: 545px !important;
+    overflow: hidden;
+    background: #f1f1f1; }
     main .hero__slider .item {
       position: relative;
       overflow: hidden;
       width: 100%;
-      height: 560px;
+      height: 545px;
       text-align: center; }
+      main .hero__slider .item a.button {
+        color: #ffffff;
+        text-decoration: none;
+        cursor: pointer; }
       main .hero__slider .item .text {
-        margin-top: 51px;
+        margin: 51px auto 0;
+        max-width: 360px;
         line-height: 28px; }
         main .hero__slider .item .text .__1 {
           text-transform: uppercase;
@@ -92,9 +101,9 @@ main {
           text-transform: uppercase;
           font-weight: 700;
           font-size: 24px; }
-      main .hero__slider .item.__1, main .hero__slider .item.__2, main .hero__slider .item.__5 {
+      main .hero__slider .item.__1, main .hero__slider .item.__2 {
         color: #ffffff; }
-        main .hero__slider .item.__1 .hero__slider_image img, main .hero__slider .item.__2 .hero__slider_image img, main .hero__slider .item.__5 .hero__slider_image img {
+        main .hero__slider .item.__1 .hero__slider_image img, main .hero__slider .item.__2 .hero__slider_image img {
           bottom: -10px; }
       main .hero__slider .item.__1 {
         background-color: #eca3b6; }
@@ -105,7 +114,6 @@ main {
         main .hero__slider .item.__3 .button {
           display: none; }
       main .hero__slider .item.__4 {
-        background-color: #ffffff;
         color: #000000; }
         main .hero__slider .item.__4 .button {
           border: none;
@@ -124,7 +132,7 @@ main {
         margin-top: 25px; }
         main .hero__slider .item.__5 .text .__1 {
           font-size: 24px;
-          padding: 0 50px;
+          padding: 0 45px;
           margin-bottom: 20px; }
         main .hero__slider .item.__5 .text .__2 {
           text-transform: uppercase;
@@ -236,7 +244,8 @@ main {
         font-size: 14px;
         line-height: 14px;
         font-weight: 700;
-        transition: 0.3s; }
+        transition: 0.3s;
+        margin-bottom: 10px; }
         main .product__wrapper .product__item .product__item__price:hover {
           background: #d03978; }
         main .product__wrapper .product__item .product__item__price span {
@@ -340,11 +349,13 @@ main {
     margin: 0 auto;
     text-align: center; }
     main .product__page .product__feature span {
-      font-weight: 700; }
+      font-weight: 500; }
     main .product__page .product__feature .short {
       margin: 30px 0 15px; }
       main .product__page .product__feature .short > div {
         margin: 0 0 15px; }
+    main .product__page .product__feature .product__desc {
+      font-weight: 500; }
     main .product__page .product__feature .box {
       border: 1px solid #C2A284;
       text-align: left;
@@ -394,8 +405,10 @@ main {
     margin-bottom: 26px;
     color: #ffffff; }
     main .cart__page .cart__info .cart__head {
-      overflow: hidden;
-      margin: 0 0 30px; }
+      max-width: 480px;
+      width: 100%;
+      margin: 0 auto 30px;
+      overflow: hidden; }
       main .cart__page .cart__info .cart__head .title {
         width: 50%;
         float: left;
@@ -429,46 +442,101 @@ main {
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain; }
-    main .cart__page .cart__info .total__price {
-      width: 50%;
-      float: right;
-      text-align: right;
+    main .cart__page .cart__info .show-cart {
+      max-width: 480px;
+      width: 100%;
+      margin: 0 auto 30px;
+      overflow: hidden; }
+      main .cart__page .cart__info .show-cart .cart__item {
+        clear: both;
+        overflow: hidden;
+        margin: 0 auto 30px; }
+        main .cart__page .cart__info .show-cart .cart__item .item__title {
+          display: table;
+          width: 100%;
+          border-bottom: 1px dashed #ffffff;
+          padding-bottom: 10px;
+          margin-bottom: 10px; }
+          main .cart__page .cart__info .show-cart .cart__item .item__title .item__name {
+            display: table-cell;
+            vertical-align: middle;
+            max-width: 160px;
+            font-size: 12px;
+            padding: 0 10px 0; }
+          main .cart__page .cart__info .show-cart .cart__item .item__title .item__price {
+            float: left;
+            display: none;
+            min-width: 120px;
+            max-width: 160px;
+            font-size: 12px;
+            padding: 0 0 0 30px; }
+          main .cart__page .cart__info .show-cart .cart__item .item__title .input__group {
+            padding: 5px;
+            border: 1px solid #ffffff;
+            overflow: hidden;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle; }
+            main .cart__page .cart__info .show-cart .cart__item .item__title .input__group .item__count {
+              width: 30px;
+              border: none;
+              background: transparent;
+              margin: 2px 5px 0;
+              font-size: 18px;
+              line-height: 14px;
+              font-weight: 500;
+              text-align: center;
+              display: inline-block;
+              color: #ffffff; }
+              main .cart__page .cart__info .show-cart .cart__item .item__title .input__group .item__count::-webkit-outer-spin-button, main .cart__page .cart__info .show-cart .cart__item .item__title .input__group .item__count::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0; }
+            main .cart__page .cart__info .show-cart .cart__item .item__title .input__group .plus-item,
+            main .cart__page .cart__info .show-cart .cart__item .item__title .input__group .delete-item,
+            main .cart__page .cart__info .show-cart .cart__item .item__title .input__group .minus-item {
+              background: transparent;
+              border: none; }
+            main .cart__page .cart__info .show-cart .cart__item .item__title .input__group .plus-item,
+            main .cart__page .cart__info .show-cart .cart__item .item__title .input__group .minus-item {
+              display: inline-block;
+              font-size: 22px;
+              color: #ffffff;
+              line-height: 10px; }
+          main .cart__page .cart__info .show-cart .cart__item .item__title .delete-item {
+            background: transparent;
+            border: none;
+            font-size: 15px;
+            color: #ff1111;
+            padding: 2px 5px;
+            margin: 12px 0 12px 20px;
+            border-radius: 150px;
+            display: table-cell;
+            vertical-align: middle; }
+      main .cart__page .cart__info .show-cart .item__total-price {
+        width: 100%;
+        text-align: right;
+        margin: 0 auto;
+        overflow: hidden; }
+    main .cart__page .cart__info .clear__cart {
+      max-width: 200px;
+      padding: 5px 10px;
+      float: none;
+      text-align: center;
       font-size: 18px;
-      font-weight: 900;
+      font-weight: 500;
+      color: #ff1111;
+      border: 1px solid;
+      margin: 15px auto 0; }
+    main .cart__page .cart__info .total__price {
+      width: 100%;
+      float: none;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
       color: #ffffff; }
       main .cart__page .cart__info .total__price span {
-        font-size: 24px;
-        text-transform: uppercase; }
-    main .cart__page .cart__info .item__count {
-      width: 20px;
-      border: none;
-      background: transparent; }
-      main .cart__page .cart__info .item__count::-webkit-outer-spin-button, main .cart__page .cart__info .item__count::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0; }
-    main .cart__page .cart__info .input__group {
-      width: 75px;
-      padding: 10px;
-      border: 1px solid #ffffff;
-      overflow: hidden;
-      text-align: center; }
-      main .cart__page .cart__info .input__group .item__count {
-        margin: 0 5px;
         font-size: 18px;
-        font-weight: 500;
-        text-align: center;
-        display: inline-block;
-        color: #ffffff; }
-      main .cart__page .cart__info .input__group .plus-item,
-      main .cart__page .cart__info .input__group .delete-item,
-      main .cart__page .cart__info .input__group .minus-item {
-        background: transparent;
-        border: none; }
-      main .cart__page .cart__info .input__group .plus-item,
-      main .cart__page .cart__info .input__group .minus-item {
-        display: inline-block;
-        font-size: 22px;
-        color: #ffffff; }
+        text-transform: uppercase; }
   main .cart__page .cart__form {
     max-width: 360px;
     margin: 0 auto;
@@ -499,6 +567,14 @@ main {
       width: 50%; }
     main .product__wrapper .product__item {
       width: 33.333%; } }
+  @media screen and (max-width: 480px) {
+    main .product__item .buy__for {
+      display: none; } }
+  @media screen and (max-width: 320px) {
+    main .product__page .product__wrapper .product__item {
+      width: 100%; }
+    main .product__wrapper .product__item {
+      width: 100%; } }
   main .press {
     border-top: 1px solid #c2a284;
     border-bottom: 1px solid #c2a284;
@@ -583,6 +659,343 @@ footer {
   align-self: center; }
 
 /* ========================================================================
+   Component: Animation
+ ========================================================================== */
+[class*='uk-animation-'] {
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both; }
+
+/* Animations
+ ========================================================================== */
+/*
+ * Fade
+ */
+.uk-animation-fade {
+  animation-name: uk-fade;
+  animation-duration: 0.8s;
+  animation-timing-function: linear; }
+
+/*
+ * Scale
+ */
+.uk-animation-scale-up {
+  animation-name: uk-fade-scale-02; }
+
+.uk-animation-scale-down {
+  animation-name: uk-fade-scale-18; }
+
+/*
+ * Slide
+ */
+.uk-animation-slide-top {
+  animation-name: uk-fade-top; }
+
+.uk-animation-slide-bottom {
+  animation-name: uk-fade-bottom; }
+
+.uk-animation-slide-left {
+  animation-name: uk-fade-left; }
+
+.uk-animation-slide-right {
+  animation-name: uk-fade-right; }
+
+/*
+ * Slide Small
+ */
+.uk-animation-slide-top-small {
+  animation-name: uk-fade-top-small; }
+
+.uk-animation-slide-bottom-small {
+  animation-name: uk-fade-bottom-small; }
+
+.uk-animation-slide-left-small {
+  animation-name: uk-fade-left-small; }
+
+.uk-animation-slide-right-small {
+  animation-name: uk-fade-right-small; }
+
+/*
+ * Slide Medium
+ */
+.uk-animation-slide-top-medium {
+  animation-name: uk-fade-top-medium; }
+
+.uk-animation-slide-bottom-medium {
+  animation-name: uk-fade-bottom-medium; }
+
+.uk-animation-slide-left-medium {
+  animation-name: uk-fade-left-medium; }
+
+.uk-animation-slide-right-medium {
+  animation-name: uk-fade-right-medium; }
+
+/*
+ * Kenburns
+ */
+.uk-animation-kenburns {
+  animation-name: uk-scale-kenburns;
+  animation-duration: 15s; }
+
+/*
+ * Shake
+ */
+.uk-animation-shake {
+  animation-name: uk-shake; }
+
+/*
+ * SVG Stroke
+ * The `--uk-animation-stroke` custom property contains the longest path length.
+ * Set it manually or use `uk-svg="stroke-animation: true"` to set it automatically.
+ * All strokes are animated by the same pace and doesn't end simultaneously.
+ * To end simultaneously, `pathLength="1"` could be used, but it's not working in Safari yet.
+ */
+.uk-animation-stroke {
+  animation-name: uk-stroke;
+  stroke-dasharray: var(--uk-animation-stroke);
+  animation-duration: 2s; }
+
+/* Direction modifier
+ ========================================================================== */
+.uk-animation-reverse {
+  animation-direction: reverse;
+  animation-timing-function: ease-in; }
+
+/* Duration modifier
+ ========================================================================== */
+.uk-animation-fast {
+  animation-duration: 0.1s; }
+
+/* Toggle (Hover + Focus)
+========================================================================== */
+/*
+ * The toggle is triggered on touch devices using `:focus` and tabindex
+ */
+.uk-animation-toggle:not(:hover):not(:focus) [class*='uk-animation-'] {
+  animation-name: none; }
+
+/*
+ * 1. Prevent tab highlighting on iOS.
+ */
+.uk-animation-toggle {
+  /* 1 */
+  -webkit-tap-highlight-color: transparent; }
+
+/*
+ * Remove outline for `tabindex`
+ */
+.uk-animation-toggle:focus {
+  outline: none; }
+
+/* Keyframes used by animation classes
+ ========================================================================== */
+/*
+ * Fade
+ */
+@keyframes uk-fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/*
+ * Slide Top
+ */
+@keyframes uk-fade-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/*
+ * Slide Bottom
+ */
+@keyframes uk-fade-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/*
+ * Slide Left
+ */
+@keyframes uk-fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+/*
+ * Slide Right
+ */
+@keyframes uk-fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+/*
+ * Slide Top Small
+ */
+@keyframes uk-fade-top-small {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/*
+ * Slide Bottom Small
+ */
+@keyframes uk-fade-bottom-small {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/*
+ * Slide Left Small
+ */
+@keyframes uk-fade-left-small {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+/*
+ * Slide Right Small
+ */
+@keyframes uk-fade-right-small {
+  0% {
+    opacity: 0;
+    transform: translateX(10px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+/*
+ * Slide Top Medium
+ */
+@keyframes uk-fade-top-medium {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/*
+ * Slide Bottom Medium
+ */
+@keyframes uk-fade-bottom-medium {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/*
+ * Slide Left Medium
+ */
+@keyframes uk-fade-left-medium {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+/*
+ * Slide Right Medium
+ */
+@keyframes uk-fade-right-medium {
+  0% {
+    opacity: 0;
+    transform: translateX(50px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+/*
+ * Scale Up
+ */
+@keyframes uk-fade-scale-02 {
+  0% {
+    opacity: 0;
+    transform: scale(0.2); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+/*
+ * Scale Down
+ */
+@keyframes uk-fade-scale-18 {
+  0% {
+    opacity: 0;
+    transform: scale(1.8); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+/*
+ * Kenburns
+ */
+@keyframes uk-scale-kenburns {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1.2); } }
+
+/*
+ * Shake
+ */
+@keyframes uk-shake {
+  0%, 100% {
+    transform: translateX(0); }
+  10% {
+    transform: translateX(-9px); }
+  20% {
+    transform: translateX(8px); }
+  30% {
+    transform: translateX(-7px); }
+  40% {
+    transform: translateX(6px); }
+  50% {
+    transform: translateX(-5px); }
+  60% {
+    transform: translateX(4px); }
+  70% {
+    transform: translateX(-3px); }
+  80% {
+    transform: translateX(2px); }
+  90% {
+    transform: translateX(-1px); } }
+
+/*
+ * Stroke
+ */
+@keyframes uk-stroke {
+  0% {
+    stroke-dashoffset: var(--uk-animation-stroke); }
+  100% {
+    stroke-dashoffset: 0; } }
+
+/* ========================================================================
    Component: Slideshow
  ========================================================================== */
 /*
@@ -647,3 +1060,100 @@ footer {
  */
 .uk-slideshow-items > :not(.uk-active) {
   display: none; }
+
+/* ========================================================================
+   Component: Notification
+ ========================================================================== */
+/*
+ * 1. Set position
+ * 2. Dimensions
+ */
+.uk-notification {
+  /* 1 */
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1040;
+  /* 2 */
+  box-sizing: border-box;
+  width: 350px; }
+
+/* Position modifiers
+========================================================================== */
+.uk-notification-top-right,
+.uk-notification-bottom-right {
+  left: auto;
+  right: 10px; }
+
+.uk-notification-top-center,
+.uk-notification-bottom-center {
+  left: 50%;
+  margin-left: -175px; }
+
+.uk-notification-bottom-left,
+.uk-notification-bottom-right,
+.uk-notification-bottom-center {
+  top: auto;
+  bottom: 10px; }
+
+/* Responsiveness
+========================================================================== */
+/* Phones portrait and smaller */
+@media (max-width: 639px) {
+  .uk-notification {
+    left: 10px;
+    right: 10px;
+    width: auto;
+    margin: 0; } }
+
+/* Message
+========================================================================== */
+.uk-notification-message {
+  position: relative;
+  padding: 15px;
+  background: #f8f8f8;
+  color: #666;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  cursor: pointer; }
+
+* + .uk-notification-message {
+  margin-top: 10px; }
+
+/* Close
+ * Adopts `uk-close`
+ ========================================================================== */
+.uk-notification-close {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 15px; }
+
+.uk-notification-message:hover .uk-notification-close {
+  display: block; }
+
+/* Style modifiers
+ ========================================================================== */
+/*
+ * Primary
+ */
+.uk-notification-message-primary {
+  color: #1e87f0; }
+
+/*
+ * Success
+ */
+.uk-notification-message-success {
+  color: #32d296; }
+
+/*
+ * Warning
+ */
+.uk-notification-message-warning {
+  color: #faa05a; }
+
+/*
+ * Danger
+ */
+.uk-notification-message-danger {
+  color: #f0506e; }

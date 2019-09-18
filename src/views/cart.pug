@@ -5,13 +5,15 @@ form(action="")
     .cart__info
         .container
             .cart__head
-                .title
+                .title(uk-toggle="target: #show_cart")
                     span!= your_order
-                .total__price
-                    span.total-cart
-                    !=currency
-            .show-cart
-            .clear-cart
+            #show_cart.show-cart
+            .total__price
+                span!=total_price
+                |&nbsp;
+                span.total-cart
+                !=currency
+            .clear__cart
                 span!= remove_all
         //end container
     //end cart__info    
@@ -25,8 +27,7 @@ form(action="")
 
             label(for="country")!= user_country
             select#country_code_selector(name="country_code")
-                option(value="ОАЭ") ОАЭ
-                option(value="Россия" selected) Россия
+                option(value="AE") United Arab Emirates
             button.submit.js_submit
                 != submit_title
         //end cart__form

@@ -3,7 +3,7 @@ include ../views/slider.pug
     .container
         .title
             h2!= product_list_title
-        .product__nav
+        .product__nav(uk-filter="target: .js-filter")
             ul
                 mixin product_nav(link, link_name)
                     li(class!=attributes.class)  
@@ -16,17 +16,22 @@ include ../views/slider.pug
                 +product_nav(link_1, link_name_5 )
                 +product_nav(link_1, link_name_6 )
         //end product nav
+        #product_list
+        
         mixin product_item( prod_id, prod_img, prod_name, prod_price, currency )
             .product__item
                 div
                     .product__image.select_prod(data-pid=prod_id)
                         img(src=prod_img, alt="")
                     .product__name.select_prod(data-pid=prod_id)
-                        p!= prod_name
+                        p!= prod_name                    
                     .product__item__price.add-to-cart(data-pid=prod_id data-name=prod_name data-price=prod_price data-currency=currency)
-                        p!= prod_price 
-                            span!=currency
-                    a.one-clk__order.add-to-cart(data-pid=prod_id data-name=prod_id data-price=prod_price data-currency=currency)
+                        p
+                            span.buy__for!= buy_for 
+                            |&nbsp;
+                            != prod_price 
+                            span!= currency
+                    a.one-clk__order.add-to-cart(data-pid=prod_id data-name=prod_name data-price=prod_price data-currency=currency)
                         span!= prod_order
         
 

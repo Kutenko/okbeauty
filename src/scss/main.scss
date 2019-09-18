@@ -18,6 +18,9 @@ body{
 }
 header{
     border-bottom: 1px solid #C2A284;
+    padding: 10px 0;
+    z-index: 9999;
+    background: #fff;
     .top__panel{
         width: 100%;
         height: 76px;
@@ -76,17 +79,24 @@ main{
     margin: 0 auto;
     overflow: hidden;
     .hero__slider{
-        max-height: 560px !important;
-        min-height: 560px !important;
+        max-height: 545px !important;
+        min-height: 545px !important;
         overflow: hidden;
+        background: #f1f1f1;
         .item{
             position: relative;
             overflow: hidden;
             width: 100%;
-            height: 560px;
+            height: 545px;
             text-align: center;
+            a.button{
+                color: #ffffff;
+                text-decoration: none;
+                cursor: pointer;
+            }
             .text{
-                margin-top: 51px;
+                margin: 51px auto 0;
+                max-width: 360px;
                 line-height: 28px;
                 .__1{
                     text-transform: uppercase;
@@ -103,7 +113,7 @@ main{
                     font-size: 24px;
                 }                   
             } 
-            &.__1,&.__2,&.__5{
+            &.__1,&.__2{
                 color: #ffffff;
                 .hero__slider_image{
                     img{
@@ -124,7 +134,7 @@ main{
                 }
             }
             &.__4{
-                background-color: #ffffff;
+                // background-color: #ffffff;
                 color: #000000;
                 .button{
                     border: none;
@@ -149,7 +159,7 @@ main{
                     // line-height: 28px;
                     .__1{
                         font-size: 24px;
-                        padding: 0 50px;
+                        padding: 0 45px;
                         margin-bottom: 20px;
                     }
                     .__2{
@@ -296,6 +306,7 @@ main{
                 line-height: 14px;
                 font-weight: 700;
                 transition: 0.3s;
+                margin-bottom: 10px;
                 &:hover{
                     background: #d03978;
                 }
@@ -425,13 +436,16 @@ main{
             margin: 0 auto;
             text-align: center;
             span{
-                font-weight: 700;
+                font-weight: 500;
             }
             .short{
                 margin: 30px 0 15px;
                 >div{
                     margin: 0 0 15px;
                 }
+            }
+            .product__desc{
+                font-weight: 500;
             }
             .box{
                 border: 1px solid #C2A284;
@@ -495,8 +509,10 @@ main{
             margin-bottom: 26px;
             color: #ffffff;
             .cart__head{
+                max-width: 480px;
+                width: 100%;
+                margin: 0 auto 30px;
                 overflow: hidden;
-                margin: 0 0 30px;
                 .title{
                     width: 50%;
                     float: left;
@@ -534,58 +550,119 @@ main{
                         }
                     }
                 }//end title
+            }//end cart__head
+            .show-cart{
+                max-width: 480px;
+                width: 100%;
+                margin: 0 auto 30px;
+                overflow: hidden;
+                .cart__item{
+                    clear: both;
+                    overflow: hidden;
+                    margin: 0 auto 30px;
+                    .item__title{
+                        display: table;
+                        width: 100%;
+                        border-bottom: 1px dashed #ffffff; 
+                        padding-bottom: 10px;
+                        margin-bottom: 10px;
+                        .item__name{
+                            display: table-cell;
+                            vertical-align: middle;
+                            max-width: 160px;
+                            font-size: 12px;
+                            padding: 0 10px 0;
+                        }
+                        .item__price{
+                            float: left;
+                            display: none;
+                            min-width: 120px;
+                            max-width: 160px;
+                            font-size: 12px;
+                            padding: 0 0 0 30px;
+                        }
+                        .input__group{
+                            padding: 5px;
+                            border: 1px solid #ffffff;
+                            overflow: hidden;
+                            text-align: center;
+                            display: table-cell;
+                            vertical-align: middle;
+                            .item__count{
+                                width: 30px;
+                                border: none;
+                                background: transparent;
+                                margin: 2px 5px 0;
+                                font-size: 18px;
+                                line-height: 14px;
+                                font-weight: 500;
+                                text-align: center;
+                                display: inline-block;
+                                color: #ffffff;
+                                &::-webkit-outer-spin-button,
+                                &::-webkit-inner-spin-button {    
+                                    -webkit-appearance: none;
+                                    margin: 0;
+                                }
+                            }// end item__count
+                            .plus-item,
+                            .delete-item,
+                            .minus-item{
+                                background: transparent;
+                                border: none;
+                            }
+                            .plus-item,
+                            .minus-item{
+                                display: inline-block;
+                                font-size: 22px;
+                                color: #ffffff;                                
+                                line-height: 10px;
+                            }
+                        }// end input__group                        
+                        .delete-item{
+                            background: transparent;
+                            border: none;
+                            font-size: 15px;
+                            color: #ff1111;
+                            padding: 2px 5px;
+                            margin: 12px 0 12px 20px;
+                            border-radius: 150px;
+                            display: table-cell;
+                            vertical-align: middle;
+                        }
+                    }// end item__title
+                }// end cart__item
+                .item__total-price{
+                    width: 100%;
+                    text-align: right;
+                    margin: 0 auto;
+                    overflow: hidden;
+                }
+            }//end cart__info
+            .clear__cart{
+                max-width: 200px;
+                padding: 5px 10px;
+                float: none;
+                text-align: center;
+                font-size: 18px;
+                font-weight: 500;
+                color: #ff1111;
+                border:1px solid ;
+                margin: 15px auto 0;                
             }
             .total__price{
-                width: 50%;
-                float: right;
-                text-align: right;
+                width: 100%;
+                float: none;
+                text-align: center;
                 font-size: 18px;
-                font-weight: 900;
+                font-weight: 500;
                 color: #ffffff;
                 span{
-                    font-size: 24px;
+                    font-size: 18px;
                     text-transform: uppercase;
                 }
             }//end total__price
-
-            .item__count{
-                width: 20px;
-                border: none;
-                background: transparent;
-                &::-webkit-outer-spin-button,
-                &::-webkit-inner-spin-button {    
-                    -webkit-appearance: none;
-                    margin: 0;
-                }
             }
-            .input__group{
-                width: 75px;
-                padding: 10px;
-                border: 1px solid #ffffff;
-                overflow: hidden;
-                text-align: center;
-                .item__count{
-                    margin: 0 5px;
-                    font-size: 18px;
-                    font-weight: 500;
-                    text-align: center;
-                    display: inline-block;
-                    color: #ffffff;
-                }
-                .plus-item,
-                .delete-item,
-                .minus-item{
-                    background: transparent;
-                    border: none;
-                }
-                .plus-item,
-                .minus-item{
-                    display: inline-block;
-                    font-size: 22px;
-                    color: #ffffff;
-                }
-            }
-        }//end cart__info
     .cart__form{
         max-width: 360px;
         margin: 0 auto;
@@ -634,7 +711,27 @@ main{
             }
         }
     } //end product wrapper 900px
-
+    @media screen and (max-width: 480px){
+        .product__item{
+            .buy__for{
+                    display: none;
+            }
+        }
+    }
+    @media screen and (max-width: 320px) {
+        .product__page{
+            .product__wrapper{
+                .product__item{
+                    width: 100%;                              
+                }                     
+            }
+        }
+        .product__wrapper{
+            .product__item{
+                width: 100%;                              
+            }
+        }
+    } //end product wrapper 320px
     .press{
         border-top: 1px solid #c2a284;
         border-bottom: 1px solid #c2a284;
@@ -735,4 +832,8 @@ footer{
     align-self: center;
   }
 //ui kit components
-@import'components/slideshow.scss'
+@import 'components/variables.scss';
+@import 'components/mixin.scss';
+@import 'components/animation.scss';
+@import 'components/slideshow.scss';
+@import 'components/notification.scss';

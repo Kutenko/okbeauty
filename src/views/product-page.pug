@@ -1,6 +1,6 @@
 // Product page
 
-mixin product_item( prod_id, prod_img, prod_name, prod_price, tipe, effect, volume , currency)
+mixin product_item( prod_id, prod_img, prod_name, prod_price, description, ingredient, how_use, currency)
     .product__page.hidden(name='prod-' + prod_id)
 
         .product__image
@@ -19,81 +19,51 @@ mixin product_item( prod_id, prod_img, prod_name, prod_price, tipe, effect, volu
                     span!= add_cart
                 .one-clk__order.add-to-cart(data-name=prod_name data-price=prod_price, data-currency=currency)
                     span(href="")!= prod_order
-            .product__feature
-                .container
-                    .short
-                        div
-                            span!= tipe_title 
-                            |:&nbsp;
-                            != tipe
-                        div
-                            span!= effect_title 
-                            |:&nbsp;
-                            != effect
-                        div
-                            span!= volume_title 
-                            |:&nbsp;
-                            != volume                 
+        .product__feature
+            .container            
+                .product__desc.box
+                    .title(uk-toggle="target: #desc") 
+                        h2!= product__desc_title
+                    #desc.wrapper!= description
+                //end product description
+                .ingredient.box
+                    .title(uk-toggle="target: #ingrd;") 
+                        h2!= ingredient_title
+                    #ingrd.wrapper(hidden="")!= ingredient
+                //end product ingredient
 
-                    .product__desc.box
-                        .title 
-                            h2!= product__desc_title
-                        .wrapper
-                            p. 
-                                OK BEAUTY СOLOR SALUTE — уникальный продукт, подчеркивающий вашу естественную красоту. Универсальный оттенок 
-                                MARRAKECH - это загадочный глиняно- бордовый цвет древней столицы Марокко. Подойдет на каждый день и для любого случая: 
-                                в офис, на свидание, на вечеринку 
-                                или прогулку
-                            h3 Эффект
-                            ul
-                                li. 
-                                    Многофункциональное средство: может заменить румяна, помаду 
-                                    и даже тени;
-                                li. 
-                                    Прост в нанесении — вы сможете освежить свой образ даже 
-                                    без зеркала и без помощи кистей;
-                                li. 
-                                    Естественный румянец 
-                                    и подчеркнутые губы без эффекта «маски».
-                            h3 Кому подойдет
-                            p. 
-                                Идеально подходит для создания естественного образа без эффекта макияжа с 
-                                натуральным финишем.
-                    //end product description
-                    .ingredient.box
-                        .title 
-                            h2!= ingredient_title
-                    //end product ingredient
+                .how__use.box
+                    .title(uk-toggle="target: #huse")
+                        h2!= how__use_title
+                    #huse.wrapper(hidden="")!= how_use
+                //end product how__use
+                
+                //- .review.box
+                //-     .title 
+                //-         h2!= review_title
+                //- //end product review
 
-                    .how__use.box
-                        .title 
-                            h2!= how__use_title
-                    //end product how__use
-                    
-                    .review.box
-                        .title 
-                            h2!= review_title
-                    //end product review
-+product_item(pid_1_prod_id, pid_1_prod_img, pid_1_prod_name, pid_1_prod_price, pid_1_tipe, pid_1_effect, pid_1_volume, currency )
-+product_item(pid_2_prod_id, pid_2_prod_img, pid_2_prod_name, pid_2_prod_price, pid_2_tipe, pid_2_effect, pid_2_volume, currency )
-+product_item(pid_3_prod_id, pid_3_prod_img, pid_3_prod_name, pid_3_prod_price, pid_3_tipe, pid_3_effect, pid_3_volume, currency )
-+product_item(pid_4_prod_id, pid_4_prod_img, pid_4_prod_name, pid_4_prod_price, pid_4_tipe, pid_4_effect, pid_4_volume, currency )
-+product_item(pid_5_prod_id, pid_5_prod_img, pid_5_prod_name, pid_5_prod_price, pid_5_tipe, pid_5_effect, pid_5_volume, currency )
-+product_item(pid_6_prod_id, pid_6_prod_img, pid_6_prod_name, pid_6_prod_price, pid_6_tipe, pid_6_effect, pid_6_volume, currency )
-+product_item(pid_7_prod_id, pid_7_prod_img, pid_7_prod_name, pid_7_prod_price, pid_7_tipe, pid_7_effect, pid_7_volume, currency )
-+product_item(pid_8_prod_id, pid_8_prod_img, pid_8_prod_name, pid_8_prod_price, pid_8_tipe, pid_8_effect, pid_8_volume, currency )
-+product_item(pid_9_prod_id, pid_9_prod_img, pid_9_prod_name, pid_9_prod_price, pid_9_tipe, pid_9_effect, pid_9_volume, currency )
-+product_item(pid_10_prod_id, pid_10_prod_img, pid_10_prod_name, pid_10_prod_price, pid_10_tipe, pid_10_effect, pid_10_volume, currency )
-+product_item(pid_11_prod_id, pid_11_prod_img, pid_11_prod_name, pid_11_prod_price, pid_11_tipe, pid_11_effect, pid_11_volume, currency )
-+product_item(pid_12_prod_id, pid_12_prod_img, pid_12_prod_name, pid_12_prod_price, pid_12_tipe, pid_12_effect, pid_12_volume, currency )
-+product_item(pid_13_prod_id, pid_13_prod_img, pid_13_prod_name, pid_13_prod_price, pid_13_tipe, pid_13_effect, pid_13_volume, currency )    
-+product_item(pid_14_prod_id, pid_14_prod_img, pid_14_prod_name, pid_14_prod_price, pid_14_tipe, pid_14_effect, pid_14_volume, currency )
-+product_item(pid_15_prod_id, pid_15_prod_img, pid_15_prod_name, pid_15_prod_price, pid_15_tipe, pid_15_effect, pid_15_volume, currency )
-+product_item(pid_16_prod_id, pid_16_prod_img, pid_16_prod_name, pid_16_prod_price, pid_16_tipe, pid_16_effect, pid_16_volume, currency )
-+product_item(pid_17_prod_id, pid_17_prod_img, pid_17_prod_name, pid_17_prod_price, pid_17_tipe, pid_17_effect, pid_17_volume, currency )
-+product_item(pid_18_prod_id, pid_18_prod_img, pid_18_prod_name, pid_18_prod_price, pid_18_tipe, pid_18_effect, pid_18_volume, currency )
-+product_item(pid_19_prod_id, pid_19_prod_img, pid_19_prod_name, pid_19_prod_price, pid_19_tipe, pid_19_effect, pid_19_volume, currency )
-+product_item(pid_20_prod_id, pid_20_prod_img, pid_20_prod_name, pid_20_prod_price, pid_20_tipe, pid_20_effect, pid_20_volume, currency )
+
++product_item(pid_1_prod_id, pid_1_prod_img, pid_1_prod_name, pid_1_prod_price, pid_1_description, pid_1_ingredient, pid_1_how_use, currency )
++product_item(pid_2_prod_id, pid_2_prod_img, pid_2_prod_name, pid_2_prod_price, pid_2_description, pid_2_ingredient, pid_2_how_use, currency )
++product_item(pid_3_prod_id, pid_3_prod_img, pid_3_prod_name, pid_3_prod_price, pid_3_description, pid_3_ingredient, pid_3_how_use, currency )
++product_item(pid_4_prod_id, pid_4_prod_img, pid_4_prod_name, pid_4_prod_price, pid_4_description, pid_4_ingredient, pid_4_how_use, currency )
++product_item(pid_5_prod_id, pid_5_prod_img, pid_5_prod_name, pid_5_prod_price, pid_5_description, pid_5_ingredient, pid_5_how_use, currency )
++product_item(pid_6_prod_id, pid_6_prod_img, pid_6_prod_name, pid_6_prod_price, pid_6_description, pid_6_ingredient, pid_6_how_use, currency )
++product_item(pid_7_prod_id, pid_7_prod_img, pid_7_prod_name, pid_7_prod_price, pid_7_description, pid_7_ingredient, pid_7_how_use, currency )
++product_item(pid_8_prod_id, pid_8_prod_img, pid_8_prod_name, pid_8_prod_price, pid_8_description, pid_8_ingredient, pid_8_how_use, currency )
++product_item(pid_9_prod_id, pid_9_prod_img, pid_9_prod_name, pid_9_prod_price, pid_9_description, pid_9_ingredient, pid_9_how_use, currency )
++product_item(pid_10_prod_id, pid_10_prod_img, pid_10_prod_name, pid_10_prod_price, pid_10_description, pid_10_ingredient, pid_10_how_use, currency )
++product_item(pid_11_prod_id, pid_11_prod_img, pid_11_prod_name, pid_11_prod_price, pid_11_description, pid_11_ingredient, pid_11_how_use, currency )
++product_item(pid_12_prod_id, pid_12_prod_img, pid_12_prod_name, pid_12_prod_price, pid_12_description, pid_12_ingredient, pid_12_how_use, currency )
++product_item(pid_13_prod_id, pid_13_prod_img, pid_13_prod_name, pid_13_prod_price, pid_13_description, pid_13_ingredient, pid_13_how_use, currency )    
++product_item(pid_14_prod_id, pid_14_prod_img, pid_14_prod_name, pid_14_prod_price, pid_14_description, pid_14_ingredient, pid_14_how_use, currency )
++product_item(pid_15_prod_id, pid_15_prod_img, pid_15_prod_name, pid_15_prod_price, pid_15_description, pid_15_ingredient, pid_15_how_use, currency )
++product_item(pid_16_prod_id, pid_16_prod_img, pid_16_prod_name, pid_16_prod_price, pid_16_description, pid_16_ingredient, pid_16_how_use, currency )
++product_item(pid_17_prod_id, pid_17_prod_img, pid_17_prod_name, pid_17_prod_price, pid_17_description, pid_17_ingredient, pid_17_how_use, currency )
++product_item(pid_18_prod_id, pid_18_prod_img, pid_18_prod_name, pid_18_prod_price, pid_18_description, pid_18_ingredient, pid_18_how_use, currency )
++product_item(pid_19_prod_id, pid_19_prod_img, pid_19_prod_name, pid_19_prod_price, pid_19_description, pid_19_ingredient, pid_19_how_use, currency )
++product_item(pid_20_prod_id, pid_20_prod_img, pid_20_prod_name, pid_20_prod_price, pid_20_description, pid_20_ingredient, pid_20_how_use, currency )
 
 
     .recomend
