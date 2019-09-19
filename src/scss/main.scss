@@ -44,6 +44,7 @@ header{
                 position: relative;
                 width: 46px;
                 height: 46px;
+                margin:0 10px 0 0 ;
                 display: inline-block;
                 vertical-align: middle;
                 border-radius: 150px;
@@ -79,6 +80,7 @@ main{
     margin: 0 auto;
     overflow: hidden;
     .hero__slider{
+        position: relative;
         max-height: 545px !important;
         min-height: 545px !important;
         overflow: hidden;
@@ -215,6 +217,25 @@ main{
                 z-index: 9;
             } // end button
         } //end item
+        .slider__nav{
+            width: 100%;
+            height: 0;
+            position: absolute;
+            top: 45%;
+            svg{
+                polyline{
+                    stroke: #ffffff;
+                }
+            }
+            a.uk-slidenav-next{
+                position: absolute;
+                right: 20px
+            }
+            a.uk-slidenav-previous{
+                position: absolute;
+                left: 20px;
+            }
+        }
     } //end hero slider
     .product__wrapper{
         margin-bottom: 41px;
@@ -229,29 +250,26 @@ main{
                 color: #000000;
             }
         } //end title
-        .product__nav{
+        ul.product__nav{        
             max-width: 320px;
-            margin: 0 auto;
-            ul{
-                margin-top: 32px;
-                text-align: center;                
-                li{
-                    // width: calc(25% - 4px);
-                    width: 64px;
-                    display: inline-block;
-                    text-align: center;
-                    text-transform: uppercase;
-                    font-size: 12px;
-                    font-weight: 500;
-                    margin: 0 0 31px; 
+            margin: 32px auto;
+            text-align: center;                
+            li{
+                // width: calc(25% - 4px);
+                width: 64px;
+                display: inline-block;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 500;
+                margin: 0 0 31px; 
+                a{
+                    color: #000000;
+                    text-decoration: none;
+                }
+                &.active{
                     a{
-                        color: #000000;
-                        text-decoration: none;
-                    }
-                    &.active{
-                        a{
-                            color: #cc5f8d;
-                        }
+                        color: #cc5f8d;
                     }
                 }
             }
@@ -295,36 +313,58 @@ main{
                 }
             }// end product name
             .product__item__price{
-                position: absolute;
-                bottom:0 ;
-                width: 100%;
-                padding: 15px 21px 15px 43px;
-                background: #cc5f8d;
                 position: relative;
-                color: #ffffff;
-                font-size: 14px;
-                line-height: 14px;
-                font-weight: 700;
-                transition: 0.3s;
-                margin-bottom: 10px;
+                transform-origin: 50% 50%;
+                transform-style: preserve-3d;
+                transition: 0.4s all;
+                height: 40px;
+                margin: 0 0 20px 0;
                 &:hover{
-                    background: #d03978;
+                    transform: rotateX(90deg);
                 }
-                span{
-                    font-weight: 500;
-                }
-                &::before{
+                .front{
                     position: absolute;
-                    left: 18px;
-                    top: 11px;
-                    content: '';
-                    width: 20px;
-                    height: 20px;
-                    background: url(../images/icons/prod_cart.png);
-                    background-position: center;
-                    background-size: contain;
-                    background-repeat: no-repeat; 
+                    top:0 ;
+                    width: 100%;
+                    padding: 15px 21px 15px 43px;
+                    background: #cc5f8d;
+                    color: #ffffff;
+                    font-size: 14px;
+                    // line-height: 14px;
+                    font-weight: 700;
+                    transition: 0.3s;
+                    // margin-bottom: 10px;
+                    transform: rotateX(0deg) translate3d(0px,0px,20px);
+                    span{
+                        font-weight: 500;
+                    }
+                    &::before{
+                        position: absolute;
+                        left: 18px;
+                        top: 11px;
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        background: url(../images/icons/prod_cart.png);
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat; 
+                    }
                 }
+                .back{
+                    position: absolute;
+                    top:0 ;
+                    width: 100%;
+                    padding: 15px 21px 15px 43px;
+                    background: #cc5f8d;
+                    color: #ffffff;
+                    font-size: 14px;
+                    // line-height: 14px;
+                    font-weight: 700;
+                    transition: 0.3s;
+                    // margin-bottom: 10px;
+                    transform: rotateX(-90deg) translate3d(0px,0px,20px);                    
+                    }                   
             }//end product price
             .one-clk__order{
                 margin-top: 24px;
@@ -782,6 +822,7 @@ footer{
             position: relative;
             width: 46px;
             height: 46px;
+            margin:0 10px 0 0 ;
             display: inline-block;
             vertical-align: middle;
             border-radius: 150px;
@@ -831,6 +872,21 @@ footer{
     height: 200px;
     align-self: center;
   }
+  .js-filter{
+      overflow: hidden;
+      ul{
+          overflow: hidden;
+      }
+  }
+.uk-notification{
+    top: 40% !important;
+    .uk-notification-message{
+        background: rgb(9, 156, 58);
+        color: #ffffff;
+        text-align: center;
+    }
+
+}
 //ui kit components
 @import 'components/variables.scss';
 @import 'components/mixin.scss';

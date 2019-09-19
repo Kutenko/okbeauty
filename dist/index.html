@@ -5,10 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 		<script src="https://dadbab.info/content/shared/js/jquery-1.12.4.min.js"></script>
-		<script src="js/uikit-core.min.js"></script>
-		<script src="js/slideshow.min.js"></script>
 		<script src="js/app.min.js"></script>
 		<link rel="stylesheet" href="css/main.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
 		<title>O.K. BEAUTY Store</title>
 	</head>
 	<body>
@@ -79,8 +79,8 @@
 		<!--end header-->
 		<main>
 			<div class="product__list hidden" name="home">
-				<div uk-slideshow="animation: scale">
-					<div class="hero__slider uk-slideshow-items">
+				<div class="hero__slider" uk-slideshow="animation: slide">
+					<div class="uk-slideshow-items">
 												<div class="item __1">
 													<div class="hero__slider_image"><img src="images/slide1.jpg" alt="" srcset=""/></div>
 													<div class="container">
@@ -154,265 +154,290 @@
 												</div>
 												<!--end item-->
 					</div>
+					<div class="slider__nav">
+						<div class="container"><a href="#" uk-slidenav-previous="uk-slidenav-previous" uk-slideshow-item="previous"></a><a href="#" uk-slidenav-next="uk-slidenav-next" uk-slideshow-item="next"></a></div>
+					</div>
 				</div>
 				<!--end hero slider    -->
-				<div class="product__wrapper">
+				<div class="product__wrapper" id="product_list">
 					<div class="container">
 						<div class="title">
 							<h2>Products</h2>
 						</div>
-						<div class="product__nav" uk-filter="target: .js-filter">
-							<ul>
-																<li class="active"> <a href="/hit.html">hit</a></li>
-																<li> <a href="/hit.html">Hair</a></li>
-																<li> <a href="/hit.html">Face</a></li>
-																<li> <a href="/hit.html">Body</a></li>
-																<li> <a href="/hit.html">Sets</a></li>
-																<li> <a href="/hit.html">Tints</a></li>
+						<div uk-filter="target: .js-filter">
+							<ul class="product__nav">
+																<li uk-filter-control=""><a href="#">All</a></li>
+																<li uk-filter-control=".hit"><a href="#">hit</a></li>
+																<li uk-filter-control=".hair"><a href="#">Hair</a></li>
+																<li uk-filter-control=".face"><a href="#">Face</a></li>
+																<li uk-filter-control=".body"><a href="#">Body</a></li>
+																<li uk-filter-control=".sets"><a href="#">Sets</a></li>
+																<li uk-filter-control=".tints"><a href="#">Tints</a></li>
 							</ul>
+							<!--end product nav-->
+							<div class="js-filter">
+																<div class="product__item hit hair">
+																	<div>
+																		<div class="product__image select_prod" data-pid="1"><img src="images/pr1.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="1">
+																			<p>Интенсивная маска для питания и восстановления</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="1" data-name="Интенсивная маска для питания и восстановления" data-price="1600" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;1600<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="1" data-name="Интенсивная маска для питания и восстановления" data-price="1600" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item hit tints face">
+																	<div>
+																		<div class="product__image select_prod" data-pid="2"><img src="images/pr2.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="2">
+																			<p>Тинт для губ и щек тон Marrakech</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="2" data-name="Тинт для губ и щек тон Marrakech" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="2" data-name="Тинт для губ и щек тон Marrakech" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item hit face">
+																	<div>
+																		<div class="product__image select_prod" data-pid="3"><img src="images/pr3.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="3">
+																			<p>Бальзам для увеличения объема губ</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="3" data-name="Бальзам для увеличения объема губ" data-price="1090" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;1090<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="3" data-name="Бальзам для увеличения объема губ" data-price="1090" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item hit face">
+																	<div>
+																		<div class="product__image select_prod" data-pid="4"><img src="images/pr4.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="4">
+																			<p>УХАЖИВАЮЩЕЕ МАСЛО-ПРАЙМЕР ДЛЯ ЛИЦА</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="4" data-name="УХАЖИВАЮЩЕЕ МАСЛО-ПРАЙМЕР ДЛЯ ЛИЦА" data-price="1950" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;1950<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="4" data-name="УХАЖИВАЮЩЕЕ МАСЛО-ПРАЙМЕР ДЛЯ ЛИЦА" data-price="1950" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item hit body">
+																	<div>
+																		<div class="product__image select_prod" data-pid="5"><img src="images/pr5.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="5">
+																			<p>Лосьон-шиммер для тела</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="5" data-name="Лосьон-шиммер для тела" data-price="1090" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;1090<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="5" data-name="Лосьон-шиммер для тела" data-price="1090" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item hit body">
+																	<div>
+																		<div class="product__image select_prod" data-pid="6"><img src="images/pr6.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="6">
+																			<p>УВЛАЖНЯЮЩИЙ И РАЗГЛАЖИВАЮЩИЙ СКРАБ ДЛЯ ТЕЛА</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="6" data-name="УВЛАЖНЯЮЩИЙ И РАЗГЛАЖИВАЮЩИЙ СКРАБ ДЛЯ ТЕЛА" data-price="1170" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;1170<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="6" data-name="УВЛАЖНЯЮЩИЙ И РАЗГЛАЖИВАЮЩИЙ СКРАБ ДЛЯ ТЕЛА" data-price="1170" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item hit tints face">
+																	<div>
+																		<div class="product__image select_prod" data-pid="7"><img src="images/pr7.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="7">
+																			<p>ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY ТОН SAFARI</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="7" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY ТОН SAFARI" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="7" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY ТОН SAFARI" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item hit hair">
+																	<div>
+																		<div class="product__image select_prod" data-pid="8"><img src="images/pr8.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="8">
+																			<p>ПИЛИНГ-МАСКА ДЛЯ КОЖИ ГОЛОВЫ</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="8" data-name="ПИЛИНГ-МАСКА ДЛЯ КОЖИ ГОЛОВЫ" data-price="950" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;950<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="8" data-name="ПИЛИНГ-МАСКА ДЛЯ КОЖИ ГОЛОВЫ" data-price="950" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item hair">
+																	<div>
+																		<div class="product__image select_prod" data-pid="9"><img src="images/pr9.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="9">
+																			<p>КОНДИЦИОНЕР ДЛЯ УВЛАЖНЕНИЯ И ПРИДАНИЯ ОБЪЕМА</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="9" data-name="КОНДИЦИОНЕР ДЛЯ УВЛАЖНЕНИЯ И ПРИДАНИЯ ОБЪЕМА" data-price="1270" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;1270<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="9" data-name="КОНДИЦИОНЕР ДЛЯ УВЛАЖНЕНИЯ И ПРИДАНИЯ ОБЪЕМА" data-price="1270" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item hair">
+																	<div>
+																		<div class="product__image select_prod" data-pid="10"><img src="images/pr10.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="10">
+																			<p>ШАМПУНЬ ДЛЯ ПРИДАНИЯ ОБЪЕМА</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="10" data-name="ШАМПУНЬ ДЛЯ ПРИДАНИЯ ОБЪЕМА" data-price="1190" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;1190<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="10" data-name="ШАМПУНЬ ДЛЯ ПРИДАНИЯ ОБЪЕМА" data-price="1190" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item hair">
+																	<div>
+																		<div class="product__image select_prod" data-pid="11"><img src="images/pr11.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="11">
+																			<p>СЫВОРОТКА-КОНЦЕНТРАТ ДЛЯ ГЛУБОКОГО ВОССТАНОВЛЕНИЯ ВОЛОС</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="11" data-name="СЫВОРОТКА-КОНЦЕНТРАТ ДЛЯ ГЛУБОКОГО ВОССТАНОВЛЕНИЯ ВОЛОС" data-price="890" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;890<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="11" data-name="СЫВОРОТКА-КОНЦЕНТРАТ ДЛЯ ГЛУБОКОГО ВОССТАНОВЛЕНИЯ ВОЛОС" data-price="890" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item sets">
+																	<div>
+																		<div class="product__image select_prod" data-pid="12"><img src="images/pr12.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="12">
+																			<p>ФИРМЕННАЯ КОРОБКА OK BEAUTY</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="12" data-name="ФИРМЕННАЯ КОРОБКА OK BEAUTY" data-price="400" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;400<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="12" data-name="ФИРМЕННАЯ КОРОБКА OK BEAUTY" data-price="400" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item sets">
+																	<div>
+																		<div class="product__image select_prod" data-pid="13"><img src="images/pr13.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="13">
+																			<p>ПОДАРОЧНЫЙ НАБОР O.K BEAUTY</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="13" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY" data-price="6260" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;6260<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="13" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY" data-price="6260" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item sets">
+																	<div>
+																		<div class="product__image select_prod" data-pid="14"><img src="images/pr14.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="14">
+																			<p>ПОДАРОЧНЫЙ НАБОР O.K BEAUTY HAIR</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="14" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY HAIR" data-price="4440" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;4440<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="14" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY HAIR" data-price="4440" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item sets">
+																	<div>
+																		<div class="product__image select_prod" data-pid="15"><img src="images/pr15.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="15">
+																			<p>БОЛЬШОЙ ПОДАРОЧНЫЙ НАБОР ALL-IN-ONE</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="15" data-name="БОЛЬШОЙ ПОДАРОЧНЫЙ НАБОР ALL-IN-ONE" data-price="9808" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;9808<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="15" data-name="БОЛЬШОЙ ПОДАРОЧНЫЙ НАБОР ALL-IN-ONE" data-price="9808" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item tints face">
+																	<div>
+																		<div class="product__image select_prod" data-pid="16"><img src="images/pr16.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="16">
+																			<p>ТИНТ ДЛЯ ГУБ И ЩЕК ТОН FLAMINGO</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="16" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН FLAMINGO" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="16" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН FLAMINGO" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item tints face">
+																	<div>
+																		<div class="product__image select_prod" data-pid="17"><img src="images/pr17.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="17">
+																			<p>ТИНТ ДЛЯ ГУБ И ЩЕК ТОН COCOA</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="17" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН COCOA" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="17" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН COCOA" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item tints face">
+																	<div>
+																		<div class="product__image select_prod" data-pid="18"><img src="images/pr18.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="18">
+																			<p>ТИНТ ДЛЯ ГУБ И ЩЕК ТОН HILLIER</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="18" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН HILLIER" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="18" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН HILLIER" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item tints face">
+																	<div>
+																		<div class="product__image select_prod" data-pid="19"><img src="images/pr19.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="19">
+																			<p>ТИНТ ДЛЯ ГУБ И ЩЕК ТОН TANAMI</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="19" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН TANAMI" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="19" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН TANAMI" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+																<div class="product__item tints face">
+																	<div>
+																		<div class="product__image select_prod" data-pid="20"><img src="images/pr20.jpg" alt=""/></div>
+																		<div class="product__name select_prod" data-pid="20">
+																			<p>ТИНТ ДЛЯ ГУБ И ЩЕК ТОН SAFARI</p>
+																		</div>
+																		<div class="product__item__price add-to-cart" data-pid="20" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН SAFARI" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})">
+																			<div class="front"><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
+																			</div>
+																			<div class="back"><span>add to cart</span></div>
+																		</div><a class="one-clk__order add-to-cart" data-pid="20" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН SAFARI" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
+																	</div>
+																</div>
+							</div>
 						</div>
-						<!--end product nav-->
-						<div id="product_list"></div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="1"><img src="images/pr1.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="1">
-															<p>Интенсивная маска для питания и восстановления</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="1" data-name="Интенсивная маска для питания и восстановления" data-price="1600" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;1600<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="1" data-name="Интенсивная маска для питания и восстановления" data-price="1600" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="2"><img src="images/pr2.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="2">
-															<p>Тинт для губ и щек тон Marrakech</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="2" data-name="Тинт для губ и щек тон Marrakech" data-price="770" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="2" data-name="Тинт для губ и щек тон Marrakech" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="3"><img src="images/pr3.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="3">
-															<p>Бальзам для увеличения объема губ</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="3" data-name="Бальзам для увеличения объема губ" data-price="1090" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;1090<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="3" data-name="Бальзам для увеличения объема губ" data-price="1090" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="4"><img src="images/pr4.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="4">
-															<p>УХАЖИВАЮЩЕЕ МАСЛО-ПРАЙМЕР ДЛЯ ЛИЦА</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="4" data-name="УХАЖИВАЮЩЕЕ МАСЛО-ПРАЙМЕР ДЛЯ ЛИЦА" data-price="1950" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;1950<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="4" data-name="УХАЖИВАЮЩЕЕ МАСЛО-ПРАЙМЕР ДЛЯ ЛИЦА" data-price="1950" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="5"><img src="images/pr5.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="5">
-															<p>Лосьон-шиммер для тела</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="5" data-name="Лосьон-шиммер для тела" data-price="1090" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;1090<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="5" data-name="Лосьон-шиммер для тела" data-price="1090" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="6"><img src="images/pr6.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="6">
-															<p>УВЛАЖНЯЮЩИЙ И РАЗГЛАЖИВАЮЩИЙ СКРАБ ДЛЯ ТЕЛА</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="6" data-name="УВЛАЖНЯЮЩИЙ И РАЗГЛАЖИВАЮЩИЙ СКРАБ ДЛЯ ТЕЛА" data-price="1170" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;1170<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="6" data-name="УВЛАЖНЯЮЩИЙ И РАЗГЛАЖИВАЮЩИЙ СКРАБ ДЛЯ ТЕЛА" data-price="1170" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="7"><img src="images/pr7.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="7">
-															<p>ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY ТОН SAFARI</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="7" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY ТОН SAFARI" data-price="770" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="7" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY ТОН SAFARI" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="8"><img src="images/pr8.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="8">
-															<p>ПИЛИНГ-МАСКА ДЛЯ КОЖИ ГОЛОВЫ</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="8" data-name="ПИЛИНГ-МАСКА ДЛЯ КОЖИ ГОЛОВЫ" data-price="950" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;950<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="8" data-name="ПИЛИНГ-МАСКА ДЛЯ КОЖИ ГОЛОВЫ" data-price="950" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="9"><img src="images/pr9.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="9">
-															<p>КОНДИЦИОНЕР ДЛЯ УВЛАЖНЕНИЯ И ПРИДАНИЯ ОБЪЕМА</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="9" data-name="КОНДИЦИОНЕР ДЛЯ УВЛАЖНЕНИЯ И ПРИДАНИЯ ОБЪЕМА" data-price="1270" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;1270<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="9" data-name="КОНДИЦИОНЕР ДЛЯ УВЛАЖНЕНИЯ И ПРИДАНИЯ ОБЪЕМА" data-price="1270" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="10"><img src="images/pr10.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="10">
-															<p>ШАМПУНЬ ДЛЯ ПРИДАНИЯ ОБЪЕМА</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="10" data-name="ШАМПУНЬ ДЛЯ ПРИДАНИЯ ОБЪЕМА" data-price="1190" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;1190<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="10" data-name="ШАМПУНЬ ДЛЯ ПРИДАНИЯ ОБЪЕМА" data-price="1190" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="11"><img src="images/pr11.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="11">
-															<p>СЫВОРОТКА-КОНЦЕНТРАТ ДЛЯ ГЛУБОКОГО ВОССТАНОВЛЕНИЯ ВОЛОС</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="11" data-name="СЫВОРОТКА-КОНЦЕНТРАТ ДЛЯ ГЛУБОКОГО ВОССТАНОВЛЕНИЯ ВОЛОС" data-price="890" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;890<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="11" data-name="СЫВОРОТКА-КОНЦЕНТРАТ ДЛЯ ГЛУБОКОГО ВОССТАНОВЛЕНИЯ ВОЛОС" data-price="890" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="12"><img src="images/pr12.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="12">
-															<p>ФИРМЕННАЯ КОРОБКА OK BEAUTY</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="12" data-name="ФИРМЕННАЯ КОРОБКА OK BEAUTY" data-price="400" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;400<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="12" data-name="ФИРМЕННАЯ КОРОБКА OK BEAUTY" data-price="400" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="13"><img src="images/pr13.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="13">
-															<p>ПОДАРОЧНЫЙ НАБОР O.K BEAUTY</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="13" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY" data-price="6260" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;6260<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="13" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY" data-price="6260" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="14"><img src="images/pr14.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="14">
-															<p>ПОДАРОЧНЫЙ НАБОР O.K BEAUTY HAIR</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="14" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY HAIR" data-price="4440" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;4440<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="14" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY HAIR" data-price="4440" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="15"><img src="images/pr15.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="15">
-															<p>БОЛЬШОЙ ПОДАРОЧНЫЙ НАБОР ALL-IN-ONE</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="15" data-name="БОЛЬШОЙ ПОДАРОЧНЫЙ НАБОР ALL-IN-ONE" data-price="9808" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;9808<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="15" data-name="БОЛЬШОЙ ПОДАРОЧНЫЙ НАБОР ALL-IN-ONE" data-price="9808" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="16"><img src="images/pr16.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="16">
-															<p>ТИНТ ДЛЯ ГУБ И ЩЕК ТОН FLAMINGO</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="16" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН FLAMINGO" data-price="770" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="16" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН FLAMINGO" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="17"><img src="images/pr17.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="17">
-															<p>ТИНТ ДЛЯ ГУБ И ЩЕК ТОН COCOA</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="17" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН COCOA" data-price="770" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="17" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН COCOA" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="18"><img src="images/pr18.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="18">
-															<p>ТИНТ ДЛЯ ГУБ И ЩЕК ТОН HILLIER</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="18" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН HILLIER" data-price="770" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="18" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН HILLIER" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="19"><img src="images/pr19.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="19">
-															<p>ТИНТ ДЛЯ ГУБ И ЩЕК ТОН TANAMI</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="19" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН TANAMI" data-price="770" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="19" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН TANAMI" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
-												<div class="product__item">
-													<div>
-														<div class="product__image select_prod" data-pid="20"><img src="images/pr20.jpg" alt=""/></div>
-														<div class="product__name select_prod" data-pid="20">
-															<p>ТИНТ ДЛЯ ГУБ И ЩЕК ТОН SAFARI</p>
-														</div>
-														<div class="product__item__price add-to-cart" data-pid="20" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН SAFARI" data-price="770" data-currency=" $">
-															<p><span class="buy__for">buy for</span>&nbsp;770<span> $</span>
-															</p>
-														</div><a class="one-clk__order add-to-cart" data-pid="20" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН SAFARI" data-price="770" data-currency=" $"><span>Buy in 1 click</span></a>
-													</div>
-												</div>
 					</div>
 				</div>
 				<!--end product wrapper-->
@@ -447,7 +472,7 @@
 								<div class="container">
 									<p><span>1600</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="Интенсивная маска для питания и восстановления" data-price="1600" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="Интенсивная маска для питания и восстановления" data-price="1600" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="Интенсивная маска для питания и восстановления" data-price="1600" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -490,7 +515,7 @@
 								<div class="container">
 									<p><span>770</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="Тинт для губ и щек тон Marrakech" data-price="770" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="Тинт для губ и щек тон Marrakech" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="Тинт для губ и щек тон Marrakech" data-price="770" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -533,7 +558,7 @@
 								<div class="container">
 									<p><span>1090</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="Бальзам для увеличения объема губ" data-price="1090" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="Бальзам для увеличения объема губ" data-price="1090" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="Бальзам для увеличения объема губ" data-price="1090" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -576,7 +601,7 @@
 								<div class="container">
 									<p><span>1950</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="УХАЖИВАЮЩЕЕ МАСЛО-ПРАЙМЕР ДЛЯ ЛИЦА" data-price="1950" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="УХАЖИВАЮЩЕЕ МАСЛО-ПРАЙМЕР ДЛЯ ЛИЦА" data-price="1950" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="УХАЖИВАЮЩЕЕ МАСЛО-ПРАЙМЕР ДЛЯ ЛИЦА" data-price="1950" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -619,7 +644,7 @@
 								<div class="container">
 									<p><span>1090</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="Лосьон-шиммер для тела" data-price="1090" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="Лосьон-шиммер для тела" data-price="1090" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="Лосьон-шиммер для тела" data-price="1090" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -662,7 +687,7 @@
 								<div class="container">
 									<p><span>1170</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="УВЛАЖНЯЮЩИЙ И РАЗГЛАЖИВАЮЩИЙ СКРАБ ДЛЯ ТЕЛА" data-price="1170" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="УВЛАЖНЯЮЩИЙ И РАЗГЛАЖИВАЮЩИЙ СКРАБ ДЛЯ ТЕЛА" data-price="1170" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="УВЛАЖНЯЮЩИЙ И РАЗГЛАЖИВАЮЩИЙ СКРАБ ДЛЯ ТЕЛА" data-price="1170" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -705,7 +730,7 @@
 								<div class="container">
 									<p><span>770</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY ТОН SAFARI" data-price="770" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY ТОН SAFARI" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY ТОН SAFARI" data-price="770" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -748,7 +773,7 @@
 								<div class="container">
 									<p><span>950</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="ПИЛИНГ-МАСКА ДЛЯ КОЖИ ГОЛОВЫ" data-price="950" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="ПИЛИНГ-МАСКА ДЛЯ КОЖИ ГОЛОВЫ" data-price="950" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="ПИЛИНГ-МАСКА ДЛЯ КОЖИ ГОЛОВЫ" data-price="950" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -791,7 +816,7 @@
 								<div class="container">
 									<p><span>1270</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="КОНДИЦИОНЕР ДЛЯ УВЛАЖНЕНИЯ И ПРИДАНИЯ ОБЪЕМА" data-price="1270" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="КОНДИЦИОНЕР ДЛЯ УВЛАЖНЕНИЯ И ПРИДАНИЯ ОБЪЕМА" data-price="1270" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="КОНДИЦИОНЕР ДЛЯ УВЛАЖНЕНИЯ И ПРИДАНИЯ ОБЪЕМА" data-price="1270" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -834,7 +859,7 @@
 								<div class="container">
 									<p><span>1190</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="ШАМПУНЬ ДЛЯ ПРИДАНИЯ ОБЪЕМА" data-price="1190" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="ШАМПУНЬ ДЛЯ ПРИДАНИЯ ОБЪЕМА" data-price="1190" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="ШАМПУНЬ ДЛЯ ПРИДАНИЯ ОБЪЕМА" data-price="1190" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -877,7 +902,7 @@
 								<div class="container">
 									<p><span>890</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="СЫВОРОТКА-КОНЦЕНТРАТ ДЛЯ ГЛУБОКОГО ВОССТАНОВЛЕНИЯ ВОЛОС" data-price="890" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="СЫВОРОТКА-КОНЦЕНТРАТ ДЛЯ ГЛУБОКОГО ВОССТАНОВЛЕНИЯ ВОЛОС" data-price="890" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="СЫВОРОТКА-КОНЦЕНТРАТ ДЛЯ ГЛУБОКОГО ВОССТАНОВЛЕНИЯ ВОЛОС" data-price="890" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -920,7 +945,7 @@
 								<div class="container">
 									<p><span>400</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="ФИРМЕННАЯ КОРОБКА OK BEAUTY" data-price="400" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="ФИРМЕННАЯ КОРОБКА OK BEAUTY" data-price="400" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="ФИРМЕННАЯ КОРОБКА OK BEAUTY" data-price="400" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -963,7 +988,7 @@
 								<div class="container">
 									<p><span>6260</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY" data-price="6260" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY" data-price="6260" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY" data-price="6260" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -1006,7 +1031,7 @@
 								<div class="container">
 									<p><span>4440</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY HAIR" data-price="4440" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY HAIR" data-price="4440" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="ПОДАРОЧНЫЙ НАБОР O.K BEAUTY HAIR" data-price="4440" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -1049,7 +1074,7 @@
 								<div class="container">
 									<p><span>9808</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="БОЛЬШОЙ ПОДАРОЧНЫЙ НАБОР ALL-IN-ONE" data-price="9808" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="БОЛЬШОЙ ПОДАРОЧНЫЙ НАБОР ALL-IN-ONE" data-price="9808" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="БОЛЬШОЙ ПОДАРОЧНЫЙ НАБОР ALL-IN-ONE" data-price="9808" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -1092,7 +1117,7 @@
 								<div class="container">
 									<p><span>770</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН FLAMINGO" data-price="770" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН FLAMINGO" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН FLAMINGO" data-price="770" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -1135,7 +1160,7 @@
 								<div class="container">
 									<p><span>770</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН COCOA" data-price="770" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН COCOA" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН COCOA" data-price="770" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -1178,7 +1203,7 @@
 								<div class="container">
 									<p><span>770</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН HILLIER" data-price="770" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН HILLIER" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН HILLIER" data-price="770" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -1221,7 +1246,7 @@
 								<div class="container">
 									<p><span>770</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН TANAMI" data-price="770" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН TANAMI" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН TANAMI" data-price="770" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -1264,7 +1289,7 @@
 								<div class="container">
 									<p><span>770</span> $
 									</p>
-									<div class="add_cart_button add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН SAFARI" data-price="770" data-currency=" $"><span>Add to cart</span></div>
+									<div class="add_cart_button add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН SAFARI" data-price="770" data-currency=" $" onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})"><span>Add to cart</span></div>
 									<div class="one-clk__order add-to-cart" data-name="ТИНТ ДЛЯ ГУБ И ЩЕК ТОН SAFARI" data-price="770" data-currency=" $"><span href="">Buy in 1 click</span></div>
 								</div>
 							</div>
@@ -1310,7 +1335,7 @@
 							<div class="show-cart" id="show_cart"></div>
 							<div class="total__price"><span>Total price</span>&nbsp;<span class="total-cart"></span> $
 							</div>
-							<div class="clear__cart"><span>this button clear all</span></div>
+							<div class="clear__cart"><span>clear all</span></div>
 						</div>
 						<!--end container-->
 					</div>

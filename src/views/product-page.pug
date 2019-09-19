@@ -15,7 +15,7 @@ mixin product_item( prod_id, prod_img, prod_name, prod_price, description, ingre
                 p
                     span!= prod_price
                     != currency
-                .add_cart_button.add-to-cart(data-name=prod_name data-price=prod_price, data-currency=currency)
+                .add_cart_button.add-to-cart(data-name=prod_name data-price=prod_price, data-currency=currency, onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})")
                     span!= add_cart
                 .one-clk__order.add-to-cart(data-name=prod_name data-price=prod_price, data-currency=currency)
                     span(href="")!= prod_order
