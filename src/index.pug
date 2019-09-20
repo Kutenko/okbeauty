@@ -21,12 +21,12 @@ html(lang="en")
         include content/content.en.pug
         include views/header.pug
         main
-            .product__list.hidden.uk-animation-slide-bottom(name="home")
+            .product__list.hidden.uk-animation-fade(name="home")
                 include views/product-list.pug
                 //end product-list
             include views/product-page.pug
             //end-product-page
-            .cart__page.uk-animation-slide-bottom.hidden#cart
+            .cart__page.uk-animation-fade.hidden#cart
                 include views/cart.pug
                 //end-cart-page
         //end main

@@ -240,19 +240,19 @@ main{
     .product__wrapper{
         margin-bottom: 41px;
         .title{
-            margin-top: 54px;
+            margin-top: 34px;
             text-align: center;
             text-transform: uppercase;
             h2{
                 font-size: 18px;
-                line-height: 56px;
+                line-height: 22px;
                 font-weight: 700;
                 color: #000000;
             }
         } //end title
         ul.product__nav{        
             max-width: 320px;
-            margin: 32px auto;
+            margin: 32px auto 0;
             text-align: center;                
             li{
                 // width: calc(25% - 4px);
@@ -267,7 +267,7 @@ main{
                     color: #000000;
                     text-decoration: none;
                 }
-                &.active{
+                &.uk-active{
                     a{
                         color: #cc5f8d;
                     }
