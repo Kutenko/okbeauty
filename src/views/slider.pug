@@ -1,0 +1,32 @@
+.hero__slider(uk-slideshow="animation: slide")
+    .uk-slideshow-items
+        mixin hero_slider_item(img, hero_text1,hero_text2,hero_text3)
+            .item(class!=attributes.class)
+                figure.hero__slider_image
+                    img(src=img, alt="", srcset="")
+                .container
+                    .text    
+                        .__1!= hero_text1
+                        .__2!= hero_text2
+                        .__3!= hero_text3 
+                    a(href="#product_list").button(uk-scroll)
+                        span!= button_text
+                //end container
+            //end item
+        
+        +hero_slider_item(hero_1_img, hero_1_text1)(class="__1")
+        +hero_slider_item(hero_2_img, hero_2_text1)(class="__2")
+        +hero_slider_item(hero_3_img, hero_3_text1, hero_3_text2)(class="__3")
+        +hero_slider_item(hero_4_img, hero_4_text1)(class="__4")
+        +hero_slider_item(hero_5_img, hero_5_text1, hero_5_text2 )(class="__5")
+        +hero_slider_item(hero_6_img, hero_6_text1)(class="__6")
+    .slider__nav
+        .container
+            a( href="#" uk-slidenav-previous uk-slideshow-item="previous")
+            a( href="#" uk-slidenav-next uk-slideshow-item="next")
+
+
+
+
+    
+//end hero slider    

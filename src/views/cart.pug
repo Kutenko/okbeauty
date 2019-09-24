@@ -1,28 +1,33 @@
 .title
     .container
-        h2 оформление заказа
-.cart__info
+        h2!= cart_title
+form(action="" method="post")
+    .cart__info
+        .container
+            .cart__head
+                .title(uk-toggle="target: #show_cart")
+                    span!= your_order
+            #show_cart.show-cart
+            .total__price
+                span!=total_price
+                |&nbsp;
+                span.total-cart
+                !=currency
+            .clear__cart
+                span!= remove_all
+        //end container
+    //end cart__info    
     .container
-        .title
-            span Ваш заказ
-        .total__price
-            span 1890
-            | р.
-    //end container
-//end cart__info    
-.container
-    .cart__form 
-        form(action="")
-            label(for="name") Ваше имя
-            input#name(type="text")
+        .cart__form 
+            label(for="name")!= user_name
+            input#name(type="text" name="name")
 
-            label(for="phone") Телефон
-            input#phone(type="text")
+            label(for="phone")!= user_phone
+            input#phone.only_number(type="text" name="phone")
 
-            label(for="country") Страна
-            select#country(name="country")
-                option(value="ОАЭ") ОАЭ
-                option(value="Россия" selected) Россия
-            button.submit
-                |подтвердить заказ
-    //end cart__form
+            label(for="country")!= user_country
+            select#country_code_selector(name="country_code")
+                option(value="AE") United Arab Emirates
+            button.submit.js_submit
+                != submit_title
+        //end cart__form

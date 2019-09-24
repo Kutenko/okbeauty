@@ -1,1 +1,0 @@
-npm i & gulp mkdir & cd src & type NUL > index.pug & cd scss & type NUL > main.scss & cd .. & cd js & type NUL > index.js & cd .. & cd .. & gulp

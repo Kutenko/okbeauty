@@ -1,127 +1,91 @@
 // Product page
--product_title = 'ТИНТ ДЛЯ ГУБ И ЩЕК OK BEAUTY СOLOR SALUTE LIP & CHEEK TINT ТОН MARRAKECH'
--product_price = '1770'
--tipe_1 = 'для всех типов.'
--effect_1 = 'стойкий пигмент для лица.'
--volume_1 = '7 мл.'
 
-.product__image
-    .container
-        img(src="./images/tint_for_lips.jpg", alt="")
-.product__title
-    .container
-        span хит продаж
-        h2!= product_title
-.product__price
-    .container
-        p
-            span!= product_price
-            |р
-        .add_cart_button
-            span в корзину
-        .one-clk__order
-            a(href="")!= prod_order
-mixin product_item( tipe, effect, volume )
-    .product__feature
-        .container
-            .short
-                div
-                    span Тип кожи :&nbsp;
-                    != tipe
-                div
-                    span Эффект: &nbsp;
-                    != effect
-                div
-                    span Объем:&nbsp;
-                    != volume                 
+mixin product_item( prod_id, prod_img, prod_name, prod_price, description, ingredient, how_use, currency)
+    .product__page.uk-animation-fade.hidden(name='prod-' + prod_id)
 
-            .product__desc.box
-                .title 
-                    h2 Описание
-                .wrapper
-                    p. 
-                        OK BEAUTY СOLOR SALUTE — уникальный продукт, подчеркивающий вашу естественную красоту. Универсальный оттенок 
-                        MARRAKECH - это загадочный глиняно- бордовый цвет древней столицы Марокко. Подойдет на каждый день и для любого случая: 
-                        в офис, на свидание, на вечеринку 
-                        или прогулку
-                    h3 Эффект
-                    ul
-                        li. 
-                            Многофункциональное средство: может заменить румяна, помаду 
-                            и даже тени;
-                        li. 
-                            Прост в нанесении — вы сможете освежить свой образ даже 
-                            без зеркала и без помощи кистей;
-                        li. 
-                            Естественный румянец 
-                            и подчеркнутые губы без эффекта «маски».
-                    h3 Кому подойдет
-                    p. 
-                        Идеально подходит для создания естественного образа без эффекта макияжа с 
-                        натуральным финишем.
-            //end product description
-            .ingredient.box
-                .title 
-                    h2 активные ингридиенты и состав
-            //end product ingredient
+        .product__image
+            .container
+                img(src=prod_img , alt="")
+        .product__title
+            .container
+                span!= annotation
+                h2!= prod_name 
+        .product__price
+            .container
+                p
+                    span!= prod_price
+                    != currency
+                .add_cart_button.add-to-cart(data-name=prod_name data-price=prod_price, data-currency=currency, onclick="UIkit.notification({message: 'товар добавлен в корзину', timeout: 500})")
+                    span!= add_cart
+                .one-clk__order.add-to-cart(data-name=prod_name data-price=prod_price, data-currency=currency)
+                    span(href="")!= prod_order
+        .product__feature
+            .container            
+                .product__desc.box
+                    .title(uk-toggle="target: #desc") 
+                        h2!= product__desc_title
+                    #desc.wrapper!= description
+                //end product description
+                .ingredient.box
+                    .title(uk-toggle="target: #ingrd;") 
+                        h2!= ingredient_title
+                    #ingrd.wrapper(hidden="")!= ingredient
+                //end product ingredient
 
-            .how__use.box
-                .title 
-                    h2 способ применения
-            //end product how__use
-            
-            .review.box
-                .title 
-                    h2 отзывы
-            //end product review
-+product_item(tipe_1, effect_1, volume_1 )
+                .how__use.box
+                    .title(uk-toggle="target: #huse")
+                        h2!= how__use_title
+                    #huse.wrapper(hidden="")!= how_use
+                //end product how__use
+                
+                //- .review.box
+                //-     .title 
+                //-         h2!= review_title
+                //- //end product review
 
-    
-.recomend
-    .product__wrapper
-        .container
-            .title
-                h2 с этим товаром покупают
-            mixin product_item( prod_img, prod_name, prod_price )
-                .product__item
-                    div
-                        .product__image
-                            img(src=prod_img, alt="", srcset="")
-                        .product__name  
-                            p!= prod_name
-                        .product__item__price
-                            p!= prod_price 
-                                span &nbsp;р
-                        .one-clk__order
-                            a(href="")!= prod_order
-            
-            -prod_order = "купить в 1 клик"
-            
-            -prod_img_1 = 'images/pr1.jpg'
-            -prod_name_1 = 'Интенсивная маска для питания и восстановления'
-            -prod_price_1 = '1600'
 
-            -prod_img_2 = 'images/pr2.jpg'
-            -prod_name_2 = 'Интенсивная маска для питания и чего то еще'
-            -prod_price_2 = '1600'                
++product_item(pid_1_prod_id, pid_1_prod_img, pid_1_prod_name, pid_1_prod_price, pid_1_description, pid_1_ingredient, pid_1_how_use, currency )
++product_item(pid_2_prod_id, pid_2_prod_img, pid_2_prod_name, pid_2_prod_price, pid_2_description, pid_2_ingredient, pid_2_how_use, currency )
++product_item(pid_3_prod_id, pid_3_prod_img, pid_3_prod_name, pid_3_prod_price, pid_3_description, pid_3_ingredient, pid_3_how_use, currency )
++product_item(pid_4_prod_id, pid_4_prod_img, pid_4_prod_name, pid_4_prod_price, pid_4_description, pid_4_ingredient, pid_4_how_use, currency )
++product_item(pid_5_prod_id, pid_5_prod_img, pid_5_prod_name, pid_5_prod_price, pid_5_description, pid_5_ingredient, pid_5_how_use, currency )
++product_item(pid_6_prod_id, pid_6_prod_img, pid_6_prod_name, pid_6_prod_price, pid_6_description, pid_6_ingredient, pid_6_how_use, currency )
++product_item(pid_7_prod_id, pid_7_prod_img, pid_7_prod_name, pid_7_prod_price, pid_7_description, pid_7_ingredient, pid_7_how_use, currency )
++product_item(pid_8_prod_id, pid_8_prod_img, pid_8_prod_name, pid_8_prod_price, pid_8_description, pid_8_ingredient, pid_8_how_use, currency )
++product_item(pid_9_prod_id, pid_9_prod_img, pid_9_prod_name, pid_9_prod_price, pid_9_description, pid_9_ingredient, pid_9_how_use, currency )
++product_item(pid_10_prod_id, pid_10_prod_img, pid_10_prod_name, pid_10_prod_price, pid_10_description, pid_10_ingredient, pid_10_how_use, currency )
++product_item(pid_11_prod_id, pid_11_prod_img, pid_11_prod_name, pid_11_prod_price, pid_11_description, pid_11_ingredient, pid_11_how_use, currency )
++product_item(pid_12_prod_id, pid_12_prod_img, pid_12_prod_name, pid_12_prod_price, pid_12_description, pid_12_ingredient, pid_12_how_use, currency )
++product_item(pid_13_prod_id, pid_13_prod_img, pid_13_prod_name, pid_13_prod_price, pid_13_description, pid_13_ingredient, pid_13_how_use, currency )    
++product_item(pid_14_prod_id, pid_14_prod_img, pid_14_prod_name, pid_14_prod_price, pid_14_description, pid_14_ingredient, pid_14_how_use, currency )
++product_item(pid_15_prod_id, pid_15_prod_img, pid_15_prod_name, pid_15_prod_price, pid_15_description, pid_15_ingredient, pid_15_how_use, currency )
++product_item(pid_16_prod_id, pid_16_prod_img, pid_16_prod_name, pid_16_prod_price, pid_16_description, pid_16_ingredient, pid_16_how_use, currency )
++product_item(pid_17_prod_id, pid_17_prod_img, pid_17_prod_name, pid_17_prod_price, pid_17_description, pid_17_ingredient, pid_17_how_use, currency )
++product_item(pid_18_prod_id, pid_18_prod_img, pid_18_prod_name, pid_18_prod_price, pid_18_description, pid_18_ingredient, pid_18_how_use, currency )
++product_item(pid_19_prod_id, pid_19_prod_img, pid_19_prod_name, pid_19_prod_price, pid_19_description, pid_19_ingredient, pid_19_how_use, currency )
++product_item(pid_20_prod_id, pid_20_prod_img, pid_20_prod_name, pid_20_prod_price, pid_20_description, pid_20_ingredient, pid_20_how_use, currency )
 
-            -prod_img_3 = 'images/pr3.jpg'
-            -prod_name_3 = 'Интенсивная маска для питания и чего то еще'
-            -prod_price_3 = '1600'       
 
-            -prod_img_4 = 'images/pr4.jpg'
-            -prod_name_4 = 'Интенсивная маска для питания и чего то еще'
-            -prod_price_4 = '1600'       
-
-            -prod_img_5 = 'images/pr1.jpg'
-            -prod_name_5 = 'Интенсивная маска для питания и чего то еще'
-            -prod_price_5 = '1600' 
-
-            -prod_img_6 = 'images/pr2.jpg'
-            -prod_name_6 = 'Интенсивная маска для питания и чего то еще'
-            -prod_price_6 = '1600' 
-
-            +product_item(prod_img_1, prod_name_1, prod_price_1 )
-            +product_item(prod_img_2, prod_name_2, prod_price_2 ) 
-            
+    .recomend
+        .product__wrapper
+            .container
+                .title
+                    h2!= recomend_title
+                mixin product_item( prod_img, prod_name, prod_price )
+                    .product__item
+                        div
+                            .product__image
+                                img(src=prod_img, alt="", srcset="")
+                            .product__name  
+                                p!= prod_name
+                            .product__item__price
+                                p!= prod_price 
+                                    span &nbsp;
+                                    span!= currency
+                            a.one-clk__order.add-to-cart(href="" data-name=prod_name data-price=prod_price)
+                                span!= prod_order
+                
+                +product_item(pid_1_prod_img, pid_1_prod_name, pid_1_prod_price )
+                +product_item(pid_2_prod_img, pid_2_prod_name, pid_2_prod_price )
+                                
     //end product wrapper    
