@@ -29,7 +29,7 @@ header{
         .logo__left{
             width: 50%;
             display: table-cell;
-            text-align: left;
+            text-align: right;
             img{
                 float: left;
                 width: 77px;
@@ -522,7 +522,7 @@ main{
             }
             .box{
                 border: 1px solid #C2A284;
-                text-align: left;
+                text-align: right;
                 margin: 15px 0 0;
                 .wrapper{
                     padding: 18px;
@@ -590,7 +590,7 @@ main{
                     width: 50%;
                     float: left;
                     position: relative;
-                    text-align: left;
+                    text-align: right;
                     color: #ffffff;
                     font-size: 16px;
                     font-weight: 500;
@@ -839,7 +839,7 @@ footer{
         display: table-cell;
         vertical-align: middle;
         width: 100%;
-        text-align: left;
+        text-align: right;
         font-size: 16px;
         font-weight: 500;
         color: #000000;

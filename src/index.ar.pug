@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+html(lang="en" dir="rtl")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        script(src="https://dadbab.info/content/shared/js/jquery-1.12.4.min.js")
+
+        //- script(src="js/uikit-core.min.js")
+        //- script(src="js/slideshow.min.js")
+        //- script(src="js/filter.js")
+        //- script(src="js/sortable.js")
+        script(src="js/app.min.js")
+        //- link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css")
+        link(rel="stylesheet", href="css/main.css")
+        script(src="js/tether.min.js")
+        script(src="js/uikit.min.js")
+        //- script(src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/components/slideshow.min.js")
+        title O.K. BEAUTY Store
+        
+    body
+        include content/content.ar.pug
+        include views/header.pug
+        main
+            .product__list.hidden.uk-animation-fade(name="home")
+                include views/product-list.pug
+                //end product-list
+            include views/product-page.pug
+            //end-product-page
+            .cart__page.uk-animation-fade.hidden#cart
+                include views/cart.pug
+                //end-cart-page
+        //end main
+        include views/footer.pug
+        

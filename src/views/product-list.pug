@@ -33,7 +33,7 @@ include ../views/slider.pug
                                     != prod_price 
                                     span!= currency
                                 .back
-                                    span add to cart
+                                    span!=add_cart
                             a.one-clk__order.add-to-cart(data-pid=prod_id data-name=prod_name data-price=prod_price data-currency=currency)
                                 span!= prod_order
                 
