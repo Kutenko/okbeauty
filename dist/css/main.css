@@ -5,7 +5,8 @@
   box-sizing: border-box; }
 
 body {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  text-align: left; }
 
 .container {
   padding: 0 10px;
@@ -108,7 +109,7 @@ main {
       main .hero__slider .item.__1, main .hero__slider .item.__2 {
         color: #ffffff; }
         main .hero__slider .item.__1 .hero__slider_image img, main .hero__slider .item.__2 .hero__slider_image img {
-          bottom: -10px; }
+          top: 25px; }
       main .hero__slider .item.__1 {
         background-color: #eca3b6; }
       main .hero__slider .item.__2 {
@@ -181,8 +182,9 @@ main {
         main .hero__slider .item .hero__slider_image img {
           position: relative;
           width: 100%;
-          max-width: 400px;
-          height: auto; }
+          max-width: 380px;
+          height: auto;
+          vertical-align: middle; }
       main .hero__slider .item .text {
         position: relative;
         text-align: center;
@@ -281,7 +283,7 @@ main {
           position: absolute;
           top: 0;
           width: 100%;
-          padding: 15px 21px 15px 43px;
+          padding: 15px 10px 15px 35px;
           background: #cc5f8d;
           color: #ffffff;
           font-size: 14px;
@@ -306,10 +308,10 @@ main {
           position: absolute;
           top: 0;
           width: 100%;
-          padding: 15px 21px 15px 43px;
+          padding: 15px 21px 15px;
           background: #cc5f8d;
           color: #ffffff;
-          font-size: 14px;
+          font-size: 10px;
           font-weight: 700;
           text-transform: uppercase;
           transition: 0.3s;
@@ -654,7 +656,7 @@ footer {
     display: table-cell;
     vertical-align: middle;
     width: 100%;
-    text-align: left;
+    text-align: center;
     font-size: 16px;
     font-weight: 500;
     color: #000000;

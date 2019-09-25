@@ -22,7 +22,7 @@ function html() {
 }
 
 function css() {
-    return src('src/scss/main.scss')
+    return src(['src/scss/main.scss','src/scss/main.*.scss'])
       .pipe(scss())
       .pipe(dest('dist/css'))
 }
