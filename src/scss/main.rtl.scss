@@ -38,9 +38,15 @@ main{
                 .text{
                     .__1{
                         &::before{
-                            top: 40px;
+                            top: auto;
+                            bottom: -50px;
                         }
                     }
+                }
+            }
+            &.__6{
+                .text{
+                    margin-top: 50px;
                 }
             }
         }

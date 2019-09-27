@@ -2,30 +2,28 @@
     .container
         h2!= cart_title
 form(action="" method="post")
-    .cart__info
-        .container
-            .cart__head
-                .title(uk-toggle="target: #show_cart")
-                    span!= your_order
+    .container
+        .cart__info
+            //- .cart__head
+            //-     .title(uk-toggle="target: #show_cart")
+            //-         span!= your_order
             #show_cart.show-cart
             .total__price
                 span!=total_price
                 |&nbsp;
                 span.total-cart
                 !=currency
-            .clear__cart
-                span!= remove_all
+            center
+                .clear__cart
+                    span!= remove_all
         //end container
     //end cart__info    
     .container
         .cart__form 
-            label(for="name")!= user_name
-            input#name(type="text" name="name")
+            input#name(type="text" name="name" placeholder=user_name)
 
-            label(for="phone")!= user_phone
-            input#phone.only_number(type="text" name="phone")
+            input#phone.only_number(type="text" name="phone" placeholder=user_phone)
 
-            label(for="country")!= user_country
             select#country_code_selector(name="country_code")
                 option(value="AE") United Arab Emirates
             button.submit.js_submit

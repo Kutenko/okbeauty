@@ -23,10 +23,10 @@ include ../views/slider.pug
                     div.product__item(class!= tag_filter)
                         div
                             .product__image.select_prod(data-pid=prod_id)
-                                img(src=prod_img, alt="")
+                                img( async src=prod_img, alt="")
                             .product__name.select_prod(data-pid=prod_id)
                                 p!= prod_name                    
-                            .product__item__price.add-to-cart(data-pid=prod_id data-name=prod_name data-price=prod_price data-currency=currency, onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})")
+                            .product__item__price.add-to-cart(data-pid=prod_id data-name=prod_name data-img=prod_img data-price=prod_price data-currency=currency, onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})")
                                 .front
                                     span.buy__for!= buy_for 
                                     |&nbsp;
@@ -34,7 +34,7 @@ include ../views/slider.pug
                                     span!= currency
                                 .back
                                     span!=add_cart
-                            a.one-clk__order.add-to-cart(data-pid=prod_id data-name=prod_name data-price=prod_price data-currency=currency)
+                            a.one-clk__order.add-to-cart(data-pid=prod_id data-name=prod_name data-img=prod_img data-price=prod_price data-currency=currency)
                                 span!= prod_order
                 
 

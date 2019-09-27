@@ -50,8 +50,9 @@ window.onload = function() {
       cart = [];
       
       // Constructor
-      function Item(name, price, currency, count, pid) {
+      function Item(name, img, price, currency, count, pid) {
         this.name = name;
+        this.img = img;
         this.price = price;
         this.currency =currency;
         this.count = count;
@@ -78,7 +79,7 @@ window.onload = function() {
       var obj = {};
       
       // Add to cart
-      obj.addItemToCart = function(name, price, currency, count, pid) {
+      obj.addItemToCart = function(name, img, price, currency, count, pid) {
         for(var item in cart) {
           if(cart[item].name === name) {
             cart[item].count ++;
@@ -86,7 +87,7 @@ window.onload = function() {
             return;
           }
         }
-        var item = new Item(name, price, currency, count, pid);
+        var item = new Item(name, img, price, currency, count, pid);
         cart.push(item);
         saveCart();
       }
@@ -186,11 +187,13 @@ window.onload = function() {
     $('.add-to-cart').click(function(event) {
       event.preventDefault();
       var name = $(this).data('name');
+      var img = $(this).data('img');
       var pid = Number($(this).data('pid'));
       var currency = $(this).data('currency');
       var price = Number($(this).data('price'));
-      shoppingCart.addItemToCart(name, price, currency, 1, pid);
-      displayCart();
+      shoppingCart.addItemToCart(name, img, price, currency, 1, pid);
+      displayTotal();
+      // displayCart();
     });
     
     // Clear items
@@ -205,14 +208,17 @@ window.onload = function() {
       var output = "";
       for(var i in cartArray) {
         output += "<div class='cart__item'>"
-          +"<div class='item__title'>"
-          + "<div class='item__name'>" + cartArray[i].name + "</div>" 
-          + "<div class='item__price'>" + cartArray[i].price + ""+ cartArray[i].currency + "</div>"
-          + "<div class='input__group'><button class='minus-item' name='cc_product_"+ cartArray[i].pid +"' data-pid="+ cartArray[i].pid +" data-name='" + cartArray[i].name + "'>-</button>"
+          +"<div class='item__left'>"
+          + "<div class='item__img'><img async src=" + cartArray[i].img + "></div>" 
+          + "<div class='input__group'>" + " <button class='minus-item' name='cc_product_"+ cartArray[i].pid +"' data-pid="+ cartArray[i].pid +" data-name='" + cartArray[i].name + "'>-</button>"
           + "<input name='cc_product_"+ cartArray[i].pid +"' type='number' class='item__count' data-pid='" + cartArray[i].pid + "' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
           + "<button class='plus-item' name='cc_product_"+ cartArray[i].pid +"' data-pid="+ cartArray[i].pid +" data-name='" + cartArray[i].name + "'>+</button></div>"
-          + "<button class='delete-item' name='cc_product_"+ cartArray[i].pid +"' data-pid="+ cartArray[i].pid +" data-name='" + cartArray[i].name + "'>X</button></div>"
+          +"</div>"
+          +"<div class='item__right'>"
+          + "<div class='item__name'>" + cartArray[i].name + "</div>" 
           + "<div class='item__total-price'><div class='item__total'>" + cartArray[i].total + " "+ cartArray[i].currency + "</div>" 
+          + "<button class='delete-item' name='cc_product_"+ cartArray[i].pid +"' data-pid="+ cartArray[i].pid +" data-name='" + cartArray[i].name + "'>X</button>" 
+          +"</div>"
           + "</div>"
           + "</div>";
       }
@@ -220,7 +226,9 @@ window.onload = function() {
       $('.total-cart').html(shoppingCart.totalCart());
       $('.total-count').html(shoppingCart.totalCount());
     }
-    
+    function displayTotal(){
+      $('.total-count').html(shoppingCart.totalCount());
+    }
     // Delete item button
     
     $('.show-cart').on("click", ".delete-item", function(event) {

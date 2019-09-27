@@ -4,6 +4,7 @@
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<script src="https://dadbab.info/content/shared/js/jquery-1.12.4.min.js"></script>
 		<script src="js/app.min.js"></script>
 		<link rel="stylesheet" href="css/main.css"/>
 		<script src="js/tether.min.js"></script>
@@ -75,6 +76,40 @@
 		</header>
 		<!--end header-->
 		<main>
+			<div class="cart__page uk-animation-fade hidden" id="cart">
+				<div class="title">
+					<div class="container">
+						<h2>ORDERING</h2>
+					</div>
+				</div>
+				<form action="" method="post">
+					<div class="container">
+						<div class="cart__info">
+							<div class="show-cart" id="show_cart"></div>
+							<div class="total__price"><span>Total price</span>&nbsp;<span class="total-cart"></span> AED
+							</div>
+							<center>
+								<div class="clear__cart"><span>clear all</span></div>
+							</center>
+						</div>
+						<!--end container-->
+					</div>
+					<!--end cart__info    -->
+					<div class="container">
+						<div class="cart__form"> 
+							<input id="name" type="text" name="name" placeholder="Your name"/>
+							<input class="only_number" id="phone" type="text" name="phone" placeholder="Your phone"/>
+							<select id="country_code_selector" name="country_code">
+								<option value="AE">United Arab Emirates</option>
+							</select>
+							<button class="submit js_submit">Order
+							</button>
+						</div>
+						<!--end cart__form-->
+					</div>
+				</form>
+				<!--end-cart-page-->
+			</div>
 			<div class="product__list hidden uk-animation-fade" name="home">
 				<div class="hero__slider" uk-slideshow="animation: slide">
 					<div class="uk-slideshow-items">
@@ -83,18 +118,6 @@
 													<div class="container">
 														<div class="text">   
 															<div class="__1">Pack your beauty purse with OK BEAUTY</div>
-															<div class="__2"></div>
-															<div class="__3"></div>
-														</div><a class="button" href="#product_list" uk-scroll="uk-scroll"><span>go shopping</span></a>
-													</div>
-													<!--end container-->
-												</div>
-												<!--end item-->
-												<div class="item __2">
-													<figure class="hero__slider_image"><img src="images/slide2.jpg" alt="" srcset=""/></figure>
-													<div class="container">
-														<div class="text">   
-															<div class="__1">OK BEAUTY – caring for your natural beauty</div>
 															<div class="__2"></div>
 															<div class="__3"></div>
 														</div><a class="button" href="#product_list" uk-scroll="uk-scroll"><span>go shopping</span></a>
@@ -174,249 +197,249 @@
 							<div class="js-filter">
 																<div class="product__item hit hair">
 																	<div>
-																		<div class="product__image select_prod" data-pid="1"><img src="images/pr1.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="1"><img async="async" src="images/pr1.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="1">
 																			<p>Intense nourishing and recovery hair mask</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="1" data-name="Intense nourishing and recovery hair mask" data-price="184" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="1" data-name="Intense nourishing and recovery hair mask" data-img="images/pr1.jpg" data-price="184" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;184<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="1" data-name="Intense nourishing and recovery hair mask" data-price="184" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="1" data-name="Intense nourishing and recovery hair mask" data-img="images/pr1.jpg" data-price="184" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item hit tints face">
 																	<div>
-																		<div class="product__image select_prod" data-pid="2"><img src="images/pr2.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="2"><img async="async" src="images/pr2.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="2">
 																			<p>OK BEAUTY СOLOR SALUTE LIP & CHEEK TINT, Marrakech</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="2" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Marrakech" data-price="88" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="2" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Marrakech" data-img="images/pr2.jpg" data-price="88" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;88<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="2" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Marrakech" data-price="88" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="2" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Marrakech" data-img="images/pr2.jpg" data-price="88" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item hit face">
 																	<div>
-																		<div class="product__image select_prod" data-pid="3"><img src="images/pr3.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="3"><img async="async" src="images/pr3.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="3">
 																			<p>Moisturizing lip plumping balm OK BEAUTY PREP & PLUMP</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="3" data-name="Moisturizing lip plumping balm OK BEAUTY PREP &amp; PLUMP" data-price="125" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="3" data-name="Moisturizing lip plumping balm OK BEAUTY PREP &amp; PLUMP" data-img="images/pr3.jpg" data-price="125" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;125<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="3" data-name="Moisturizing lip plumping balm OK BEAUTY PREP &amp; PLUMP" data-price="125" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="3" data-name="Moisturizing lip plumping balm OK BEAUTY PREP &amp; PLUMP" data-img="images/pr3.jpg" data-price="125" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item hit face">
 																	<div>
-																		<div class="product__image select_prod" data-pid="4"><img src="images/pr4.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="4"><img async="async" src="images/pr4.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="4">
 																			<p>Face Skin Care Oil Primer OK BEAUTY PREP & CARE</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="4" data-name="Face Skin Care Oil Primer OK BEAUTY PREP &amp; CARE" data-price="220" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="4" data-name="Face Skin Care Oil Primer OK BEAUTY PREP &amp; CARE" data-img="images/pr4.jpg" data-price="220" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;220<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="4" data-name="Face Skin Care Oil Primer OK BEAUTY PREP &amp; CARE" data-price="220" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="4" data-name="Face Skin Care Oil Primer OK BEAUTY PREP &amp; CARE" data-img="images/pr4.jpg" data-price="220" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item hit body">
 																	<div>
-																		<div class="product__image select_prod" data-pid="5"><img src="images/pr5.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="5"><img async="async" src="images/pr5.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="5">
 																			<p>Shimmer Body Lotion OK BEAUTY FLASH & CARE</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="5" data-name="Shimmer Body Lotion OK BEAUTY FLASH &amp; CARE" data-price="198" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="5" data-name="Shimmer Body Lotion OK BEAUTY FLASH &amp; CARE" data-img="images/pr5.jpg" data-price="198" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;198<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="5" data-name="Shimmer Body Lotion OK BEAUTY FLASH &amp; CARE" data-price="198" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="5" data-name="Shimmer Body Lotion OK BEAUTY FLASH &amp; CARE" data-img="images/pr5.jpg" data-price="198" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item hit body">
 																	<div>
-																		<div class="product__image select_prod" data-pid="6"><img src="images/pr6.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="6"><img async="async" src="images/pr6.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="6">
 																			<p>Moisturizing and tightening body scrub OK BEAUTY SMOOTH & CARE</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="6" data-name="Moisturizing and tightening body scrub OK BEAUTY SMOOTH &amp; CARE" data-price="132" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="6" data-name="Moisturizing and tightening body scrub OK BEAUTY SMOOTH &amp; CARE" data-img="images/pr6.jpg" data-price="132" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;132<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="6" data-name="Moisturizing and tightening body scrub OK BEAUTY SMOOTH &amp; CARE" data-price="132" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="6" data-name="Moisturizing and tightening body scrub OK BEAUTY SMOOTH &amp; CARE" data-img="images/pr6.jpg" data-price="132" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item hit tints face">
 																	<div>
-																		<div class="product__image select_prod" data-pid="7"><img src="images/pr7.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="7"><img async="async" src="images/pr7.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="7">
 																			<p>OK BEAUTY СOLOR SALUTE LIP & CHEEK TINT, Safari</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="7" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Safari" data-price="88" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="7" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Safari" data-img="images/pr7.jpg" data-price="88" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;88<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="7" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Safari" data-price="88" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="7" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Safari" data-img="images/pr7.jpg" data-price="88" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item hit hair">
 																	<div>
-																		<div class="product__image select_prod" data-pid="8"><img src="images/pr8.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="8"><img async="async" src="images/pr8.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="8">
 																			<p>Wake Up & Peel Scalp Exfoliating Mask</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="8" data-name="Wake Up &amp; Peel Scalp Exfoliating Mask" data-price="110" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="8" data-name="Wake Up &amp; Peel Scalp Exfoliating Mask" data-img="images/pr8.jpg" data-price="110" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;110<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="8" data-name="Wake Up &amp; Peel Scalp Exfoliating Mask" data-price="110" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="8" data-name="Wake Up &amp; Peel Scalp Exfoliating Mask" data-img="images/pr8.jpg" data-price="110" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item hair">
 																	<div>
-																		<div class="product__image select_prod" data-pid="9"><img src="images/pr9.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="9"><img async="async" src="images/pr9.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="9">
 																			<p>OK BEAUTY moisturize & volume conditioner for hydration and volume</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="9" data-name="OK BEAUTY moisturize &amp; volume conditioner for hydration and volume" data-price="103" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="9" data-name="OK BEAUTY moisturize &amp; volume conditioner for hydration and volume" data-img="images/pr9.jpg" data-price="103" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;103<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="9" data-name="OK BEAUTY moisturize &amp; volume conditioner for hydration and volume" data-price="103" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="9" data-name="OK BEAUTY moisturize &amp; volume conditioner for hydration and volume" data-img="images/pr9.jpg" data-price="103" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item hair">
 																	<div>
-																		<div class="product__image select_prod" data-pid="10"><img src="images/pr10.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="10"><img async="async" src="images/pr10.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="10">
 																			<p>Volumizing shampoo OK BEAUTY CLARIFYING & VOLUMIZING</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="10" data-name="Volumizing shampoo OK BEAUTY CLARIFYING &amp; VOLUMIZING" data-price="140" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="10" data-name="Volumizing shampoo OK BEAUTY CLARIFYING &amp; VOLUMIZING" data-img="images/pr10.jpg" data-price="140" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;140<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="10" data-name="Volumizing shampoo OK BEAUTY CLARIFYING &amp; VOLUMIZING" data-price="140" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="10" data-name="Volumizing shampoo OK BEAUTY CLARIFYING &amp; VOLUMIZING" data-img="images/pr10.jpg" data-price="140" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item hair">
 																	<div>
-																		<div class="product__image select_prod" data-pid="11"><img src="images/pr11.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="11"><img async="async" src="images/pr11.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="11">
 																			<p>OK BEAUTY concentrated serum for deep hair recovery fill & handle </p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="11" data-name="OK BEAUTY concentrated serum for deep hair recovery fill &amp; handle " data-price="103" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="11" data-name="OK BEAUTY concentrated serum for deep hair recovery fill &amp; handle " data-img="images/pr11.jpg" data-price="103" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;103<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="11" data-name="OK BEAUTY concentrated serum for deep hair recovery fill &amp; handle " data-price="103" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="11" data-name="OK BEAUTY concentrated serum for deep hair recovery fill &amp; handle " data-img="images/pr11.jpg" data-price="103" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item sets">
 																	<div>
-																		<div class="product__image select_prod" data-pid="12"><img src="images/pr12.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="12"><img async="async" src="images/pr12.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="12">
 																			<p>OK Beauty brand box</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="12" data-name="OK Beauty brand box" data-price="47" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="12" data-name="OK Beauty brand box" data-img="images/pr12.jpg" data-price="47" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;47<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="12" data-name="OK Beauty brand box" data-price="47" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="12" data-name="OK Beauty brand box" data-img="images/pr12.jpg" data-price="47" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item sets">
 																	<div>
-																		<div class="product__image select_prod" data-pid="13"><img src="images/pr13.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="13"><img async="async" src="images/pr13.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="13">
 																			<p>OK Beauty gift-set</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="13" data-name="OK Beauty gift-set" data-price="735" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="13" data-name="OK Beauty gift-set" data-img="images/pr13.jpg" data-price="735" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;735<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="13" data-name="OK Beauty gift-set" data-price="735" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="13" data-name="OK Beauty gift-set" data-img="images/pr13.jpg" data-price="735" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item sets">
 																	<div>
-																		<div class="product__image select_prod" data-pid="14"><img src="images/pr14.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="14"><img async="async" src="images/pr14.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="14">
 																			<p>Gift-set OK Beauty Hair</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="14" data-name="Gift-set OK Beauty Hair" data-price="506" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="14" data-name="Gift-set OK Beauty Hair" data-img="images/pr14.jpg" data-price="506" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;506<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="14" data-name="Gift-set OK Beauty Hair" data-price="506" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="14" data-name="Gift-set OK Beauty Hair" data-img="images/pr14.jpg" data-price="506" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item sets">
 																	<div>
-																		<div class="product__image select_prod" data-pid="15"><img src="images/pr15.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="15"><img async="async" src="images/pr15.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="15">
 																			<p>Big gift-set OK Beauty All-in-one</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="15" data-name="Big gift-set OK Beauty All-in-one" data-price="1152" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="15" data-name="Big gift-set OK Beauty All-in-one" data-img="images/pr15.jpg" data-price="1152" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;1152<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="15" data-name="Big gift-set OK Beauty All-in-one" data-price="1152" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="15" data-name="Big gift-set OK Beauty All-in-one" data-img="images/pr15.jpg" data-price="1152" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item tints face">
 																	<div>
-																		<div class="product__image select_prod" data-pid="16"><img src="images/pr16.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="16"><img async="async" src="images/pr16.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="16">
 																			<p>OK BEAUTY СOLOR SALUTE LIP & CHEEK TINT, Flamingo</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="16" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Flamingo" data-price="88" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="16" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Flamingo" data-img="images/pr16.jpg" data-price="88" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;88<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="16" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Flamingo" data-price="88" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="16" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Flamingo" data-img="images/pr16.jpg" data-price="88" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item tints face">
 																	<div>
-																		<div class="product__image select_prod" data-pid="17"><img src="images/pr17.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="17"><img async="async" src="images/pr17.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="17">
 																			<p>OK BEAUTY СOLOR SALUTE LIP & CHEEK TINT, Cocoa</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="17" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Cocoa" data-price="88" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="17" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Cocoa" data-img="images/pr17.jpg" data-price="88" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;88<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="17" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Cocoa" data-price="88" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="17" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Cocoa" data-img="images/pr17.jpg" data-price="88" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item tints face">
 																	<div>
-																		<div class="product__image select_prod" data-pid="18"><img src="./images/pr18.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="18"><img async="async" src="./images/pr18.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="18">
 																			<p>OK BEAUTY СOLOR SALUTE LIP & CHEEK TINT, Hillier</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="18" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Hillier" data-price="88" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="18" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Hillier" data-img="./images/pr18.jpg" data-price="88" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;88<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="18" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Hillier" data-price="88" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="18" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Hillier" data-img="./images/pr18.jpg" data-price="88" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 																<div class="product__item tints face">
 																	<div>
-																		<div class="product__image select_prod" data-pid="19"><img src="images/pr19.jpg" alt=""/></div>
+																		<div class="product__image select_prod" data-pid="19"><img async="async" src="images/pr19.jpg" alt=""/></div>
 																		<div class="product__name select_prod" data-pid="19">
 																			<p>OK BEAUTY СOLOR SALUTE LIP & CHEEK TINT, Tanami</p>
 																		</div>
-																		<div class="product__item__price add-to-cart" data-pid="19" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Tanami" data-price="88" data-currency=" AED" onclick="UIkit.notification({message: 'The product has been added to your cart.', timeout: 500})">
+																		<div class="product__item__price add-to-cart" data-pid="19" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Tanami" data-img="images/pr19.jpg" data-price="88" data-currency=" AED" onclick="UIkit.notification({message: 'تمت إضافة المنتج إلى سلة التسوق الخاصة بك.', timeout: 500})">
 																			<div class="front"><span class="buy__for">buy for</span>&nbsp;88<span> AED</span>
 																			</div>
 																			<div class="back"><span>Add to cart</span></div>
-																		</div><a class="one-clk__order add-to-cart" data-pid="19" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Tanami" data-price="88" data-currency=" AED"><span>Buy in 1 click</span></a>
+																		</div><a class="one-clk__order add-to-cart" data-pid="19" data-name="OK BEAUTY СOLOR SALUTE LIP &amp; CHEEK TINT, Tanami" data-img="images/pr19.jpg" data-price="88" data-currency=" AED"><span>Buy in 1 click</span></a>
 																	</div>
 																</div>
 							</div>
@@ -1303,44 +1326,6 @@
 							</div>
 						</div>
 			<!--end-product-page-->
-			<div class="cart__page uk-animation-fade hidden" id="cart">
-				<div class="title">
-					<div class="container">
-						<h2>ORDERING</h2>
-					</div>
-				</div>
-				<form action="" method="post">
-					<div class="cart__info">
-						<div class="container">
-							<div class="cart__head">
-								<div class="title" uk-toggle="target: #show_cart"><span>Your order</span></div>
-							</div>
-							<div class="show-cart" id="show_cart"></div>
-							<div class="total__price"><span>Total price</span>&nbsp;<span class="total-cart"></span> AED
-							</div>
-							<div class="clear__cart"><span>clear all</span></div>
-						</div>
-						<!--end container-->
-					</div>
-					<!--end cart__info    -->
-					<div class="container">
-						<div class="cart__form"> 
-							<label for="name">Your name</label>
-							<input id="name" type="text" name="name"/>
-							<label for="phone">Your phone</label>
-							<input class="only_number" id="phone" type="text" name="phone"/>
-							<label for="country">Сhoose сountry</label>
-							<select id="country_code_selector" name="country_code">
-								<option value="AE">United Arab Emirates</option>
-							</select>
-							<button class="submit js_submit">Order
-							</button>
-						</div>
-						<!--end cart__form-->
-					</div>
-				</form>
-				<!--end-cart-page-->
-			</div>
 		</main>
 		<!--end main-->
 		<!-- start footer-->

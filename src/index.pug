@@ -4,7 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        //- script(src="https://dadbab.info/content/shared/js/jquery-1.12.4.min.js")
+        script(src="https://dadbab.info/content/shared/js/jquery-1.12.4.min.js")
 
         //- script(src="js/uikit-core.min.js")
         //- script(src="js/slideshow.min.js")
@@ -21,14 +21,14 @@ html(lang="en")
         include content/content.en.pug
         include views/header.pug
         main
+            .cart__page.uk-animation-fade.hidden#cart
+                include views/cart.pug
+                //end-cart-page
             .product__list.hidden.uk-animation-fade(name="home")
                 include views/product-list.pug
                 //end product-list
             include views/product-page.pug
             //end-product-page
-            .cart__page.uk-animation-fade.hidden#cart
-                include views/cart.pug
-                //end-cart-page
         //end main
         include views/footer.pug
         

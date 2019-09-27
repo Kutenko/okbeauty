@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,400,700&display=swap');
 
 *{
     margin: 0;
@@ -10,7 +10,7 @@ body{
     text-align: left;
 }
 .container{
-    padding: 0 10px;
+    padding: 0 20px;
     margin: 0 auto;
     max-width: 1280px;
     overflow: hidden;
@@ -228,6 +228,7 @@ main{
                 img{
                     position: relative;
                     width: 100%;
+                    min-width: 320px;                    
                     max-width: 380px;
                     height: auto;
                     vertical-align: middle;
@@ -328,7 +329,7 @@ main{
             .product__image{
                 width: 100%;
                 height: 185px;
-                padding: 20px 0;
+                padding: 10px 0 20px 0;
                 vertical-align: middle;
                 overflow: hidden;
                 img{
@@ -355,14 +356,19 @@ main{
                 &:hover{
                     transform: rotateX(90deg);
                 }
+                @media screen and (max-width: 480px) {
+                    &:hover{
+                        transform: none;
+                    }
+                }
                 .front{
                     position: absolute;
                     top:0 ;
                     width: 100%;
-                    padding: 15px 10px 15px 35px;
+                    padding: 15px 10px 15px 30px;
                     background: #cc5f8d;
                     color: #ffffff;
-                    font-size: 14px;
+                    font-size: 13px;
                     // line-height: 14px;
                     font-weight: 700;
                     text-transform: uppercase;
@@ -374,7 +380,7 @@ main{
                     }
                     &::before{
                         position: absolute;
-                        left: 18px;
+                        left: 10px;
                         top: 11px;
                         content: '';
                         width: 20px;
@@ -389,10 +395,10 @@ main{
                     position: absolute;
                     top:0 ;
                     width: 100%;
-                    padding: 15px 21px 15px;
+                    padding: 15px 10px 15px;
                     background: #cc5f8d;
                     color: #ffffff;
-                    font-size: 10px;
+                    font-size: 14px;
                     // line-height: 14px;
                     font-weight: 700;
                     text-transform: uppercase;
@@ -569,9 +575,11 @@ main{
         }//end product__feature
     }//end product page
     .cart__page{
+        background: #C2A284;
         .title{
             text-align: center;
             padding: 25px 0 20px;
+            background: #ffffff;
             h2{
                 text-transform: uppercase;
                 font-size: 18px;
@@ -579,101 +587,55 @@ main{
             }
         }
         .cart__info{
-            padding: 22px 0;
-            background: #C2A284;
-            margin-bottom: 26px;
+            padding: 22px 20px;
+            margin: 20px 0 26px;
             color: #ffffff;
-            .cart__head{
-                max-width: 480px;
-                width: 100%;
-                margin: 0 auto 30px;
-                overflow: hidden;
-                .title{
-                    width: 50%;
-                    float: left;
-                    position: relative;
-                    text-align: left;
-                    color: #ffffff;
-                    font-size: 16px;
-                    font-weight: 500;
-                    padding: 0 0 0 31px;
-                    &::before{
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 21px;
-                        height: 20px;
-                        background: url(../images/icons/prod_cart.png);
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                    }
-                    span{
-                        position: relative;
-                        &::after{
-                            content: '';
-                            position: absolute;
-                            top: 5px;
-                            right: -25px;
-                            width: 15px;
-                            height: 8px;
-                            background: url(../images/icons/arrow.png);
-                            background-position: center;
-                            background-repeat: no-repeat;
-                            background-size: contain;                    
-                        }
-                    }
-                }//end title
-            }//end cart__head
+            background: #ffffff;
             .show-cart{
                 max-width: 480px;
                 width: 100%;
+                color: #000000;
                 margin: 0 auto 30px;
                 overflow: hidden;
                 .cart__item{
                     clear: both;
                     overflow: hidden;
                     margin: 0 auto 30px;
-                    .item__title{
-                        display: table;
-                        width: 100%;
-                        border-bottom: 1px dashed #ffffff; 
-                        padding-bottom: 10px;
-                        margin-bottom: 10px;
-                        .item__name{
-                            display: table-cell;
-                            vertical-align: middle;
-                            max-width: 160px;
-                            font-size: 12px;
-                            padding: 0 10px 0;
-                        }
-                        .item__price{
-                            float: left;
-                            display: none;
-                            min-width: 120px;
-                            max-width: 160px;
-                            font-size: 12px;
-                            padding: 0 0 0 30px;
-                        }
-                        .input__group{
-                            padding: 5px;
-                            border: 1px solid #ffffff;
+                    border-bottom: 1px dashed ;
+                    .item__left{
+                        padding: 0 10px 20px 0;
+                        float: left;
+                        overflow: hidden;
+                        .item__img{
+                            min-width:90px;
+                            height: 90px;
                             overflow: hidden;
                             text-align: center;
-                            display: table-cell;
+                            border: 1px solid rgba(191, 163, 133, 0.3);
+                            img{
+                                width: auto;
+                                height: 100%;
+                            }
+                        }
+                        .input__group{
+                            display: table;
+                            text-align: center;
                             vertical-align: middle;
+                            width: 100%;
+                            color: #000000;
+                            font-weight: 100;
+                            background: rgba(191, 163, 133, 0.3); 
+                            padding: 5px 0;
                             .item__count{
+                                font-family: 'Montserrat', sans-serif;
                                 width: 30px;
                                 border: none;
                                 background: transparent;
                                 margin: 2px 5px 0;
                                 font-size: 18px;
                                 line-height: 14px;
-                                font-weight: 500;
                                 text-align: center;
                                 display: inline-block;
-                                color: #ffffff;
                                 &::-webkit-outer-spin-button,
                                 &::-webkit-inner-spin-button {    
                                     -webkit-appearance: none;
@@ -683,55 +645,73 @@ main{
                             .plus-item,
                             .delete-item,
                             .minus-item{
+                                font-family: 'Montserrat', sans-serif;
                                 background: transparent;
                                 border: none;
                             }
                             .plus-item,
                             .minus-item{
                                 display: inline-block;
-                                font-size: 22px;
-                                color: #ffffff;                                
+                                font-size: 22px;                             
                                 line-height: 10px;
                             }
-                        }// end input__group                        
-                        .delete-item{
-                            background: transparent;
-                            border: none;
-                            font-size: 15px;
-                            color: #ff1111;
-                            padding: 2px 5px;
-                            margin: 12px 0 12px 20px;
-                            border-radius: 150px;
-                            display: table-cell;
+                        }// end input__group
+                    }
+                    .item__right{
+                        float: left;
+                        padding: 0 0 20px 10px;
+                        .item__name{
                             vertical-align: middle;
+                            max-width: 160px;
+                            min-height: 90px;
+                            font-size: 14px;
+                            padding: 0 10px 0;
+                        }                        
+                        .item__total-price{
+                            display: table;
+                            width: 100%;
+                            text-align: right;
+                            margin: 0 auto;
+                            overflow: hidden;
+                            .item__total{
+                                display: table-cell;
+                                vertical-align: middle;
+                            }
+                            .delete-item{
+                                background: transparent;
+                                border: none;
+                                font-size: 15px;
+                                color: #000000;
+                                padding: 2px 5px;
+                                margin: 12px 0 12px 20px;
+                                border-radius: 150px;
+                                display: table-cell;
+                                vertical-align: middle;
+                            }
                         }
-                    }// end item__title
+                    }
                 }// end cart__item
-                .item__total-price{
-                    width: 100%;
-                    text-align: right;
-                    margin: 0 auto;
-                    overflow: hidden;
-                }
             }//end cart__info
             .clear__cart{
-                max-width: 200px;
+                display: inline;
                 padding: 5px 10px;
                 float: none;
                 text-align: center;
-                font-size: 18px;
+                font-size: 12px;
+                border-bottom: 1px solid;
                 font-weight: 500;
-                color: #ff1111;
-                border:1px solid ;
+                color: #000000;
+                opacity: .5;
                 margin: 15px auto 0;                
             }
             .total__price{
                 width: 100%;
                 float: none;
+                margin-bottom: 10px;
                 text-align: center;
                 font-size: 18px;
                 font-weight: 500;
-                color: #ffffff;
+                color: #000000;
                 span{
                     font-size: 18px;
                     text-transform: uppercase;
@@ -739,26 +719,27 @@ main{
             }//end total__price
             }
     .cart__form{
-        max-width: 360px;
-        margin: 0 auto;
+        background: #ffffff;
+        margin: 0 auto 20px;
+        padding: 20px 20px;
         text-align: center;
         input,select,label{
             width: 100%;
             display: block;
         }
         input,select{
+            max-width: 360px;
             height: 47px;
-            border: 1px solid #bababa;
+            padding: 0 20px;
+            background: #ECE3DA;
+            border: none;
+            margin-left: auto;
+            margin-right: auto;
             margin-bottom: 30px;
             &:last-child{
                 margin-bottom: 0;
             }
 
-        }
-        label{
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 12px;
         }
         button.submit{
             border:none;
@@ -793,7 +774,7 @@ main{
             }
         }
     }
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: 360px) {
         .product__page{
             .product__wrapper{
                 .product__item{
@@ -916,7 +897,7 @@ footer{
 .uk-notification{
     top: 40% !important;
     .uk-notification-message{
-        background: rgb(9, 156, 58);
+        background: #BFA385;
         color: #ffffff;
         text-align: center;
     }
